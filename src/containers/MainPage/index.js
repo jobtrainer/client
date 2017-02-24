@@ -17,7 +17,7 @@ class MainPage extends React.Component {
     render() {
         const tutorialElements = this.props.tutorials.map((curr, index) => this.renderSingleTutorial(index, curr.header, curr.text));
         return (
-            <div>
+            <div className="page main_page_container">
                 <h1>JobTrainer</h1>
                 <span>Trainer for new jobs</span>
                 <h3>Tutorials</h3>

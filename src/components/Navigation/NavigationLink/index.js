@@ -1,9 +1,11 @@
 import "./index.scss";
 import { Link } from "react-router";
 
-const NavigationLink = ({to, linkText}) => {
+const NavigationLink = ({to, linkText, className}) => {
+	const itemClassName = `navigation_item${className ? ' ' + className : ''}`;
+
 	return (
-		<div className="navigation_item"><Link to={to}>{linkText}</Link></div>
+		<div className={itemClassName}><Link to={to}>{linkText}</Link></div>
 	);
 };
 
