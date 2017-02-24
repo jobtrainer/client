@@ -24093,7 +24093,7 @@ var InputGroup = function (ref) {
 	);
 };
 
-__$styleInject(".login_page .login_background_image{position:absolute;left:0;top:0;z-index:-1;max-width:100%}",undefined);
+__$styleInject(".login_page .login_background_image{position:absolute;left:0;top:0;z-index:-1;max-width:100%}.login_page .login_container{position:absolute;top:50%;left:50%;transform:translateX(-50%) translateY(-50%);max-width:100%;width:750px;height:300px;background-color:hsla(0,0%,100%,.8);border-radius:5px;box-shadow:0 1px 5px 1px #696969;padding:15px}",undefined);
 
 var Login = (function (superclass) {
 	function Login () {
