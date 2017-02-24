@@ -24093,7 +24093,7 @@ var InputGroup = function (ref) {
 	);
 };
 
-__$styleInject(".login_page .login_background_image{position:absolute;left:0;top:0;z-index:-1;max-width:100%}.login_page .login_container{position:absolute;top:50%;left:50%;transform:translateX(-50%) translateY(-50%);max-width:100%;width:750px;height:300px;background-color:hsla(0,0%,100%,.8);border-radius:5px;box-shadow:0 1px 5px 1px #696969;padding:15px}",undefined);
+__$styleInject(".login_page .login_background_image{position:absolute;left:0;top:0;z-index:-1;max-width:100%}.login_page .login_container{position:absolute;top:50%;left:50%;transform:translateX(-50%) translateY(-50%);max-width:100%;width:750px;height:300px;background-color:hsla(0,0%,100%,.8);border-radius:5px;box-shadow:0 1px 5px 1px #696969;padding:15px;text-align:center}.login_page .login_container .title{color:#666e77}.login_page .login_container .input_group{margin:30px 0}",undefined);
 
 var Login = (function (superclass) {
 	function Login () {
@@ -24108,7 +24108,7 @@ var Login = (function (superclass) {
 		return (
 			React$1__default.createElement( 'div', { className: "login_page" }, 
 				React$1__default.createElement( 'div', { className: "login_container" }, 
-					React$1__default.createElement( 'h1', null, "Login" ), 
+					React$1__default.createElement( 'h1', { className: "title" }, "Login"), 
 					React$1__default.createElement( 'form', { onSubmit: function (e) { e.preventDefault(); } }, 
 						React$1__default.createElement( InputGroup, { labelText: "Username", inputName: "username", inputType: "text" }), 
 						React$1__default.createElement( InputGroup, { labelText: "Password", inputName: "password", inputType: "password" }), 						
@@ -24123,7 +24123,7 @@ var Login = (function (superclass) {
 	return Login;
 }(React$1__default.Component));
 
-__$styleInject("h1{color:red}",undefined);
+__$styleInject("h1{color:#666e77}",undefined);
 
 var MainPage = (function (superclass) {
     function MainPage () {

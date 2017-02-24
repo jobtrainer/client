@@ -9,7 +9,7 @@ export default class Login extends React.Component {
 		return (
 			<div className="login_page">
 				<div className="login_container">
-					<h1>Login</h1>
+					<h1 className="title">Login</h1>
 					<form onSubmit={(e) => { e.preventDefault(); }}>
 						<InputGroup labelText="Username" inputName="username" inputType="text" />
 						<InputGroup labelText="Password" inputName="password" inputType="password" />						
