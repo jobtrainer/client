@@ -20107,177 +20107,6 @@ function createConnect() {
 
 var connect$1 = createConnect();
 
-__$styleInject("body{margin:0;padding:0;@import url(\"https://fonts.googleapis.com/css?family=Roboto\");font-family:Roboto,sans-serif}.application .header{background-color:#fff;width:100%;height:50px;padding:10px}.application .header .logo{height:100%;display:flex;align-items:center}.application .header .logo .logo_image{max-width:100%;max-height:100%}.application .header .logo .company_name{display:inline-block;margin:0 15px}",undefined);
-
-var App = (function (superclass) {
-	function App () {
-		superclass.apply(this, arguments);
-	}
-
-	if ( superclass ) App.__proto__ = superclass;
-	App.prototype = Object.create( superclass && superclass.prototype );
-	App.prototype.constructor = App;
-
-	App.prototype.render = function render () {
-		return (
-			React$1__default.createElement( 'div', { className: "application" }, 
-				React$1__default.createElement( 'div', { className: "header" }, 
-					React$1__default.createElement( 'div', { className: "logo" }, 
-						React$1__default.createElement( 'img', { className: "logo_image", src: "https://cdn1.iconfinder.com/data/icons/mix-color-3/502/Untitled-35-512.png" }), 
-						React$1__default.createElement( 'span', { className: "company_name" }, "jobTrainer")
-					)
-				), 
-				React$1__default.createElement( 'div', { className: "content" }, 
-					this.props.children
-				), 
-				React$1__default.createElement( 'div', { className: "footer" }, "This is the header")
-			)
-		)
-	};
-
-	return App;
-}(React$1__default.Component));
-
-__$styleInject("",undefined);
-
-var InputGroup = function (ref) {
-	var labelText = ref.labelText;
-	var inputType = ref.inputType;
-	var inputName = ref.inputName;
-
-	return (
-		React.createElement( 'div', { className: "input_group" }, 
-			React.createElement( 'label', { htmlFor: inputName }, labelText, ":"), 
-			React.createElement( 'input', { id: inputName, type: inputType, className: "text_field" })
-		)
-	);
-};
-
-__$styleInject("",undefined);
-
-var Login = (function (superclass) {
-	function Login () {
-		superclass.apply(this, arguments);
-	}
-
-	if ( superclass ) Login.__proto__ = superclass;
-	Login.prototype = Object.create( superclass && superclass.prototype );
-	Login.prototype.constructor = Login;
-
-	Login.prototype.render = function render () {
-		return (
-			React$1__default.createElement( 'div', { className: "login_page" }, 
-				React$1__default.createElement( 'div', { className: "login_container" }, 
-					React$1__default.createElement( 'h1', null, "Login" ), 
-					React$1__default.createElement( 'form', { onSubmit: function (e) { e.preventDefault(); } }, 
-						React$1__default.createElement( InputGroup, { labelText: "Username", inputName: "username", inputType: "text" }), 
-						React$1__default.createElement( InputGroup, { labelText: "Password", inputName: "password", inputType: "password" }), 						
-						React$1__default.createElement( 'button', { type: "submit" }, "Submit")
-					)
-				)
-			)
-		)
-	};
-
-	return Login;
-}(React$1__default.Component));
-
-__$styleInject("h1{color:red}",undefined);
-
-var MainPage = (function (superclass) {
-    function MainPage () {
-        superclass.apply(this, arguments);
-    }
-
-    if ( superclass ) MainPage.__proto__ = superclass;
-    MainPage.prototype = Object.create( superclass && superclass.prototype );
-    MainPage.prototype.constructor = MainPage;
-
-    MainPage.prototype.renderSingleTutorial = function renderSingleTutorial (index, header, text) {
-        return (
-            React$1__default.createElement( 'div', { key: index }, 
-                React$1__default.createElement( 'h5', null, index + 1, ". ", header ), 
-                React$1__default.createElement( 'span', null, text )
-            )
-        )
-    };
-
-
-    MainPage.prototype.render = function render () {
-        var this$1 = this;
-
-        var tutorialElements = this.props.tutorials.map(function (curr, index) { return this$1.renderSingleTutorial(index, curr.header, curr.text); });
-        return (
-            React$1__default.createElement( 'div', null, 
-                React$1__default.createElement( 'h1', null, "JobTrainer" ), 
-                React$1__default.createElement( 'span', null, "Trainer for new jobs" ), 
-                React$1__default.createElement( 'h3', null, "Tutorials" ), 
-                tutorialElements
-            )
-        )
-    };
-
-    return MainPage;
-}(React$1__default.Component));
-
-function mapStateToProps(state) {
-    return {
-        tutorials: state.get("tutorials")
-    };
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-    }
-}
-
-var MainPage$1 = connect$1(mapStateToProps, mapDispatchToProps)(MainPage);
-
-var SET_INITIAL_DATA_ACTION = "SET_INITIAL_DATA_ACTION";
-var SET_VALUE_ACTION = "SET_VALUE_ACTION";
-
-
-
-function setValueAction(key, value) {
-    return {
-        type: SET_VALUE_ACTION,
-        payload:  { 
-            key: key,
-            value: value
-        }
-    }
-}
-
-function commonDataReducer(state, ref) {
-    if ( state === void 0 ) state = Immutable.Map({});
-    var type = ref.type;
-    var payload = ref.payload;
-
-    var newState;
-    switch (type) {
-        case SET_INITIAL_DATA_ACTION: 
-            newState = Immutable.Map(payload);
-
-            break;
-        case SET_VALUE_ACTION:
-            newState = state.set(payload.key, payload.value);
-
-            break;
-        default: {
-            newState = state;
-        }
-    }
-
-    return newState;
-}
-
-function createAppStore() {
-    var reducer = commonDataReducer;
-    var store = createStore(reducer);
-
-    return store;
-}
-
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -22433,13 +22262,13 @@ var POP = exports.POP = 'POP';
 
 var Actions_2 = Actions.REPLACE;
 
-var index$13 = function (str) {
+var index$9 = function (str) {
 	return encodeURIComponent(str).replace(/[!'()*]/g, function (c) {
 		return '%' + c.charCodeAt(0).toString(16).toUpperCase();
 	});
 };
 
-var strictUriEncode = index$13;
+var strictUriEncode = index$9;
 var objectAssign = index$1;
 
 function encoderForArrayFormat(opts) {
@@ -22642,7 +22471,7 @@ var stringify = function (obj, opts) {
 	}).join('&') : '';
 };
 
-var index$11 = {
+var index$7 = {
 	extract: extract,
 	parse: parse,
 	stringify: stringify
@@ -22880,7 +22709,7 @@ exports.__esModule = true;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _queryString = index$11;
+var _queryString = index$7;
 
 var _runTransitionHook = runTransitionHook_1;
 
@@ -24202,6 +24031,181 @@ var createHashHistory = unwrapExports(createHashHistory_1);
 createRouterHistory(createHashHistory);
 
 /* components */
+
+__$styleInject("body{margin:0;padding:0;@import url(\"https://fonts.googleapis.com/css?family=Roboto\");font-family:Roboto,sans-serif}.application .header{background-color:#fff;width:100%;height:50px;padding:10px}.application .header .logo{height:100%;display:flex;align-items:center}.application .header .logo .logo_image{max-width:100%;max-height:100%}.application .header .logo .company_name{display:inline-block;margin:0 15px}",undefined);
+
+var App = (function (superclass) {
+	function App () {
+		superclass.apply(this, arguments);
+	}
+
+	if ( superclass ) App.__proto__ = superclass;
+	App.prototype = Object.create( superclass && superclass.prototype );
+	App.prototype.constructor = App;
+
+	App.prototype.render = function render () {
+		return (
+			React$1__default.createElement( 'div', { className: "application" }, 
+				React$1__default.createElement( 'div', { className: "header" }, 
+					React$1__default.createElement( 'div', { className: "logo" }, 
+						React$1__default.createElement( 'img', { className: "logo_image", src: "https://cdn1.iconfinder.com/data/icons/mix-color-3/502/Untitled-35-512.png" }), 
+						React$1__default.createElement( 'span', { className: "company_name" }, "jobTrainer")
+					), 
+					React$1__default.createElement( 'div', { className: "navigation" }, 
+						React$1__default.createElement( 'div', { className: "navigation_item" }, React$1__default.createElement( Link, { to: "/" }, "Main")), 
+						React$1__default.createElement( 'div', { className: "navigation_item" }, React$1__default.createElement( Link, { to: "/login" }, "Login"))
+					)
+				), 
+				React$1__default.createElement( 'div', { className: "content" }, 
+					this.props.children
+				), 
+				React$1__default.createElement( 'div', { className: "footer" }, "This is the header")
+			)
+		)
+	};
+
+	return App;
+}(React$1__default.Component));
+
+__$styleInject("",undefined);
+
+var InputGroup = function (ref) {
+	var labelText = ref.labelText;
+	var inputType = ref.inputType;
+	var inputName = ref.inputName;
+
+	return (
+		React.createElement( 'div', { className: "input_group" }, 
+			React.createElement( 'label', { htmlFor: inputName }, labelText, ":"), 
+			React.createElement( 'input', { id: inputName, type: inputType, className: "text_field" })
+		)
+	);
+};
+
+__$styleInject("",undefined);
+
+var Login = (function (superclass) {
+	function Login () {
+		superclass.apply(this, arguments);
+	}
+
+	if ( superclass ) Login.__proto__ = superclass;
+	Login.prototype = Object.create( superclass && superclass.prototype );
+	Login.prototype.constructor = Login;
+
+	Login.prototype.render = function render () {
+		return (
+			React$1__default.createElement( 'div', { className: "login_page" }, 
+				React$1__default.createElement( 'div', { className: "login_container" }, 
+					React$1__default.createElement( 'h1', null, "Login" ), 
+					React$1__default.createElement( 'form', { onSubmit: function (e) { e.preventDefault(); } }, 
+						React$1__default.createElement( InputGroup, { labelText: "Username", inputName: "username", inputType: "text" }), 
+						React$1__default.createElement( InputGroup, { labelText: "Password", inputName: "password", inputType: "password" }), 						
+						React$1__default.createElement( 'button', { type: "submit" }, "Submit")
+					)
+				)
+			)
+		)
+	};
+
+	return Login;
+}(React$1__default.Component));
+
+__$styleInject("h1{color:red}",undefined);
+
+var MainPage = (function (superclass) {
+    function MainPage () {
+        superclass.apply(this, arguments);
+    }
+
+    if ( superclass ) MainPage.__proto__ = superclass;
+    MainPage.prototype = Object.create( superclass && superclass.prototype );
+    MainPage.prototype.constructor = MainPage;
+
+    MainPage.prototype.renderSingleTutorial = function renderSingleTutorial (index, header, text) {
+        return (
+            React$1__default.createElement( 'div', { key: index }, 
+                React$1__default.createElement( 'h5', null, index + 1, ". ", header ), 
+                React$1__default.createElement( 'span', null, text )
+            )
+        )
+    };
+
+
+    MainPage.prototype.render = function render () {
+        var this$1 = this;
+
+        var tutorialElements = this.props.tutorials.map(function (curr, index) { return this$1.renderSingleTutorial(index, curr.header, curr.text); });
+        return (
+            React$1__default.createElement( 'div', null, 
+                React$1__default.createElement( 'h1', null, "JobTrainer" ), 
+                React$1__default.createElement( 'span', null, "Trainer for new jobs" ), 
+                React$1__default.createElement( 'h3', null, "Tutorials" ), 
+                tutorialElements
+            )
+        )
+    };
+
+    return MainPage;
+}(React$1__default.Component));
+
+function mapStateToProps(state) {
+    return {
+        tutorials: state.get("tutorials")
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+    }
+}
+
+var MainPage$1 = connect$1(mapStateToProps, mapDispatchToProps)(MainPage);
+
+var SET_INITIAL_DATA_ACTION = "SET_INITIAL_DATA_ACTION";
+var SET_VALUE_ACTION = "SET_VALUE_ACTION";
+
+
+
+function setValueAction(key, value) {
+    return {
+        type: SET_VALUE_ACTION,
+        payload:  { 
+            key: key,
+            value: value
+        }
+    }
+}
+
+function commonDataReducer(state, ref) {
+    if ( state === void 0 ) state = Immutable.Map({});
+    var type = ref.type;
+    var payload = ref.payload;
+
+    var newState;
+    switch (type) {
+        case SET_INITIAL_DATA_ACTION: 
+            newState = Immutable.Map(payload);
+
+            break;
+        case SET_VALUE_ACTION:
+            newState = state.set(payload.key, payload.value);
+
+            break;
+        default: {
+            newState = state;
+        }
+    }
+
+    return newState;
+}
+
+function createAppStore() {
+    var reducer = commonDataReducer;
+    var store = createStore(reducer);
+
+    return store;
+}
 
 var store = createAppStore();
 
