@@ -12,7 +12,7 @@ import postcssimport from 'postcss-import';
 export default {
     entry: "src/index.js",
     dest: "build/app.js",
-    format: "iife",
+    format: "umd",
     moduleName: "jobtrainer",
     plugins: [
         postcss({
@@ -24,11 +24,14 @@ export default {
             ],
             extensions: ['.scss'],
         }),
-        commonjs(),
         nodeResolve(),
-        buble(),
+        commonjs(),
+        buble({
+            exclude: "node_modules/**"
+        }),
         replace({
             'process.env.NODE_ENV': JSON.stringify('development')
         })
     ],
+    external: [ "react" , "Immutable"]
 }
