@@ -33,5 +33,9 @@ export default {
             'process.env.NODE_ENV': JSON.stringify('development')
         })
     ],
-    external: [ "react" , "Immutable"]
+    external: [ "react" , "Immutable"],
+    globals: {
+        react: "React",
+        Immutable: "Immutable"
+    }
 }
