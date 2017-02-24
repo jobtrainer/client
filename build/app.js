@@ -24032,7 +24032,18 @@ createRouterHistory(createHashHistory);
 
 /* components */
 
-__$styleInject("body{margin:0;padding:0;@import url(\"https://fonts.googleapis.com/css?family=Roboto\");font-family:Roboto,sans-serif}.application .header{background-color:#fff;width:100%;height:50px;padding:10px;display:flex}.application .header .logo{height:100%;display:flex;align-items:center}.application .header .logo .logo_image{max-width:100%;max-height:100%}.application .header .logo .company_name{display:inline-block;margin:0 15px}.application .header .navigation{display:flex;align-items:center}.application .header .navigation .navigation_item{margin:0 20px}",undefined);
+__$styleInject(".navigation_item{margin:0 20px}.navigation_item a{color:#aebdc1;font-weight:300;transition:all .3s}.navigation_item a:hover{color:#393d40}",undefined);
+
+var NavigationLink = function (ref) {
+	var to = ref.to;
+	var linkText = ref.linkText;
+
+	return (
+		React.createElement( 'div', { className: "navigation_item" }, React.createElement( Link, { to: to }, linkText))
+	);
+};
+
+__$styleInject("body{margin:0;padding:0;@import url(\"https://fonts.googleapis.com/css?family=Roboto\");font-family:Roboto,sans-serif}.application .header{background-color:#fff;width:100%;height:50px;padding:10px;display:flex}.application .header .logo{height:100%;display:flex;align-items:center}.application .header .logo .logo_image{max-width:100%;max-height:100%}.application .header .logo .company_name{display:inline-block;margin:0 15px}.application .header .navigation{display:flex;align-items:center}",undefined);
 
 var App = (function (superclass) {
 	function App () {
@@ -24052,8 +24063,8 @@ var App = (function (superclass) {
 						React$1__default.createElement( 'span', { className: "company_name" }, "jobTrainer")
 					), 
 					React$1__default.createElement( 'div', { className: "navigation" }, 
-						React$1__default.createElement( 'div', { className: "navigation_item" }, React$1__default.createElement( Link, { to: "/" }, "Main")), 
-						React$1__default.createElement( 'div', { className: "navigation_item" }, React$1__default.createElement( Link, { to: "/login" }, "Login"))
+						React$1__default.createElement( NavigationLink, { to: "/", linkText: "Main" }), 
+						React$1__default.createElement( NavigationLink, { to: "/login", linkText: "Login" })
 					)
 				), 
 				React$1__default.createElement( 'div', { className: "content" }, 

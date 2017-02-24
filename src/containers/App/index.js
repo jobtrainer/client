@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router";
 
+import NavigationLink from "../../components/Navigation/NavigationLink";
+
 import "./index.scss";
 
 export default class App extends React.Component {
@@ -13,8 +15,8 @@ export default class App extends React.Component {
 						<span className="company_name">jobTrainer</span>
 					</div>
 					<div className="navigation">
-						<div className="navigation_item"><Link to="/">Main</Link></div>
-						<div className="navigation_item"><Link to="/login">Login</Link></div>
+						<NavigationLink to="/" linkText="Main" />
+						<NavigationLink to="/login" linkText="Login" />
 					</div>
 				</div>
 				<div className="content">
