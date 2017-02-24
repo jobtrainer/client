@@ -24,11 +24,14 @@ export default {
             ],
             extensions: ['.scss'],
         }),
-        commonjs(),
         nodeResolve(),
-        buble(),
+        commonjs(),
+        buble({
+            exclude: "node_modules/**"
+        }),
         replace({
             'process.env.NODE_ENV': JSON.stringify('development')
         })
     ],
+    external: [ "react" , "Immutable"]
 }
