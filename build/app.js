@@ -43,17 +43,6 @@ var React__default = 'default' in React ? React['default'] : React;
  *
  */
 
-/**
- * Use invariant() to assert state which your program assumes to be true.
- *
- * Provide sprintf-style format (only %s is supported) and arguments
- * to provide information about what broke and what you were
- * expecting.
- *
- * The invariant message will be stripped in production, but the invariant
- * will remain to ensure logic does not differ in production.
- */
-
 var validateFormat = function validateFormat(format) {};
 
 {
@@ -867,17 +856,6 @@ var ReactErrorUtils$2 = {
 
 var ReactErrorUtils_1 = ReactErrorUtils$2;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * 
- */
-
 function makeEmptyFunction(arg) {
   return function () {
     return arg;
@@ -1223,14 +1201,6 @@ var accumulateInto_1 = accumulateInto$2;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * 
- */
-
-/**
- * @param {array} arr an "accumulation" of items which is either an Array or
- * a single item. Useful when paired with the `accumulate` module. This is a
- * simple utility that allows us to reason about a collection of items, but
- * handling the case when there is exactly one item (and we do not need to
- * allocate an array).
  */
 
 function forEachAccumulated$2(arr, cb, scope) {
@@ -1669,7 +1639,6 @@ object-assign
 @license MIT
 */
 
-/* eslint-disable no-unused-vars */
 var getOwnPropertySymbols = Object.getOwnPropertySymbols;
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 var propIsEnumerable = Object.prototype.propertyIsEnumerable;
@@ -2987,12 +2956,6 @@ var ReactHostOperationHistoryHook_1 = ReactHostOperationHistoryHook$1;
  * 
  */
 
-/**
- * Keeps track of the current owner.
- *
- * The current owner is the component who should own any components that are
- * currently being constructed.
- */
 var ReactCurrentOwner$1 = {
 
   /**
@@ -3333,17 +3296,6 @@ if (ExecutionEnvironment$6.canUseDOM) {
 }
 
 var performance_1 = performance$2 || {};
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
 
 var performance$1 = performance_1;
 
@@ -3713,8 +3665,6 @@ if (/[?&]react_perf\b/.test(url)) {
 }
 
 var ReactDebugTool_1 = ReactDebugTool$1;
-
-// Trust the developer to only use ReactInstrumentation with a __DEV__ check
 
 var debugTool = null;
 
@@ -4339,14 +4289,6 @@ var ReactUpdates_1 = ReactUpdates$2;
  *
  */
 
-/**
- * Gets the target node from a native browser event by accounting for
- * inconsistencies in browser DOM APIs.
- *
- * @param {object} nativeEvent Native browser event.
- * @return {DOMEventTarget} Target node.
- */
-
 function getEventTarget$1(nativeEvent) {
   var target = nativeEvent.target || nativeEvent.srcElement || window;
 
@@ -4419,10 +4361,6 @@ var isEventSupported_1 = isEventSupported$1;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * 
- */
-
-/**
- * @see http://www.whatwg.org/specs/web-apps/current-work/multipage/the-input-element.html#input-type-attr-summary
  */
 
 var supportedInputTypes = {
@@ -4778,16 +4716,6 @@ var ChangeEventPlugin_1 = ChangeEventPlugin$1;
  *
  */
 
-/**
- * Module that is injectable into `EventPluginHub`, that specifies a
- * deterministic ordering of `EventPlugin`s. A convenient way to reason about
- * plugins, without having to package every one of them. This is better than
- * having plugins be ordered in the same order that they are injected because
- * that ordering would be influenced by the packaging order.
- * `ResponderEventPlugin` must occur before `SimpleEventPlugin` so that
- * preventing default on events is convenient in `SimpleEventPlugin` handlers.
- */
-
 var DefaultEventPluginOrder$1 = ['ResponderEventPlugin', 'SimpleEventPlugin', 'TapEventPlugin', 'EnterLeaveEventPlugin', 'ChangeEventPlugin', 'SelectEventPlugin', 'BeforeInputEventPlugin'];
 
 var DefaultEventPluginOrder_1 = DefaultEventPluginOrder$1;
@@ -4872,11 +4800,6 @@ var ViewportMetrics_1 = ViewportMetrics$1;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- */
-
-/**
- * Translation from modifier key to the associated property in the event.
- * @see http://www.w3.org/TR/DOM-Level-3-Events/#keys-Modifiers
  */
 
 var modifierKeyToProp = {
@@ -5283,10 +5206,6 @@ var DOMNamespaces_1 = DOMNamespaces$1;
 
 /* globals MSApp */
 
-/**
- * Create a function which has 'unsafe' privileges (required by windows8 apps)
- */
-
 var createMicrosoftUnsafeLocalFunction$3 = function (func) {
   if (typeof MSApp !== 'undefined' && MSApp.execUnsafeLocalFunction) {
     return function (arg0, arg1, arg2, arg3) {
@@ -5420,12 +5339,6 @@ var setInnerHTML_1 = setInnerHTML$2;
  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
- */
-
-// code copied and modified from escape-html
-/**
- * Module variables.
- * @private
  */
 
 var matchHtmlRegExp = /["'&<>]/;
@@ -5654,17 +5567,6 @@ DOMLazyTree$1.queueText = queueText;
 
 var DOMLazyTree_1 = DOMLazyTree$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
-
 var invariant$15 = invariant_1;
 
 /**
@@ -5779,18 +5681,6 @@ function createArrayFromMixed$1(obj) {
 
 var createArrayFromMixed_1 = createArrayFromMixed$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
-/*eslint-disable fb-www/unsafe-html */
-
 var ExecutionEnvironment$12 = ExecutionEnvironment_1;
 
 var invariant$16 = invariant_1;
@@ -5871,19 +5761,6 @@ function getMarkupWrap$1(nodeName) {
 }
 
 var getMarkupWrap_1 = getMarkupWrap$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
-
-/*eslint-disable fb-www/unsafe-html*/
 
 var ExecutionEnvironment$11 = ExecutionEnvironment_1;
 
@@ -6251,10 +6128,6 @@ var ReactComponentBrowserEnvironment_1 = ReactComponentBrowserEnvironment$1;
  *
  */
 
-/**
- * @param {DOMElement} node input/textarea to focus
- */
-
 function focusNode$1(node) {
   // IE8 can throw "Can't move focus to the control because it is invisible,
   // not enabled, or of a type that does not accept the focus." for all kinds of
@@ -6286,10 +6159,6 @@ var AutoFocusUtils_1 = AutoFocusUtils$1;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- */
-
-/**
- * CSS properties which accept numbers but are not in units of "px".
  */
 
 var isUnitlessNumber = {
@@ -6424,17 +6293,6 @@ var CSSProperty$1 = {
 
 var CSSProperty_1 = CSSProperty$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
-
 var _hyphenPattern = /-(.)/g;
 
 /**
@@ -6548,17 +6406,6 @@ function dangerousStyleValue$1(name, value, component) {
 
 var dangerousStyleValue_1 = dangerousStyleValue$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
-
 var _uppercasePattern = /([A-Z])/g;
 
 /**
@@ -6615,10 +6462,6 @@ var hyphenateStyleName_1 = hyphenateStyleName$1;
  *
  * 
  * @typechecks static-only
- */
-
-/**
- * Memoizes the return value of a function that accepts one string argument.
  */
 
 function memoizeStringOnly$1(callback) {
@@ -7495,101 +7338,6 @@ var ReactBrowserEventEmitter$1 = _assign$4({}, ReactEventEmitterMixin, {
 
 var ReactBrowserEventEmitter_1 = ReactBrowserEventEmitter$1;
 
-<<<<<<< HEAD
-=======
-/*
-object-assign
-(c) Sindre Sorhus
-@license MIT
-*/
-
-/* eslint-disable no-unused-vars */
-var getOwnPropertySymbols$1 = Object.getOwnPropertySymbols;
-var hasOwnProperty$2 = Object.prototype.hasOwnProperty;
-var propIsEnumerable$1 = Object.prototype.propertyIsEnumerable;
-
-function toObject$1(val) {
-	if (val === null || val === undefined) {
-		throw new TypeError('Object.assign cannot be called with null or undefined');
-	}
-
-	return Object(val);
-}
-
-function shouldUseNative$1() {
-	try {
-		if (!Object.assign) {
-			return false;
-		}
-
-		// Detect buggy property enumeration order in older V8 versions.
-
-		// https://bugs.chromium.org/p/v8/issues/detail?id=4118
-		var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
-		test1[5] = 'de';
-		if (Object.getOwnPropertyNames(test1)[0] === '5') {
-			return false;
-		}
-
-		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
-		var test2 = {};
-		for (var i = 0; i < 10; i++) {
-			test2['_' + String.fromCharCode(i)] = i;
-		}
-		var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
-			return test2[n];
-		});
-		if (order2.join('') !== '0123456789') {
-			return false;
-		}
-
-		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
-		var test3 = {};
-		'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
-			test3[letter] = letter;
-		});
-		if (Object.keys(Object.assign({}, test3)).join('') !==
-				'abcdefghijklmnopqrst') {
-			return false;
-		}
-
-		return true;
-	} catch (err) {
-		// We don't expect any of the above to throw, but better to be safe.
-		return false;
-	}
-}
-
-var index$3 = shouldUseNative$1() ? Object.assign : function (target, source) {
-	var arguments$1 = arguments;
-
-	var from;
-	var to = toObject$1(target);
-	var symbols;
-
-	for (var s = 1; s < arguments.length; s++) {
-		from = Object(arguments$1[s]);
-
-		for (var key in from) {
-			if (hasOwnProperty$2.call(from, key)) {
-				to[key] = from[key];
-			}
-		}
-
-		if (getOwnPropertySymbols$1) {
-			symbols = getOwnPropertySymbols$1(from);
-			for (var i = 0; i < symbols.length; i++) {
-				if (propIsEnumerable$1.call(from, symbols[i])) {
-					to[symbols[i]] = from[symbols[i]];
-				}
-			}
-		}
-	}
-
-	return to;
-};
-
->>>>>>> 9d5e47cd13e8c6f3f9bf6abeab0a0576bde9287b
 var invariant$20 = invariant_1;
 
 /**
@@ -7721,9 +7469,6 @@ var canDefineProperty_1 = canDefineProperty$1;
  *
  * 
  */
-
-// The Symbol used to tag the ReactElement type. If there is no native Symbol
-// nor polyfill, then a plain number is used for performance.
 
 var REACT_ELEMENT_TYPE$1 = typeof Symbol === 'function' && Symbol['for'] && Symbol['for']('react.element') || 0xeac7;
 
@@ -8070,8 +7815,6 @@ var ReactElement_1 = ReactElement$2;
  * 
  */
 
-/* global Symbol */
-
 var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
 var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
 
@@ -8107,13 +7850,6 @@ var getIteratorFn_1 = getIteratorFn$1;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * 
- */
-
-/**
- * Escape and wrap key so it is safe to use as a reactid
- *
- * @param {string} key to be escaped.
- * @return {string} the escaped key.
  */
 
 function escape(key) {
@@ -11344,15 +11080,6 @@ var ReactComponentEnvironment_1 = ReactComponentEnvironment$1;
  *
  */
 
-/**
- * `ReactInstanceMap` maintains a mapping from a public facing stateful
- * instance (key) and the internal representation (value). This allows public
- * methods to accept the user facing instance as an argument and map them back
- * to internal methods.
- */
-
-// TODO: Replace this with ES6: var ReactInstanceMap = new Map();
-
 var ReactInstanceMap$1 = {
 
   /**
@@ -11575,18 +11302,6 @@ var shallowEqual_1 = shallowEqual$2;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- */
-
-/**
- * Given a `prevElement` and `nextElement`, determines if the existing
- * instance should be updated as opposed to being destroyed or replaced by a new
- * instance. Both arguments are elements. This ensures that this logic can
- * operate on stateless trees without any backing instance.
- *
- * @param {?object} prevElement
- * @param {?object} nextElement
- * @return {boolean} True if the existing instance should be updated.
- * @protected
  */
 
 function shouldUpdateReactComponent$2(prevElement, nextElement) {
@@ -12699,13 +12414,6 @@ var instantiateReactComponent_1 = instantiateReactComponent$1;
  * 
  */
 
-/**
- * Escape and wrap key so it is safe to use as a reactid
- *
- * @param {string} key to be escaped.
- * @return {string} the escaped key.
- */
-
 function escape$1(key) {
   var escapeRegex = /[=:]/g;
   var escaperLookup = {
@@ -12756,9 +12464,6 @@ var KeyEscapeUtils_1$2 = KeyEscapeUtils$3;
  * 
  */
 
-// The Symbol used to tag the ReactElement type. If there is no native Symbol
-// nor polyfill, then a plain number is used for performance.
-
 var REACT_ELEMENT_TYPE$4 = typeof Symbol === 'function' && Symbol['for'] && Symbol['for']('react.element') || 0xeac7;
 
 var ReactElementSymbol$2 = REACT_ELEMENT_TYPE$4;
@@ -12773,8 +12478,6 @@ var ReactElementSymbol$2 = REACT_ELEMENT_TYPE$4;
  *
  * 
  */
-
-/* global Symbol */
 
 var ITERATOR_SYMBOL$1 = typeof Symbol === 'function' && Symbol.iterator;
 var FAUX_ITERATOR_SYMBOL$1 = '@@iterator'; // Before Symbol spec.
@@ -15750,24 +15453,6 @@ var ReactDefaultBatchingStrategy$1 = {
 
 var ReactDefaultBatchingStrategy_1 = ReactDefaultBatchingStrategy$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- * @typechecks
- */
-
 var emptyFunction$10 = emptyFunction_1;
 
 /**
@@ -15841,17 +15526,6 @@ var EventListener_1 = EventListener$1;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @typechecks
- */
-
-/**
- * Gets the scroll position of the supplied element or window.
- *
- * The return values are unbounded, unlike `getScrollPosition`. This means they
- * may be negative or exceed the element boundaries (which is possible using
- * inertial scrolling).
- *
- * @param {DOMWindow|DOMElement} scrollable
- * @return {object} Map with `x` and `y` keys.
  */
 
 function getUnboundedScrollPosition$1(scrollable) {
@@ -16042,13 +15716,6 @@ var ReactInjection_1 = ReactInjection$1;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- */
-
-/**
- * Given any node return the first leaf node without children.
- *
- * @param {DOMElement|DOMTextNode} node
- * @return {DOMElement|DOMTextNode}
  */
 
 function getLeafNode(node) {
@@ -16306,37 +15973,11 @@ var ReactDOMSelection$1 = {
 
 var ReactDOMSelection_1 = ReactDOMSelection$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
-
-/**
- * @param {*} object The object to check.
- * @return {boolean} Whether or not the object is a DOM node.
- */
 function isNode$2(object) {
   return !!(object && (typeof Node === 'function' ? object instanceof Node : typeof object === 'object' && typeof object.nodeType === 'number' && typeof object.nodeName === 'string'));
 }
 
 var isNode_1 = isNode$2;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
 
 var isNode$1 = isNode_1;
 
@@ -16349,17 +15990,6 @@ function isTextNode$1(object) {
 }
 
 var isTextNode_1 = isTextNode$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * 
- */
 
 var isTextNode = isTextNode_1;
 
@@ -16388,26 +16018,6 @@ function containsNode$1(outerNode, innerNode) {
 
 var containsNode_1 = containsNode$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
-
-/* eslint-disable fb-www/typeof-undefined */
-
-/**
- * Same as document.activeElement but wraps in a try-catch block. In IE it is
- * not safe to call document.activeElement if there is nothing focused.
- *
- * The activeElement will be null only if the document or document body is not
- * yet defined.
- */
 function getActiveElement$1() /*?DOMElement*/{
   if (typeof document === 'undefined') {
     return null;
@@ -17263,17 +16873,6 @@ var SyntheticFocusEvent_1 = SyntheticFocusEvent$1;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- */
-
-/**
- * `charCode` represents the actual "character code" and is safe to use with
- * `String.fromCharCode`. As such, only keys that correspond to printable
- * characters produce a valid `charCode`, the only exception to this is Enter.
- * The Tab-key is considered non-printable and does not have a `charCode`,
- * presumably because it does not produce a tab-character in browsers.
- *
- * @param {object} nativeEvent Native browser event.
- * @return {number} Normalized `charCode` property.
  */
 
 function getEventCharCode$2(nativeEvent) {
@@ -19011,7 +18610,6 @@ Provider.displayName = 'Provider';
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
  */
-<<<<<<< HEAD
 var REACT_STATICS = {
     childContextTypes: true,
     contextTypes: true,
@@ -19056,8 +18654,6 @@ var index$3 = function hoistNonReactStatics(targetComponent, sourceComponent, cu
 
     return targetComponent;
 };
-=======
->>>>>>> 9d5e47cd13e8c6f3f9bf6abeab0a0576bde9287b
 
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -19068,18 +18664,36 @@ var index$3 = function hoistNonReactStatics(targetComponent, sourceComponent, cu
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+var NODE_ENV = "development";
 
-/** Detect free variable `global` from Node.js. */
-var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+var invariant$41 = function(condition, format, a, b, c, d, e, f) {
+  if (NODE_ENV !== 'production') {
+    if (format === undefined) {
+      throw new Error('invariant requires an error message argument');
+    }
+  }
 
-/** Detect free variable `self`. */
-var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+  if (!condition) {
+    var error;
+    if (format === undefined) {
+      error = new Error(
+        'Minified exception occurred; use the non-minified dev environment ' +
+        'for the full error message and additional helpful warnings.'
+      );
+    } else {
+      var args = [a, b, c, d, e, f];
+      var argIndex = 0;
+      error = new Error(
+        format.replace(/%s/g, function() { return args[argIndex++]; })
+      );
+      error.name = 'Invariant Violation';
+    }
 
-/** Used as a reference to the global object. */
-var root = freeGlobal || freeSelf || Function('return this')();
+    error.framesToPop = 1; // we don't care about invariant's own frame
+    throw error;
+  }
+};
 
-<<<<<<< HEAD
 var invariant_1$2 = invariant$41;
 
 function _classCallCheck$4(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -19212,12 +18826,8 @@ var freeSelf = typeof self == 'object' && self && self.Object === Object && self
 /** Used as a reference to the global object. */
 var root = freeGlobal || freeSelf || Function('return this')();
 
-=======
-/** Built-in value references. */
->>>>>>> 9d5e47cd13e8c6f3f9bf6abeab0a0576bde9287b
 var Symbol$1 = root.Symbol;
 
-/** Used for built-in method references. */
 var objectProto$1 = Object.prototype;
 
 /** Used to check objects for own properties. */
@@ -19281,7 +18891,6 @@ function objectToString(value) {
   return nativeObjectToString$1.call(value);
 }
 
-/** `Object#toString` result references. */
 var nullTag = '[object Null]';
 var undefinedTag = '[object Undefined]';
 
@@ -19318,7 +18927,6 @@ function overArg(func, transform) {
   };
 }
 
-/** Built-in value references. */
 var getPrototype = overArg(Object.getPrototypeOf, Object);
 
 /**
@@ -19349,7 +18957,6 @@ function isObjectLike(value) {
   return value != null && typeof value == 'object';
 }
 
-/** `Object#toString` result references. */
 var objectTag = '[object Object]';
 
 /** Used for built-in method references. */
@@ -19476,12 +19083,6 @@ exports['default'] = result;
 
 var index$4 = index$5;
 
-/**
- * These are private action types reserved by Redux.
- * For any unknown actions, you must return the current state.
- * If the current state is undefined, you must return the initial state.
- * Do not reference these action types directly in your code.
- */
 var ActionTypes = {
   INIT: '@@redux/INIT'
 };
@@ -19744,7 +19345,6 @@ function warning$42(message) {
   /* eslint-enable no-empty */
 }
 
-<<<<<<< HEAD
 function getUndefinedStateErrorMessage(key, action) {
   var actionType = action && action.type;
   var actionName = actionType && '"' + actionType.toString() + '"' || 'an action';
@@ -19810,8 +19410,6 @@ function assertReducerSanity(reducers) {
  * passed object, and builds a state object with the same shape.
  */
 
-=======
->>>>>>> 9d5e47cd13e8c6f3f9bf6abeab0a0576bde9287b
 /**
  * Composes single-argument functions from right to left. The rightmost
  * function can take multiple arguments as it provides the signature for
@@ -19823,7 +19421,6 @@ function assertReducerSanity(reducers) {
  * (...args) => f(g(h(...args))).
  */
 
-<<<<<<< HEAD
 function compose() {
   for (var _len = arguments.length, funcs = Array(_len), _key = 0; _key < _len; _key++) {
     funcs[_key] = arguments[_key];
@@ -19850,27 +19447,18 @@ function compose() {
 
 var _extends$2 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-=======
-/*
-* This is a dummy function to check if the function name has been altered by minification.
-* If the function has been minified and NODE_ENV !== 'production', warn the user.
-*/
->>>>>>> 9d5e47cd13e8c6f3f9bf6abeab0a0576bde9287b
 function isCrushed() {}
 
 if ("development" !== 'production' && typeof isCrushed.name === 'string' && isCrushed.name !== 'isCrushed') {
   warning$42('You are currently using minified code outside of NODE_ENV === \'production\'. ' + 'This means that you are running a slower development build of Redux. ' + 'You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify ' + 'or DefinePlugin for webpack (http://stackoverflow.com/questions/30030031) ' + 'to ensure you have the correct code for your production build.');
 }
 
-<<<<<<< HEAD
 function verifyPlainObject(value, displayName, methodName) {
   if (!isPlainObject(value)) {
     warning$41(methodName + '() in ' + displayName + ' must return a plain object. Instead received ' + value + '.');
   }
 }
 
-=======
->>>>>>> 9d5e47cd13e8c6f3f9bf6abeab0a0576bde9287b
 // dependsOnOwnProps is used by createMapToPropsProxy to determine whether to pass props as args
 // to the mapToProps function being wrapped. It is also used by makePurePropsSelector to determine
 // whether mapToProps needs to be invoked when props have changed.
@@ -19878,7 +19466,9 @@ function verifyPlainObject(value, displayName, methodName) {
 // A length of one signals that mapToProps does not depend on props from the parent component.
 // A length of zero is assumed to mean mapToProps is getting args via arguments or ...args and
 // therefore not reporting its length accurately..
-
+function getDependsOnOwnProps(mapToProps) {
+  return mapToProps.dependsOnOwnProps !== null && mapToProps.dependsOnOwnProps !== undefined ? Boolean(mapToProps.dependsOnOwnProps) : mapToProps.length !== 1;
+}
 
 // Used by whenMapStateToPropsIsFunction and whenMapDispatchToPropsIsFunction,
 // this function wraps mapToProps in a proxy function which does several things:
@@ -19893,7 +19483,6 @@ function verifyPlainObject(value, displayName, methodName) {
 //    the developer that their mapToProps function is not returning a valid result.
 //
 
-<<<<<<< HEAD
 // TODO: Add more comments
 
 // If pure is true, the selector returned by selectorFactory will memoize its results,
@@ -19916,7 +19505,7 @@ var Login = (function (superclass) {
 		return (
 			React__default.createElement( 'div', { className: "login_page" }, 
 				React__default.createElement( 'div', { className: "login_container" }, 
-					React__default.createElement( 'h1', null, "Login" ),  
+					React__default.createElement( 'h1', null, "Login" ), 
 					React__default.createElement( 'form', { onSubmit: function (e) { e.preventDefault(); } }, 
 						React__default.createElement( 'div', { className: "input_group" }, 
 							React__default.createElement( 'label', { htmlFor: "username" }, "Username:"), 
@@ -20427,48 +20016,6 @@ function _classCallCheck$5(instance, Constructor) { if (!(instance instanceof Co
 
 var PendingHooks = function PendingHooks() {
   var _this = this;
-=======
-// createConnect with default args builds the 'official' connect behavior. Calling it with
-// different options opens up some testing and extensibility scenarios
-
-__$styleInject("",undefined);
-
-var Login = (function (superclass) {
-	function Login () {
-		superclass.apply(this, arguments);
-	}
-
-	if ( superclass ) Login.__proto__ = superclass;
-	Login.prototype = Object.create( superclass && superclass.prototype );
-	Login.prototype.constructor = Login;
-
-	Login.prototype.render = function render () {
-		return (
-			React__default.createElement( 'div', { className: "login_page" },
-				React__default.createElement( 'div', { className: "login_container" },
-					React__default.createElement( 'h1', null, "Login" ),
-					React__default.createElement( 'form', { onSubmit: function (e) { e.preventDefault(); } },
-						React__default.createElement( 'div', { className: "input_group" },
-							React__default.createElement( 'label', { htmlFor: "username" }, "Username:"),
-							React__default.createElement( 'input', { id: "username", type: "text", className: "text_field" })
-						),
-						React__default.createElement( 'div', { className: "input_group" },
-							React__default.createElement( 'label', { htmlFor: "password" }, "Password:"),
-							React__default.createElement( 'input', { id: "password", type: "password", className: "text_field" })
-						),
-						React__default.createElement( 'button', { type: "submit" }, "Submit")
-					)
-				)
-			)
-		)
-	};
-
-	return Login;
-}(React__default.Component));
-
-var SET_INITIAL_DATA_ACTION = "SET_INITIAL_DATA_ACTION";
-var SET_VALUE_ACTION = "SET_VALUE_ACTION";
->>>>>>> 9d5e47cd13e8c6f3f9bf6abeab0a0576bde9287b
 
   _classCallCheck$5(this, PendingHooks);
 
@@ -23958,13 +23505,8 @@ store.dispatch(setValueAction("tutorials", [
 ]));
 
 index.render(
-<<<<<<< HEAD
     React__default.createElement( Provider, { store: store }, 
         React__default.createElement( Login, null )
-=======
-    React__default.createElement( Provider, { store: store },
-    React__default.createElement( Login, null )
->>>>>>> 9d5e47cd13e8c6f3f9bf6abeab0a0576bde9287b
     ),
     document.getElementById("root")
 );
