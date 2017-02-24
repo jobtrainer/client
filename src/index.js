@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 
-import MainPage from "./containers/MainPage";
+import Login from "./containers/Login";
+
 import { createAppStore } from "./store";
 import { setValueAction } from "./reducers/commonDataReducer/actions";
 
@@ -17,7 +18,7 @@ store.dispatch(setValueAction("tutorials", [
 
 ReactDOM.render(
     <Provider store={store}>
-        <MainPage></MainPage>
+    <Login></Login>
     </Provider>,
     document.getElementById("root")
 );
