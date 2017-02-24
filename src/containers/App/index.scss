@@ -15,6 +15,9 @@ body {
 		width: 100%;
 		height: 50px;
 		padding: 10px;
+
+		display: flex;
+
 		.logo {
 			height: 100%;
 			display: flex;
@@ -27,6 +30,15 @@ body {
 			.company_name {
 				display: inline-block;
 				margin: 0 15px;
+			}
+		}
+
+		.navigation {
+			display: flex;
+			align-items: center;
+
+			.navigation_item {
+				margin: 0 20px;
 			}
 		}
 	}

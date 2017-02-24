@@ -24032,7 +24032,7 @@ createRouterHistory(createHashHistory);
 
 /* components */
 
-__$styleInject("body{margin:0;padding:0;@import url(\"https://fonts.googleapis.com/css?family=Roboto\");font-family:Roboto,sans-serif}.application .header{background-color:#fff;width:100%;height:50px;padding:10px}.application .header .logo{height:100%;display:flex;align-items:center}.application .header .logo .logo_image{max-width:100%;max-height:100%}.application .header .logo .company_name{display:inline-block;margin:0 15px}",undefined);
+__$styleInject("body{margin:0;padding:0;@import url(\"https://fonts.googleapis.com/css?family=Roboto\");font-family:Roboto,sans-serif}.application .header{background-color:#fff;width:100%;height:50px;padding:10px;display:flex}.application .header .logo{height:100%;display:flex;align-items:center}.application .header .logo .logo_image{max-width:100%;max-height:100%}.application .header .logo .company_name{display:inline-block;margin:0 15px}.application .header .navigation{display:flex;align-items:center}.application .header .navigation .navigation_item{margin:0 20px}",undefined);
 
 var App = (function (superclass) {
 	function App () {
