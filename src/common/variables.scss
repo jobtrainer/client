@@ -2,6 +2,9 @@ $header-background-color: white;
 $header-links: #aebdc1;
 $header-links-hover: #393d40;
 
-$main-title-color: #666e77;
+$focus-color: #905a20;
+
+$main-text-color: #666e77;
+$main-title-color: $main-text-color;
 
 $header-color: $main-title-color;

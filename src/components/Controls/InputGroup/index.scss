@@ -1,0 +1,22 @@
+@import "../../../common/variables.scss";
+
+.input_group {
+	font-size: 18px;
+	color: $main-text-color;
+	label {
+		margin: 0 15px;
+	}
+	input {
+		color: $main-text-color;
+		border: none;
+		height: 30px;
+		font-size: 18px;
+		padding: 5px;
+		transition: box-shadow 0.3s;
+
+		&:focus {
+			box-shadow: 0 0 3px $focus-color;
+			outline: none;
+		}
+	}
+}

@@ -24078,7 +24078,7 @@ var App = (function (superclass) {
 	return App;
 }(React$1__default.Component));
 
-__$styleInject("",undefined);
+__$styleInject(".input_group{font-size:18px;color:#666e77}.input_group label{margin:0 15px}.input_group input{color:#666e77;border:none;height:30px;font-size:18px;padding:5px;transition:box-shadow .3s}.input_group input:focus{box-shadow:0 0 3px #905a20;outline:none}",undefined);
 
 var InputGroup = function (ref) {
 	var labelText = ref.labelText;
