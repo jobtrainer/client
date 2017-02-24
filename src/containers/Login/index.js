@@ -16,6 +16,7 @@ export default class Login extends React.Component {
 						<button type="submit">Submit</button>
 					</form>
 				</div>
+				<img className="login_background_image" src="/resources/images/desk.jpg" />
 			</div>
 		)
 	}

@@ -24043,7 +24043,7 @@ var NavigationLink = function (ref) {
 	);
 };
 
-__$styleInject("body{margin:0;padding:0;@import url(\"https://fonts.googleapis.com/css?family=Roboto\");font-family:Roboto,sans-serif}.application .header{background-color:#fff;width:100%;height:50px;padding:10px;display:flex}.application .header .logo{height:100%;display:flex;align-items:center}.application .header .logo .logo_image{max-width:100%;max-height:100%}.application .header .logo .company_name{display:inline-block;margin:0 15px}.application .header .navigation{display:flex;align-items:center}",undefined);
+__$styleInject("body{margin:0;padding:0;overflow:hidden;@import url(\"https://fonts.googleapis.com/css?family=Roboto\");font-family:Roboto,sans-serif}.application .header{background-color:#fff;width:100%;height:50px;padding:10px;display:flex}.application .header .logo{height:100%;display:flex;align-items:center}.application .header .logo .logo_image{max-width:100%;max-height:100%}.application .header .logo .company_name{display:inline-block;margin:0 15px}.application .header .navigation{display:flex;align-items:center}",undefined);
 
 var App = (function (superclass) {
 	function App () {
@@ -24070,7 +24070,7 @@ var App = (function (superclass) {
 				React$1__default.createElement( 'div', { className: "content" }, 
 					this.props.children
 				), 
-				React$1__default.createElement( 'div', { className: "footer" }, "This is the header")
+				React$1__default.createElement( 'div', { className: "footer" }, "This is the footer")
 			)
 		)
 	};
@@ -24093,7 +24093,7 @@ var InputGroup = function (ref) {
 	);
 };
 
-__$styleInject("",undefined);
+__$styleInject(".login_page .login_background_image{position:absolute;left:0;top:0;z-index:-1;max-width:100%}",undefined);
 
 var Login = (function (superclass) {
 	function Login () {
@@ -24114,7 +24114,8 @@ var Login = (function (superclass) {
 						React$1__default.createElement( InputGroup, { labelText: "Password", inputName: "password", inputType: "password" }), 						
 						React$1__default.createElement( 'button', { type: "submit" }, "Submit")
 					)
-				)
+				), 
+				React$1__default.createElement( 'img', { className: "login_background_image", src: "/resources/images/desk.jpg" })
 			)
 		)
 	};

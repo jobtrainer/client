@@ -22,7 +22,7 @@ export default class App extends React.Component {
 				<div className="content">
 					{this.props.children}
 				</div>
-				<div className="footer">This is the header</div>
+				<div className="footer">This is the footer</div>
 			</div>
 		)
 	}
