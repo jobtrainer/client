@@ -2,7 +2,7 @@
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('react'), require('Immutable')) :
     typeof define === 'function' && define.amd ? define(['react', 'Immutable'], factory) :
     (factory(global.React,global.Immutable));
-}(this, (function (React,Immutable) { 'use strict';
+}(this, (function (React$1,Immutable) { 'use strict';
 
 function __$styleInject(css, returnValue) {
   if (typeof document === 'undefined') {
@@ -20,7 +20,7 @@ function __$styleInject(css, returnValue) {
   head.appendChild(style);
   return returnValue;
 }
-var React__default = 'default' in React ? React['default'] : React;
+var React$1__default = 'default' in React$1 ? React$1['default'] : React$1;
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -10151,7 +10151,7 @@ var __spread = _assign$6;
   };
 }
 
-var React$2 = {
+var React$3 = {
 
   // Modern
 
@@ -10190,7 +10190,7 @@ var React$2 = {
   __spread: __spread
 };
 
-var React_1 = React$2;
+var React_1 = React$3;
 
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -10207,7 +10207,7 @@ var ReactPropTypesSecret$4 = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 var ReactPropTypesSecret_1$2 = ReactPropTypesSecret$4;
 
-var React$1 = React_1;
+var React$2 = React_1;
 var ReactPropTypesSecret = ReactPropTypesSecret_1$2;
 
 var invariant$19 = invariant_1;
@@ -10249,7 +10249,7 @@ var propTypes = {
     }
     return new Error('You provided a `checked` prop to a form field without an ' + '`onChange` handler. This will render a read-only field. If ' + 'the field should be mutable use `defaultChecked`. Otherwise, ' + 'set either `onChange` or `readOnly`.');
   },
-  onChange: React$1.PropTypes.func
+  onChange: React$2.PropTypes.func
 };
 
 var loggedTypeFailures = {};
@@ -10783,7 +10783,7 @@ var ReactDOMSelect_1 = ReactDOMSelect$2;
 
 var _assign$10 = index$1;
 
-var React$3 = React_1;
+var React$4 = React_1;
 var ReactDOMComponentTree$11 = ReactDOMComponentTree_1;
 var ReactDOMSelect$1 = ReactDOMSelect_1;
 
@@ -10795,7 +10795,7 @@ function flattenChildren(children) {
 
   // Flatten children and warn if they aren't strings or numbers;
   // invalid types are ignored.
-  React$3.Children.forEach(children, function (child) {
+  React$4.Children.forEach(children, function (child) {
     if (child == null) {
       return;
     }
@@ -11107,7 +11107,7 @@ var ReactInstanceMap$1 = {
 
 var ReactInstanceMap_1 = ReactInstanceMap$1;
 
-var React$5 = React_1;
+var React$6 = React_1;
 
 var invariant$31 = invariant_1;
 
@@ -11119,7 +11119,7 @@ var ReactNodeTypes$1 = {
   getType: function (node) {
     if (node === null || node === false) {
       return ReactNodeTypes$1.EMPTY;
-    } else if (React$5.isValidElement(node)) {
+    } else if (React$6.isValidElement(node)) {
       if (typeof node.type === 'function') {
         return ReactNodeTypes$1.COMPOSITE;
       } else {
@@ -11324,7 +11324,7 @@ var shouldUpdateReactComponent_1 = shouldUpdateReactComponent$2;
 
 var _assign$14 = index$1;
 
-var React$4 = React_1;
+var React$5 = React_1;
 var ReactComponentEnvironment$2 = ReactComponentEnvironment_1;
 var ReactCurrentOwner$6 = ReactCurrentOwner_1;
 var ReactErrorUtils$3 = ReactErrorUtils_1;
@@ -11359,7 +11359,7 @@ StatelessComponent.prototype.render = function () {
 
 function warnIfInvalidElement(Component$$1, element) {
   {
-    warning$29(element === null || element === false || React$4.isValidElement(element), '%s(...): A valid React element (or null) must be returned. You may have ' + 'returned undefined, an array or some other invalid object.', Component$$1.displayName || Component$$1.name || 'Component');
+    warning$29(element === null || element === false || React$5.isValidElement(element), '%s(...): A valid React element (or null) must be returned. You may have ' + 'returned undefined, an array or some other invalid object.', Component$$1.displayName || Component$$1.name || 'Component');
     warning$29(!Component$$1.childContextTypes, '%s(...): childContextTypes cannot be defined on a functional component.', Component$$1.displayName || Component$$1.name || 'Component');
   }
 }
@@ -11503,7 +11503,7 @@ var ReactCompositeComponent$1 = {
     if (!doConstruct && (inst == null || inst.render == null)) {
       renderedElement = inst;
       warnIfInvalidElement(Component$$1, renderedElement);
-      !(inst === null || inst === false || React$4.isValidElement(inst)) ? invariant$30(false, '%s(...): A valid React element (or null) must be returned. You may have returned undefined, an array or some other invalid object.', Component$$1.displayName || Component$$1.name || 'Component') : void 0;
+      !(inst === null || inst === false || React$5.isValidElement(inst)) ? invariant$30(false, '%s(...): A valid React element (or null) must be returned. You may have returned undefined, an array or some other invalid object.', Component$$1.displayName || Component$$1.name || 'Component') : void 0;
       inst = new StatelessComponent(Component$$1);
       this._compositeType = CompositeTypes.StatelessFunctional;
     } else {
@@ -12115,7 +12115,7 @@ var ReactCompositeComponent$1 = {
     }
     !(
     // TODO: An `isValidNode` function would probably be more appropriate
-    renderedElement === null || renderedElement === false || React$4.isValidElement(renderedElement)) ? invariant$30(false, '%s.render(): A valid React element (or null) must be returned. You may have returned undefined, an array or some other invalid object.', this.getName() || 'ReactCompositeComponent') : void 0;
+    renderedElement === null || renderedElement === false || React$5.isValidElement(renderedElement)) ? invariant$30(false, '%s.render(): A valid React element (or null) must be returned. You may have returned undefined, an array or some other invalid object.', this.getName() || 'ReactCompositeComponent') : void 0;
 
     return renderedElement;
   },
@@ -17597,7 +17597,7 @@ var ReactMarkupChecksum_1 = ReactMarkupChecksum$1;
 
 var DOMLazyTree$6 = DOMLazyTree_1;
 var DOMProperty$6 = DOMProperty_1;
-var React$6 = React_1;
+var React$7 = React_1;
 var ReactBrowserEventEmitter$4 = ReactBrowserEventEmitter_1;
 var ReactCurrentOwner$9 = ReactCurrentOwner_1;
 var ReactDOMComponentTree$19 = ReactDOMComponentTree_1;
@@ -17928,13 +17928,13 @@ var ReactMount$1 = {
 
   _renderSubtreeIntoContainer: function (parentComponent, nextElement, container, callback) {
     ReactUpdateQueue$3.validateCallback(callback, 'ReactDOM.render');
-    !React$6.isValidElement(nextElement) ? invariant$39(false, 'ReactDOM.render(): Invalid component element.%s', typeof nextElement === 'string' ? ' Instead of passing a string like \'div\', pass ' + 'React.createElement(\'div\') or <div />.' : typeof nextElement === 'function' ? ' Instead of passing a class like Foo, pass ' + 'React.createElement(Foo) or <Foo />.' :
+    !React$7.isValidElement(nextElement) ? invariant$39(false, 'ReactDOM.render(): Invalid component element.%s', typeof nextElement === 'string' ? ' Instead of passing a string like \'div\', pass ' + 'React.createElement(\'div\') or <div />.' : typeof nextElement === 'function' ? ' Instead of passing a class like Foo, pass ' + 'React.createElement(Foo) or <Foo />.' :
     // Check if it quacks like an element
     nextElement != null && nextElement.props !== undefined ? ' This may be caused by unintentionally loading two independent ' + 'copies of React.' : '') : void 0;
 
     warning$36(!container || !container.tagName || container.tagName.toUpperCase() !== 'BODY', 'render(): Rendering components directly into document.body is ' + 'discouraged, since its children are often manipulated by third-party ' + 'scripts and browser extensions. This may lead to subtle ' + 'reconciliation issues. Try rendering into a container element created ' + 'for your app.');
 
-    var nextWrappedElement = React$6.createElement(TopLevelWrapper, { child: nextElement });
+    var nextWrappedElement = React$7.createElement(TopLevelWrapper, { child: nextElement });
 
     var nextContext;
     if (parentComponent) {
@@ -18510,17 +18510,17 @@ var ReactDOM_1 = ReactDOM$1;
 
 var index = ReactDOM_1;
 
-var subscriptionShape = React.PropTypes.shape({
-  trySubscribe: React.PropTypes.func.isRequired,
-  tryUnsubscribe: React.PropTypes.func.isRequired,
-  notifyNestedSubs: React.PropTypes.func.isRequired,
-  isSubscribed: React.PropTypes.func.isRequired
+var subscriptionShape = React$1.PropTypes.shape({
+  trySubscribe: React$1.PropTypes.func.isRequired,
+  tryUnsubscribe: React$1.PropTypes.func.isRequired,
+  notifyNestedSubs: React$1.PropTypes.func.isRequired,
+  isSubscribed: React$1.PropTypes.func.isRequired
 });
 
-var storeShape = React.PropTypes.shape({
-  subscribe: React.PropTypes.func.isRequired,
-  dispatch: React.PropTypes.func.isRequired,
-  getState: React.PropTypes.func.isRequired
+var storeShape = React$1.PropTypes.shape({
+  subscribe: React$1.PropTypes.func.isRequired,
+  dispatch: React$1.PropTypes.func.isRequired,
+  getState: React$1.PropTypes.func.isRequired
 });
 
 /**
@@ -18578,11 +18578,11 @@ var Provider = function (_Component) {
   }
 
   Provider.prototype.render = function render() {
-    return React.Children.only(this.props.children);
+    return React$1.Children.only(this.props.children);
   };
 
   return Provider;
-}(React.Component);
+}(React$1.Component);
 
 {
   Provider.prototype.componentWillReceiveProps = function (nextProps) {
@@ -18598,7 +18598,7 @@ var Provider = function (_Component) {
 
 Provider.propTypes = {
   store: storeShape.isRequired,
-  children: React.PropTypes.element.isRequired
+  children: React$1.PropTypes.element.isRequired
 };
 Provider.childContextTypes = {
   store: storeShape.isRequired,
@@ -19019,12 +19019,12 @@ selectorFactory) {
         if (selector.error) {
           throw selector.error;
         } else {
-          return React.createElement(WrappedComponent, this.addExtraProps(selector.props));
+          return React$1.createElement(WrappedComponent, this.addExtraProps(selector.props));
         }
       };
 
       return Connect;
-    }(React.Component);
+    }(React$1.Component);
 
     Connect.WrappedComponent = WrappedComponent;
     Connect.displayName = displayName;
@@ -20120,18 +20120,33 @@ var App = (function (superclass) {
 
 	App.prototype.render = function render () {
 		return (
-			React__default.createElement( 'div', { className: "application" }, 
-				React__default.createElement( 'div', { className: "header" }, "This is the header"), 
-				React__default.createElement( 'div', { className: "content" }, 
+			React$1__default.createElement( 'div', { className: "application" }, 
+				React$1__default.createElement( 'div', { className: "header" }, "This is the header"), 
+				React$1__default.createElement( 'div', { className: "content" }, 
 					this.props.children
 				), 
-				React__default.createElement( 'div', { className: "footer" }, "This is the header")
+				React$1__default.createElement( 'div', { className: "footer" }, "This is the header")
 			)
 		)
 	};
 
 	return App;
-}(React__default.Component));
+}(React$1__default.Component));
+
+__$styleInject("",undefined);
+
+var InputGroup = function (ref) {
+	var labelText = ref.labelText;
+	var inputType = ref.inputType;
+	var inputName = ref.inputName;
+
+	return (
+		React.createElement( 'div', { className: "input_group" }, 
+			React.createElement( 'label', { htmlFor: inputName }, labelText, ":"), 
+			React.createElement( 'input', { id: inputName, type: inputType, className: "text_field" })
+		)
+	);
+};
 
 __$styleInject("",undefined);
 
@@ -20146,19 +20161,21 @@ var Login = (function (superclass) {
 
 	Login.prototype.render = function render () {
 		return (
-			React__default.createElement( 'div', { className: "login_page" }, 
-				React__default.createElement( 'div', { className: "login_container" }, 
-					React__default.createElement( 'h1', null, "Login" ), 
-					React__default.createElement( 'form', { onSubmit: function (e) { e.preventDefault(); } }, 
-						React__default.createElement( 'div', { className: "input_group" }, 
-							React__default.createElement( 'label', { htmlFor: "username" }, "Username:"), 
-							React__default.createElement( 'input', { id: "username", type: "text", className: "text_field" })
-						), 
-						React__default.createElement( 'div', { className: "input_group" }, 
-							React__default.createElement( 'label', { htmlFor: "password" }, "Password:"), 
-							React__default.createElement( 'input', { id: "password", type: "password", className: "text_field" })
-						), 
-						React__default.createElement( 'button', { type: "submit" }, "Submit")
+			React$1__default.createElement( 'div', { className: "login_page" }, 
+				React$1__default.createElement( 'div', { className: "login_container" }, 
+					React$1__default.createElement( 'h1', null, "Login" ), 
+					React$1__default.createElement( 'form', { onSubmit: function (e) { e.preventDefault(); } }
+						/*<div className="input_group">
+							<label htmlFor="username">Username:</label>
+							<input id="username" type="text" className="text_field" />
+						</div>*/, 
+						React$1__default.createElement( InputGroup, { labelText: "Username", inputName: "username", inputType: "text" }), 
+						React$1__default.createElement( InputGroup, { labelText: "Password", inputName: "password", inputType: "password" })
+						/*<div className="input_group">
+							<label htmlFor="password">Password:</label>
+							<input id="password" type="password" className="text_field" />
+						</div>*/, 
+						React$1__default.createElement( 'button', { type: "submit" }, "Submit")
 					)
 				)
 			)
@@ -20166,7 +20183,7 @@ var Login = (function (superclass) {
 	};
 
 	return Login;
-}(React__default.Component));
+}(React$1__default.Component));
 
 __$styleInject("h1{color:red}",undefined);
 
@@ -20181,9 +20198,9 @@ var MainPage = (function (superclass) {
 
     MainPage.prototype.renderSingleTutorial = function renderSingleTutorial (index, header, text) {
         return (
-            React__default.createElement( 'div', { key: index }, 
-                React__default.createElement( 'h5', null, index + 1, ". ", header ), 
-                React__default.createElement( 'span', null, text )
+            React$1__default.createElement( 'div', { key: index }, 
+                React$1__default.createElement( 'h5', null, index + 1, ". ", header ), 
+                React$1__default.createElement( 'span', null, text )
             )
         )
     };
@@ -20194,17 +20211,17 @@ var MainPage = (function (superclass) {
 
         var tutorialElements = this.props.tutorials.map(function (curr, index) { return this$1.renderSingleTutorial(index, curr.header, curr.text); });
         return (
-            React__default.createElement( 'div', null, 
-                React__default.createElement( 'h1', null, "JobTrainer" ), 
-                React__default.createElement( 'span', null, "Trainer for new jobs" ), 
-                React__default.createElement( 'h3', null, "Tutorials" ), 
+            React$1__default.createElement( 'div', null, 
+                React$1__default.createElement( 'h1', null, "JobTrainer" ), 
+                React$1__default.createElement( 'span', null, "Trainer for new jobs" ), 
+                React$1__default.createElement( 'h3', null, "Tutorials" ), 
                 tutorialElements
             )
         )
     };
 
     return MainPage;
-}(React__default.Component));
+}(React$1__default.Component));
 
 function mapStateToProps(state) {
     return {
@@ -21034,7 +21051,7 @@ function getComponents(nextState, callback) {
 var _extends$7 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 function isValidChild(object) {
-  return object == null || React__default.isValidElement(object);
+  return object == null || React$1__default.isValidElement(object);
 }
 
 function isReactChildren(object) {
@@ -21080,8 +21097,8 @@ function createRouteFromReactElement$1(element) {
 function createRoutesFromReactChildren(children, parentRoute) {
   var routes = [];
 
-  React__default.Children.forEach(children, function (element) {
-    if (React__default.isValidElement(element)) {
+  React$1__default.Children.forEach(children, function (element) {
+    if (React$1__default.isValidElement(element)) {
       // Component classes may have a static create* method.
       if (element.type.createRouteFromReactElement) {
         var route = element.type.createRouteFromReactElement(element, parentRoute);
@@ -21598,13 +21615,13 @@ function createTransitionManager$1(history, routes) {
   };
 }
 
-var func$1 = React.PropTypes.func;
-var object$1 = React.PropTypes.object;
-var arrayOf = React.PropTypes.arrayOf;
-var oneOfType = React.PropTypes.oneOfType;
-var element = React.PropTypes.element;
-var shape = React.PropTypes.shape;
-var string = React.PropTypes.string;
+var func$1 = React$1.PropTypes.func;
+var object$1 = React$1.PropTypes.object;
+var arrayOf = React$1.PropTypes.arrayOf;
+var oneOfType = React$1.PropTypes.oneOfType;
+var element = React$1.PropTypes.element;
+var shape = React$1.PropTypes.shape;
+var string = React$1.PropTypes.string;
 
 
 function falsy(props, propName, componentName) {
@@ -21639,9 +21656,9 @@ function getRouteParams(route, params) {
   return routeParams;
 }
 
-var contextProviderShape = React.PropTypes.shape({
-  subscribe: React.PropTypes.func.isRequired,
-  eventIndex: React.PropTypes.number.isRequired
+var contextProviderShape = React$1.PropTypes.shape({
+  subscribe: React$1.PropTypes.func.isRequired,
+  eventIndex: React$1.PropTypes.number.isRequired
 });
 
 function makeContextName(name) {
@@ -21752,7 +21769,7 @@ var _extends$8 = Object.assign || function (target) { for (var i = 1; i < argume
 
 var _typeof$2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _React$PropTypes$1 = React__default.PropTypes;
+var _React$PropTypes$1 = React$1__default.PropTypes;
 var array = _React$PropTypes$1.array;
 var func$2 = _React$PropTypes$1.func;
 var object$2 = _React$PropTypes$1.object;
@@ -21762,7 +21779,7 @@ var object$2 = _React$PropTypes$1.object;
  * and sets the history object and the current location in context.
  */
 
-var RouterContext = React__default.createClass({
+var RouterContext = React$1__default.createClass({
   displayName: 'RouterContext',
 
 
@@ -21779,7 +21796,7 @@ var RouterContext = React__default.createClass({
 
   getDefaultProps: function getDefaultProps() {
     return {
-      createElement: React__default.createElement
+      createElement: React$1__default.createElement
     };
   },
 
@@ -21851,7 +21868,7 @@ var RouterContext = React__default.createClass({
       }, element);
     }
 
-    !(element === null || element === false || React__default.isValidElement(element)) ? invariant_1$2(false, 'The root route must render a single element') : void 0;
+    !(element === null || element === false || React$1__default.isValidElement(element)) ? invariant_1$2(false, 'The root route must render a single element') : void 0;
 
     return element;
   }
@@ -21884,7 +21901,7 @@ var _extends$4 = Object.assign || function (target) { for (var i = 1; i < argume
 
 function _objectWithoutProperties$3(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-var _React$PropTypes = React__default.PropTypes;
+var _React$PropTypes = React$1__default.PropTypes;
 var func = _React$PropTypes.func;
 var object = _React$PropTypes.object;
 
@@ -21894,7 +21911,7 @@ var object = _React$PropTypes.object;
  * it needs each time the URL changes.
  */
 
-var Router = React__default.createClass({
+var Router = React$1__default.createClass({
   displayName: 'Router',
 
 
@@ -21914,7 +21931,7 @@ var Router = React__default.createClass({
   getDefaultProps: function getDefaultProps() {
     return {
       render: function render(props) {
-        return React__default.createElement(RouterContext, props);
+        return React$1__default.createElement(RouterContext, props);
       }
     };
   },
@@ -22021,10 +22038,10 @@ var Router = React__default.createClass({
   }
 });
 
-var func$4 = React.PropTypes.func;
-var object$4 = React.PropTypes.object;
-var shape$1 = React.PropTypes.shape;
-var string$2 = React.PropTypes.string;
+var func$4 = React$1.PropTypes.func;
+var object$4 = React$1.PropTypes.object;
+var shape$1 = React$1.PropTypes.shape;
+var string$2 = React$1.PropTypes.string;
 
 
 var routerShape = shape$1({
@@ -22049,7 +22066,7 @@ var _extends$10 = Object.assign || function (target) { for (var i = 1; i < argum
 
 function _objectWithoutProperties$4(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-var _React$PropTypes$2 = React__default.PropTypes;
+var _React$PropTypes$2 = React$1__default.PropTypes;
 var bool = _React$PropTypes$2.bool;
 var object$3 = _React$PropTypes$2.object;
 var string$1 = _React$PropTypes$2.string;
@@ -22094,7 +22111,7 @@ function resolveToLocation(to, router) {
  *
  *   <Link ... query={{ show: true }} state={{ the: 'state' }} />
  */
-var Link = React__default.createClass({
+var Link = React$1__default.createClass({
   displayName: 'Link',
 
 
@@ -22158,7 +22175,7 @@ var Link = React__default.createClass({
     if (router) {
       // If user does not specify a `to` prop, return an empty anchor tag.
       if (!to) {
-        return React__default.createElement('a', props);
+        return React$1__default.createElement('a', props);
       }
 
       var toLocation = resolveToLocation(to, router);
@@ -22179,16 +22196,16 @@ var Link = React__default.createClass({
       }
     }
 
-    return React__default.createElement('a', _extends$10({}, props, { onClick: this.handleClick }));
+    return React$1__default.createElement('a', _extends$10({}, props, { onClick: this.handleClick }));
   }
 });
 
 var _extends$11 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var IndexLink = React__default.createClass({
+var IndexLink = React$1__default.createClass({
   displayName: 'IndexLink',
   render: function render() {
-    return React__default.createElement(Link, _extends$11({}, this.props, { onlyActiveOnIndex: true }));
+    return React$1__default.createElement(Link, _extends$11({}, this.props, { onlyActiveOnIndex: true }));
   }
 });
 
@@ -22198,7 +22215,7 @@ function getDisplayName$2(WrappedComponent) {
   return WrappedComponent.displayName || WrappedComponent.name || 'Component';
 }
 
-var _React$PropTypes$4 = React__default.PropTypes;
+var _React$PropTypes$4 = React$1__default.PropTypes;
 var string$4 = _React$PropTypes$4.string;
 var object$6 = _React$PropTypes$4.object;
 
@@ -22211,7 +22228,7 @@ var object$6 = _React$PropTypes$4.object;
  */
 /* eslint-disable react/require-render-return */
 
-var Redirect = React__default.createClass({
+var Redirect = React$1__default.createClass({
   displayName: 'Redirect',
 
 
@@ -22279,7 +22296,7 @@ var Redirect = React__default.createClass({
   }
 });
 
-var _React$PropTypes$3 = React__default.PropTypes;
+var _React$PropTypes$3 = React$1__default.PropTypes;
 var string$3 = _React$PropTypes$3.string;
 var object$5 = _React$PropTypes$3.object;
 
@@ -22288,7 +22305,7 @@ var object$5 = _React$PropTypes$3.object;
  */
 /* eslint-disable react/require-render-return */
 
-var IndexRedirect = React__default.createClass({
+var IndexRedirect = React$1__default.createClass({
   displayName: 'IndexRedirect',
 
 
@@ -22317,7 +22334,7 @@ var IndexRedirect = React__default.createClass({
   }
 });
 
-var func$5 = React__default.PropTypes.func;
+var func$5 = React$1__default.PropTypes.func;
 
 /**
  * An <IndexRoute> is used to specify its parent's <Route indexRoute> in
@@ -22325,7 +22342,7 @@ var func$5 = React__default.PropTypes.func;
  */
 /* eslint-disable react/require-render-return */
 
-var IndexRoute = React__default.createClass({
+var IndexRoute = React$1__default.createClass({
   displayName: 'IndexRoute',
 
 
@@ -22354,7 +22371,7 @@ var IndexRoute = React__default.createClass({
   }
 });
 
-var _React$PropTypes$5 = React__default.PropTypes;
+var _React$PropTypes$5 = React$1__default.PropTypes;
 var string$5 = _React$PropTypes$5.string;
 var func$6 = _React$PropTypes$5.func;
 
@@ -22370,7 +22387,7 @@ var func$6 = _React$PropTypes$5.func;
  */
 /* eslint-disable react/require-render-return */
 
-var Route = React__default.createClass({
+var Route = React$1__default.createClass({
   displayName: 'Route',
 
 
@@ -22419,13 +22436,13 @@ var POP = exports.POP = 'POP';
 
 var Actions_2 = Actions.REPLACE;
 
-var index$12 = function (str) {
+var index$13 = function (str) {
 	return encodeURIComponent(str).replace(/[!'()*]/g, function (c) {
 		return '%' + c.charCodeAt(0).toString(16).toUpperCase();
 	});
 };
 
-var strictUriEncode = index$12;
+var strictUriEncode = index$13;
 var objectAssign = index$1;
 
 function encoderForArrayFormat(opts) {
@@ -22628,7 +22645,7 @@ var stringify = function (obj, opts) {
 	}).join('&') : '';
 };
 
-var index$10 = {
+var index$11 = {
 	extract: extract,
 	parse: parse,
 	stringify: stringify
@@ -22866,7 +22883,7 @@ exports.__esModule = true;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _queryString = index$10;
+var _queryString = index$11;
 
 var _runTransitionHook = runTransitionHook_1;
 
@@ -24199,11 +24216,11 @@ store.dispatch(setValueAction("tutorials", [
 ]));
  
 index.render(
-    React__default.createElement( Provider, { store: store }, 
-        React__default.createElement( Router, { history: browserHistory }, 
-            React__default.createElement( Route, { path: "/", component: App }, 
-                React__default.createElement( IndexRoute, { component: MainPage$1 }), 
-                React__default.createElement( Route, { path: "login", component: Login })
+    React$1__default.createElement( Provider, { store: store }, 
+        React$1__default.createElement( Router, { history: browserHistory }, 
+            React$1__default.createElement( Route, { path: "/", component: App }, 
+                React$1__default.createElement( IndexRoute, { component: MainPage$1 }), 
+                React$1__default.createElement( Route, { path: "login", component: Login })
             )
         )
     ),
