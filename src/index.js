@@ -2,8 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import MainPage from "./containers/MainPage";
+import Login from "./containers/Login";
 
 ReactDOM.render(
-    <MainPage>5</MainPage>,
+    <Login></Login>,
     document.getElementById("root")
 );
