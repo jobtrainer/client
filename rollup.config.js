@@ -12,7 +12,7 @@ import postcssimport from 'postcss-import';
 export default {
     entry: "src/index.js",
     dest: "build/app.js",
-    format: "iife",
+    format: "umd",
     moduleName: "jobtrainer",
     plugins: [
         postcss({
