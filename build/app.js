@@ -20107,7 +20107,7 @@ function createConnect() {
 
 var connect$1 = createConnect();
 
-__$styleInject("",undefined);
+__$styleInject("body{margin:0;padding:0}.application .header{background-color:#fff;width:100%;height:50px;padding:10px}.application .header .logo{height:100%;display:flex;align-items:center}.application .header .logo .logo_image{max-width:100%;max-height:100%}.application .header .logo .company_name{display:inline-block;margin:0 15px}",undefined);
 
 var App = (function (superclass) {
 	function App () {
@@ -20121,7 +20121,12 @@ var App = (function (superclass) {
 	App.prototype.render = function render () {
 		return (
 			React$1__default.createElement( 'div', { className: "application" }, 
-				React$1__default.createElement( 'div', { className: "header" }, "This is the header"), 
+				React$1__default.createElement( 'div', { className: "header" }, 
+					React$1__default.createElement( 'div', { className: "logo" }, 
+						React$1__default.createElement( 'img', { className: "logo_image", src: "https://cdn1.iconfinder.com/data/icons/mix-color-3/502/Untitled-35-512.png" }), 
+						React$1__default.createElement( 'span', { className: "company_name" }, "jobTrainer")
+					)
+				), 
 				React$1__default.createElement( 'div', { className: "content" }, 
 					this.props.children
 				), 
@@ -20164,17 +20169,9 @@ var Login = (function (superclass) {
 			React$1__default.createElement( 'div', { className: "login_page" }, 
 				React$1__default.createElement( 'div', { className: "login_container" }, 
 					React$1__default.createElement( 'h1', null, "Login" ), 
-					React$1__default.createElement( 'form', { onSubmit: function (e) { e.preventDefault(); } }
-						/*<div className="input_group">
-							<label htmlFor="username">Username:</label>
-							<input id="username" type="text" className="text_field" />
-						</div>*/, 
+					React$1__default.createElement( 'form', { onSubmit: function (e) { e.preventDefault(); } }, 
 						React$1__default.createElement( InputGroup, { labelText: "Username", inputName: "username", inputType: "text" }), 
-						React$1__default.createElement( InputGroup, { labelText: "Password", inputName: "password", inputType: "password" })
-						/*<div className="input_group">
-							<label htmlFor="password">Password:</label>
-							<input id="password" type="password" className="text_field" />
-						</div>*/, 
+						React$1__default.createElement( InputGroup, { labelText: "Password", inputName: "password", inputType: "password" }), 						
 						React$1__default.createElement( 'button', { type: "submit" }, "Submit")
 					)
 				)
