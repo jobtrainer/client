@@ -24087,11 +24087,12 @@ var InputGroup = function (ref) {
 	var labelText = ref.labelText;
 	var inputType = ref.inputType;
 	var inputName = ref.inputName;
+	var onChange = ref.onChange;
 
 	return (
 		React.createElement( 'div', { className: "input_group" }, 
 			React.createElement( 'label', { htmlFor: inputName }, labelText, ":"), 
-			React.createElement( 'input', { id: inputName, type: inputType, className: "text_field" })
+			React.createElement( 'input', { id: inputName, type: inputType, className: "text_field", onChange: onChange })
 		)
 	);
 };
@@ -24127,14 +24128,29 @@ var Login = (function (superclass) {
 	Login.prototype = Object.create( superclass && superclass.prototype );
 	Login.prototype.constructor = Login;
 
+	Login.prototype.handleUsernameChange = function handleUsernameChange (e) {
+		this.setState({username: e.target.value});
+	};
+
+	Login.prototype.handlePasswordChange = function handlePasswordChange (e) {
+		this.setState({password: e.target.value});
+	};
+	
+	Login.prototype.handleLoginSubmit = function handleLoginSubmit (e) {
+		e.preventDefault();
+		console.log('you tried to login!');
+		console.log('username: ' + this.state.username);
+		console.log('password: ' + this.state.password);
+	};
+	
 	Login.prototype.render = function render () {
 		return (
 			React$1__default.createElement( 'div', { className: "login_page" }, 
 				React$1__default.createElement( 'div', { className: "login_container" }, 
 					React$1__default.createElement( 'h1', { className: "title" }, "Login"), 
-					React$1__default.createElement( 'form', { onSubmit: function (e) { e.preventDefault(); } }, 
-						React$1__default.createElement( InputGroup, { labelText: "Username", inputName: "username", inputType: "text" }), 
-						React$1__default.createElement( InputGroup, { labelText: "Password", inputName: "password", inputType: "password" }), 						
+					React$1__default.createElement( 'form', { onSubmit: this.handleLoginSubmit.bind(this) }, 
+						React$1__default.createElement( InputGroup, { labelText: "Username", inputName: "username", inputType: "text", onChange: this.handleUsernameChange.bind(this) }), 
+						React$1__default.createElement( InputGroup, { labelText: "Password", inputName: "password", inputType: "password", onChange: this.handlePasswordChange.bind(this) }), 						
 						React$1__default.createElement( MainButton, { buttonText: "Login", isSubmit: true, isDisabled: false })
 					)
 				)
