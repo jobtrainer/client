@@ -1,0 +1,26 @@
+@import "../../../common/variables.scss";
+
+.main_button {
+	font-size: 18px;
+	padding: 10px 70px;
+	
+	border: none;
+	border-radius: 20px;
+
+	color: white;
+	background-color: $button-primary-color;
+	cursor: pointer;
+	transition: background-color 0.3s;
+
+	&:hover {
+		background-color: $button-primary-color-hover;
+	}
+	&:focus {
+		outline: none;
+		box-shadow: 0 0 4px 4px #ffffff;
+	}
+	&.disabled {
+		background-color: $button-primary-color-disabled;
+		cursor: default;
+	}
+}

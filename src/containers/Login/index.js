@@ -1,6 +1,7 @@
 import React from "react";
 
 import InputGroup from "../../components/Controls/InputGroup";
+import MainButton from "../../components/Controls/MainButton";
 
 import "./index.scss";
 
@@ -13,7 +14,7 @@ export default class Login extends React.Component {
 					<form onSubmit={(e) => { e.preventDefault(); }}>
 						<InputGroup labelText="Username" inputName="username" inputType="text" />
 						<InputGroup labelText="Password" inputName="password" inputType="password" />						
-						<button type="submit">Submit</button>
+						<MainButton buttonText="Login" isSubmit={true} isDisabled={false} />
 					</form>
 				</div>
 			</div>
