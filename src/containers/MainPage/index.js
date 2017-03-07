@@ -4,24 +4,25 @@ import { connect } from "react-redux";
 import "./index.scss";
 
 class MainPage extends React.Component {
-    renderSingleTutorial(index, header, text) {
+    renderSingleCourse({id, title, description, imageUrl}) {
         return (
-            <div key={index}>
-                <h5>{index + 1}. {header}</h5>
-                <span>{text}</span>
+            <div key={id} id={id} className="course_container" key={id}>
+                <img className="course_image" src={imageUrl}/>
+                <h5 className="course_title" >{title}</h5>
+                <span className="course_description">{description}</span>
             </div>
         )
     }
 
-
     render() {
-        const tutorialElements = this.props.tutorials.map((curr, index) => this.renderSingleTutorial(index, curr.header, curr.text));
+        const coursesElements = this.props.courses.map(curr => this.renderSingleCourse(curr));
         return (
             <div className="page main_page_container">
                 <h1>JobTrainer</h1>
                 <span>Trainer for new jobs</span>
-                <h3>Tutorials</h3>
-                {tutorialElements}
+                <hr/>
+                <h3>Courses</h3>
+                {coursesElements}
             </div>
         )
     }
@@ -29,7 +30,7 @@ class MainPage extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        tutorials: state.get("tutorials")
+        courses: state.get("courses")
     };
 }
 

@@ -8,6 +8,7 @@ import simplevars from 'postcss-simple-vars';
 import nested from 'postcss-nested';
 import cssnano from 'cssnano';
 import postcssimport from 'postcss-import';
+import colorfunctions from 'postcss-sass-color-functions';
 
 export default {
     entry: "src/index.js",
@@ -19,8 +20,9 @@ export default {
             plugins: [
                 postcssimport(),
                 simplevars(),
+                colorfunctions(),
                 nested(),
-                cssnano()
+                cssnano(),
             ],
             extensions: ['.scss'],
         }),
