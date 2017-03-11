@@ -24020,9 +24020,6 @@ var Login = (function (superclass) {
 	
 	Login.prototype.handleLoginSubmit = function handleLoginSubmit (e) {
 		e.preventDefault();
-		console.log('you tried to login!');
-		console.log('username: ' + this.state.username);
-		console.log('password: ' + this.state.password);
 	};
 	
 	Login.prototype.render = function render () {
@@ -24042,6 +24039,42 @@ var Login = (function (superclass) {
 
 	return Login;
 }(React$1__default.Component));
+
+__$styleInject("",undefined);
+
+var COURSE_STATUS_PENDING = 'pending';
+var COURSE_STATUS_IN_PROGRESS = 'in-progress';
+var COURSE_STATUS_FINISHED = 'finished';
+
+var COURSE_STATUSES = [
+	COURSE_STATUS_PENDING,
+	COURSE_STATUS_IN_PROGRESS,
+	COURSE_STATUS_FINISHED ];
+
+var CourseGroupCard = function (ref) {
+	var title = ref.title;
+	var courses = ref.courses;
+
+	return (
+		React.createElement( 'div', { className: "course_group_card" },
+			React.createElement( 'div', { className: "course_group_header" }, title),
+			React.createElement( 'div', { className: "active_course" }),
+			React.createElement( 'div', { className: "course_group_dependencies" }
+			)
+		)
+	);
+};
+
+CourseGroupCard.PropTypes = {
+	title: React.PropTypes.string,
+	courses: React.PropTypes.arrayOf(React.PropTypes.shape({
+		id: React.PropTypes.string,
+		title: React.PropTypes.string,
+		description: React.PropTypes.string,
+		status: React.PropTypes.oneOf(COURSE_STATUSES),
+		imageUrl: React.PropTypes.string
+	}))
+};
 
 __$styleInject(".main_page_container h1{color:#666e77}",undefined);
 
@@ -24097,7 +24130,8 @@ var MainPage = (function (superclass) {
                 React$1__default.createElement( 'span', null, "Trainer for new jobs" ),
                 React$1__default.createElement( 'hr', null ),
                 React$1__default.createElement( 'h3', null, "Courses" ),
-                coursesElements
+                coursesElements,
+                React$1__default.createElement( CourseGroupCard, { title: "hello world" })
             )
         )
     };
