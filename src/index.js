@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import App from "./containers/App";
 import Login from "./containers/Login";
 import MainPage from "./containers/MainPage";
+import Courses from "./containers/CoursesPage";
 
 import { createAppStore } from "./store";
 import { setValueAction } from "./reducers/commonDataReducer/actions";
@@ -41,6 +42,7 @@ ReactDOM.render(
             <Route path="/" component={App}>
                 <IndexRoute component={MainPage}/>
                 <Route path="login" component={Login}/>
+                <Route path="courses" component={Courses}/>
             </Route>
         </Router>
     </Provider>,
