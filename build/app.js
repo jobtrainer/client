@@ -24158,8 +24158,6 @@ var Login = (function (superclass) {
 	return Login;
 }(React$1__default.Component));
 
-__$styleInject("",undefined);
-
 var COURSE_STATUS_PENDING = 'pending';
 var COURSE_STATUS_IN_PROGRESS = 'in-progress';
 var COURSE_STATUS_FINISHED = 'finished';
@@ -24169,15 +24167,36 @@ var COURSE_STATUSES = [
 	COURSE_STATUS_IN_PROGRESS,
 	COURSE_STATUS_FINISHED ];
 
+__$styleInject("",undefined);
+
 var CourseGroupCard = function (ref) {
 	var title = ref.title;
 	var courses = ref.courses;
 
+	var activeCourses = courses.filter(function (course) {
+		return course.status === COURSE_STATUS_IN_PROGRESS;
+	});
+
+	var currentCourse = activeCourses.length === 0 ? courses[0] : activeCourses[0];
+	
+	var leftCourses = courses.filter(function (course) {
+		return currentCourse.id !== course.id;
+	});
+
+	var coursesContent = leftCourses.map(function (course) {
+		return React.createElement( 'div', { className: "course" }, course.status, " - ", course.title)
+	});
+
 	return (
 		React.createElement( 'div', { className: "course_group_card" }, 
 			React.createElement( 'div', { className: "course_group_header" }, title), 
-			React.createElement( 'div', { className: "active_course" }), 
-			React.createElement( 'div', { className: "course_group_dependencies" }
+			React.createElement( 'div', { className: "current_course" }, 
+				React.createElement( 'div', { className: ("course_status course_status_" + (currentCourse.status)) }), 
+				React.createElement( 'div', { className: 'course_title' }, currentCourse.title), 
+				React.createElement( 'div', { className: 'course_description' }, currentCourse.description)
+			), 
+			React.createElement( 'div', { className: "course_group_dependencies" }, 
+				coursesContent
 			)
 		)
 	);
@@ -24197,14 +24216,33 @@ CourseGroupCard.PropTypes = {
 __$styleInject(".main_page_container h1{color:#666e77}.main_page_container .course_container{width:300px;height:350px;margin:10px;padding:10px;display:inline-block;box-shadow:0 0 3px 1px rgba(0,0,0,.3);text-align:center}.main_page_container .course_container .course_image{height:150px;filter:grayscale(100%)}.main_page_container .course_container .course_title{font-size:1.5em}.main_page_container .course_container:hover{box-shadow:0 0 3px 1px rgba(0,0,0,.1);background:#fff;cursor:pointer}.main_page_container .course_container:hover .course_image{filter:none}",undefined);
 
 var MainPage = (function (superclass) {
-    function MainPage () {
-        superclass.apply(this, arguments);
+    function MainPage(props) {
+        superclass.call(this, props);
+        this.courses = [{
+            id: 'dj2912jd019dj',
+            title: 'Components',
+            description: 'write react components!',
+            status: COURSE_STATUS_PENDING,
+            imageUrl: 'https://images-na.ssl-images-amazon.com/images/G/01/img15/pet-products/small-tiles/23695_pets_vertical_store_dogs_small_tile_8._CB312176604_.jpg'
+        }, {
+            id: 'dj2912jd019dj31313',
+            title: 'Applications',
+            description: 'write react applications!',
+            status: COURSE_STATUS_IN_PROGRESS,
+            imageUrl: 'https://www.what-dog.net/Images/faces2/scroll0015.jpg'
+        }, {
+            id: 'dj2912jd019dj211212',
+            title: 'Redux',
+            description: 'write redux data flow!',
+            status: COURSE_STATUS_PENDING,
+            imageUrl: 'https://d2wq73xazpk036.cloudfront.net/media/27FB7F0C-9885-42A6-9E0C19C35242B5AC/DA746CFE-B4A4-43C0-A02F8BAF7BC6CE20/thul-51a71b71-3799-5e48-8a84-5b08c9efa9cf.jpg?response-content-disposition=inline'
+        }];
     }
 
     if ( superclass ) MainPage.__proto__ = superclass;
     MainPage.prototype = Object.create( superclass && superclass.prototype );
     MainPage.prototype.constructor = MainPage;
-
+    
     MainPage.prototype.renderSingleCourse = function renderSingleCourse (ref) {
         var id = ref.id;
         var title = ref.title;
@@ -24231,7 +24269,7 @@ var MainPage = (function (superclass) {
                 React$1__default.createElement( 'hr', null ), 
                 React$1__default.createElement( 'h3', null, "Courses" ), 
                 coursesElements, 
-                React$1__default.createElement( CourseGroupCard, { title: "hello world" })
+                React$1__default.createElement( CourseGroupCard, { title: "hello world", courses: this.courses })
             )
         )
     };
