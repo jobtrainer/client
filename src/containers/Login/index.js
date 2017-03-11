@@ -16,9 +16,6 @@ export default class Login extends React.Component {
 	
 	handleLoginSubmit(e) {
 		e.preventDefault();
-		console.log('you tried to login!');
-		console.log('username: ' + this.state.username);
-		console.log('password: ' + this.state.password);
 	}
 	
 	render() {

@@ -24,6 +24,7 @@
     "lodash": "^4.17.4",
     "postcss-import": "^9.1.0",
     "postcss-nested": "^1.0.0",
+    "postcss-sass-color-functions": "^1.1.0",
     "postcss-simple-vars": "^3.0.0",
     "react": "^15.4.2",
     "react-redux": "^5.0.3",
@@ -37,6 +38,7 @@
     "rollup-watch": "^3.2.2"
   },
   "dependencies": {
+    "axios": "^0.15.3",
     "react-dom": "^15.4.2",
     "react-router": "^3.0.2"
   }
