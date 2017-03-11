@@ -4,6 +4,7 @@ import * as COURSE_CONSTANT from "../../constants/courseConstants";
 import CourseGroupCard from "../../components/Cards/CourseGroupCard";
 
 import "./index.scss";
+import DomainCard from "../../components/Cards/DomainCard";
 
 class MainPage extends React.Component {
     constructor(props) {
@@ -40,7 +41,8 @@ class MainPage extends React.Component {
     }
 
     render() {
-        const coursesElements = this.props.courses.map(curr => this.renderSingleCourse(curr));
+        const coursesElements = this.props.courses.map(({id, title, description, imageUrl}) => 
+                <DomainCard key={id} id={id} title={title} description={description} imageUrl={imageUrl}></DomainCard>);
         return (
             <div className="page main_page_container">
                 <h1>JobTrainer</h1>

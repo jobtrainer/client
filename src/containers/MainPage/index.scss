@@ -4,36 +4,4 @@
     h1 {
         color: $header-color;
     }
-
-    .course_container {
-        width: 300px;
-        height: 350px;
-
-        margin: 10px;
-        padding: 10px;
-        
-        display: inline-block;
-        
-        box-shadow: 0 0 3px 1px rgba(0,0,0,0.3);
-        text-align: center;
-    
-        .course_image {
-            height: 150px;
-            filter: grayscale(100%);
-        }
-
-        .course_title {
-            font-size: 1.5em;
-        }
-
-        &:hover {
-            box-shadow: 0 0 3px 1px rgba(0,0,0,0.1);
-            background: white;
-            cursor: pointer;
-
-            .course_image {
-                filter: none;
-            }
-        }
-    }
 }

@@ -1,0 +1,19 @@
+.domain_container {
+    .domain_image {
+        height: 150px;
+        filter: grayscale(100%);
+    }
+
+    .course_title {
+        font-size: 1.5em;
+    }
+
+    &:hover {
+        box-shadow: 0 0 3px 1px rgba(0,0,0,0.1);
+        cursor: pointer;
+
+        .domain_image {
+            filter: none;
+        }
+    }
+}

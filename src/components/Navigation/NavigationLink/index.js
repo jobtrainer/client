@@ -5,7 +5,7 @@ const NavigationLink = ({to, linkText, className}) => {
 	const itemClassName = `navigation_item${className ? ' ' + className : ''}`;
 
 	return (
-		<div className={itemClassName}><Link to={to}>{linkText}</Link></div>
+		<Link to={to}><div className={itemClassName}>{linkText}</div></Link>
 	);
 };
 
