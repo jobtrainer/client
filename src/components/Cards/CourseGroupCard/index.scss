@@ -1,0 +1,13 @@
+.course {
+	display: flex;
+
+	.course_title {
+		line-height: 30px;
+		margin: 0 5px;
+	}
+	.course_status {
+		width: 30px;
+		height: 30px;
+		display: inline-block;
+	}
+}

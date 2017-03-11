@@ -1,7 +1,7 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('react'), require('Immutable')) :
-	typeof define === 'function' && define.amd ? define(['react', 'Immutable'], factory) :
-	(factory(global.React,global.Immutable));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('react'), require('Immutable')) :
+    typeof define === 'function' && define.amd ? define(['react', 'Immutable'], factory) :
+    (factory(global.React,global.Immutable));
 }(this, (function (React$1,Immutable) { 'use strict';
 
 function __$styleInject(css, returnValue) {
@@ -20,7 +20,6 @@ function __$styleInject(css, returnValue) {
   head.appendChild(style);
   return returnValue;
 }
-
 var React$1__default = 'default' in React$1 ? React$1['default'] : React$1;
 
 /**
@@ -868,7 +867,7 @@ function makeEmptyFunction(arg) {
  * primarily useful idiomatically for overridable function endpoints which
  * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
  */
-var emptyFunction$1 = function emptyFunction() {};
+var emptyFunction$1 = function emptyFunction$1() {};
 
 emptyFunction$1.thatReturns = makeEmptyFunction;
 emptyFunction$1.thatReturnsFalse = makeEmptyFunction(false);
@@ -916,7 +915,7 @@ var warning$3 = emptyFunction;
       } catch (x) {}
     };
 
-    warning$3 = function warning(condition, format) {
+    warning$3 = function warning$3(condition, format) {
       if (format === undefined) {
         throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
       }
@@ -3097,7 +3096,7 @@ function describeComponentFrame(name, source, ownerName) {
   return '\n    in ' + (name || 'Unknown') + (source ? ' (at ' + source.fileName.replace(/^.*[\\\/]/, '') + ':' + source.lineNumber + ')' : ownerName ? ' (created by ' + ownerName + ')' : '');
 }
 
-function getDisplayName(element) {
+function getDisplayName$1(element) {
   if (element == null) {
     return '#empty';
   } else if (typeof element === 'string' || typeof element === 'number') {
@@ -3215,7 +3214,7 @@ var ReactComponentTreeHook$1 = {
   getCurrentStackAddendum: function (topElement) {
     var info = '';
     if (topElement) {
-      var name = getDisplayName(topElement);
+      var name = getDisplayName$1(topElement);
       var owner = topElement._owner;
       info += describeComponentFrame(name, topElement._source, owner && owner.getName());
     }
@@ -3243,7 +3242,7 @@ var ReactComponentTreeHook$1 = {
     if (!element) {
       return null;
     }
-    return getDisplayName(element);
+    return getDisplayName$1(element);
   },
   getElement: function (id) {
     var item = getItem(id);
@@ -3308,11 +3307,11 @@ var performanceNow$1;
  * because of Facebook's testing infrastructure.
  */
 if (performance$1.now) {
-  performanceNow$1 = function performanceNow() {
+  performanceNow$1 = function performanceNow$1() {
     return performance$1.now();
   };
 } else {
-  performanceNow$1 = function performanceNow() {
+  performanceNow$1 = function performanceNow$1() {
     return Date.now();
   };
 }
@@ -10130,13 +10129,13 @@ var ReactVersion$1 = ReactVersion$2;
 var onlyChild = onlyChild_1;
 var warning$15 = warning_1;
 
-var createElement$1 = ReactElement.createElement;
+var createElement$2 = ReactElement.createElement;
 var createFactory = ReactElement.createFactory;
 var cloneElement = ReactElement.cloneElement;
 
 {
   var ReactElementValidator = ReactElementValidator_1;
-  createElement$1 = ReactElementValidator.createElement;
+  createElement$2 = ReactElementValidator.createElement;
   createFactory = ReactElementValidator.createFactory;
   cloneElement = ReactElementValidator.cloneElement;
 }
@@ -10167,7 +10166,7 @@ var React$3 = {
   Component: ReactComponent,
   PureComponent: ReactPureComponent,
 
-  createElement: createElement$1,
+  createElement: createElement$2,
   cloneElement: cloneElement,
   isValidElement: ReactElement.isValidElement,
 
@@ -12977,7 +12976,7 @@ function makeTextContent(textContent) {
  * Push an update, if any, onto the queue. Creates a new queue if none is
  * passed and always returns the queue. Mutative.
  */
-function enqueue(queue, update) {
+function enqueue$1(queue, update) {
   if (update) {
     queue = queue || [];
     queue.push(update);
@@ -13186,7 +13185,7 @@ var ReactMultiChild$1 = {
         var prevChild = prevChildren && prevChildren[name];
         var nextChild = nextChildren[name];
         if (prevChild === nextChild) {
-          updates = enqueue(updates, this.moveChild(prevChild, lastPlacedNode, nextIndex, lastIndex));
+          updates = enqueue$1(updates, this.moveChild(prevChild, lastPlacedNode, nextIndex, lastIndex));
           lastIndex = Math.max(prevChild._mountIndex, lastIndex);
           prevChild._mountIndex = nextIndex;
         } else {
@@ -13196,7 +13195,7 @@ var ReactMultiChild$1 = {
             // The `removedNodes` loop below will actually remove the child.
           }
           // The child must be instantiated before it's mounted.
-          updates = enqueue(updates, this._mountChildAtIndex(nextChild, mountImages[nextMountIndex], lastPlacedNode, nextIndex, transaction, context));
+          updates = enqueue$1(updates, this._mountChildAtIndex(nextChild, mountImages[nextMountIndex], lastPlacedNode, nextIndex, transaction, context));
           nextMountIndex++;
         }
         nextIndex++;
@@ -13205,7 +13204,7 @@ var ReactMultiChild$1 = {
       // Remove children that are no longer present.
       for (name in removedNodes) {
         if (removedNodes.hasOwnProperty(name)) {
-          updates = enqueue(updates, this._unmountChild(prevChildren[name], removedNodes[name]));
+          updates = enqueue$1(updates, this._unmountChild(prevChildren[name], removedNodes[name]));
         }
       }
       if (updates) {
@@ -19609,6 +19608,71 @@ function warning$42(message) {
   /* eslint-enable no-empty */
 }
 
+function getUndefinedStateErrorMessage(key, action) {
+  var actionType = action && action.type;
+  var actionName = actionType && '"' + actionType.toString() + '"' || 'an action';
+
+  return 'Given action ' + actionName + ', reducer "' + key + '" returned undefined. ' + 'To ignore an action, you must explicitly return the previous state.';
+}
+
+function getUnexpectedStateShapeWarningMessage(inputState, reducers, action, unexpectedKeyCache) {
+  var reducerKeys = Object.keys(reducers);
+  var argumentName = action && action.type === ActionTypes.INIT ? 'preloadedState argument passed to createStore' : 'previous state received by the reducer';
+
+  if (reducerKeys.length === 0) {
+    return 'Store does not have a valid reducer. Make sure the argument passed ' + 'to combineReducers is an object whose values are reducers.';
+  }
+
+  if (!isPlainObject(inputState)) {
+    return 'The ' + argumentName + ' has unexpected type of "' + {}.toString.call(inputState).match(/\s([a-z|A-Z]+)/)[1] + '". Expected argument to be an object with the following ' + ('keys: "' + reducerKeys.join('", "') + '"');
+  }
+
+  var unexpectedKeys = Object.keys(inputState).filter(function (key) {
+    return !reducers.hasOwnProperty(key) && !unexpectedKeyCache[key];
+  });
+
+  unexpectedKeys.forEach(function (key) {
+    unexpectedKeyCache[key] = true;
+  });
+
+  if (unexpectedKeys.length > 0) {
+    return 'Unexpected ' + (unexpectedKeys.length > 1 ? 'keys' : 'key') + ' ' + ('"' + unexpectedKeys.join('", "') + '" found in ' + argumentName + '. ') + 'Expected to find one of the known reducer keys instead: ' + ('"' + reducerKeys.join('", "') + '". Unexpected keys will be ignored.');
+  }
+}
+
+function assertReducerSanity(reducers) {
+  Object.keys(reducers).forEach(function (key) {
+    var reducer = reducers[key];
+    var initialState = reducer(undefined, { type: ActionTypes.INIT });
+
+    if (typeof initialState === 'undefined') {
+      throw new Error('Reducer "' + key + '" returned undefined during initialization. ' + 'If the state passed to the reducer is undefined, you must ' + 'explicitly return the initial state. The initial state may ' + 'not be undefined.');
+    }
+
+    var type = '@@redux/PROBE_UNKNOWN_ACTION_' + Math.random().toString(36).substring(7).split('').join('.');
+    if (typeof reducer(undefined, { type: type }) === 'undefined') {
+      throw new Error('Reducer "' + key + '" returned undefined when probed with a random type. ' + ('Don\'t try to handle ' + ActionTypes.INIT + ' or other actions in "redux/*" ') + 'namespace. They are considered private. Instead, you must return the ' + 'current state for any unknown actions, unless it is undefined, ' + 'in which case you must return the initial state, regardless of the ' + 'action type. The initial state may not be undefined.');
+    }
+  });
+}
+
+/**
+ * Turns an object whose values are different reducer functions, into a single
+ * reducer function. It will call every child reducer, and gather their results
+ * into a single state object, whose keys correspond to the keys of the passed
+ * reducer functions.
+ *
+ * @param {Object} reducers An object whose values correspond to different
+ * reducer functions that need to be combined into one. One handy way to obtain
+ * it is to use ES6 `import * as reducers` syntax. The reducers may never return
+ * undefined for any action. Instead, they should return their initial state
+ * if the state passed to them was undefined, and the current state for any
+ * unrecognized action.
+ *
+ * @returns {Function} A reducer function that invokes every reducer inside the
+ * passed object, and builds a state object with the same shape.
+ */
+
 function bindActionCreator(actionCreator, dispatch) {
   return function () {
     return dispatch(actionCreator.apply(undefined, arguments));
@@ -19667,6 +19731,32 @@ function bindActionCreators(actionCreators, dispatch) {
  * from right to left. For example, compose(f, g, h) is identical to doing
  * (...args) => f(g(h(...args))).
  */
+
+function compose() {
+  for (var _len = arguments.length, funcs = Array(_len), _key = 0; _key < _len; _key++) {
+    funcs[_key] = arguments[_key];
+  }
+
+  if (funcs.length === 0) {
+    return function (arg) {
+      return arg;
+    };
+  }
+
+  if (funcs.length === 1) {
+    return funcs[0];
+  }
+
+  var last = funcs[funcs.length - 1];
+  var rest = funcs.slice(0, -1);
+  return function () {
+    return rest.reduceRight(function (composed, f) {
+      return f(composed);
+    }, last.apply(undefined, arguments));
+  };
+}
+
+var _extends$2 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 function isCrushed() {}
 
@@ -20015,7 +20105,7 @@ function createConnect() {
   };
 }
 
-var connect = createConnect();
+var connect$1 = createConnect();
 
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -20798,7 +20888,7 @@ function createRoute(defaultProps, props) {
   return _extends$7({}, defaultProps, props);
 }
 
-function createRouteFromReactElement(element) {
+function createRouteFromReactElement$1(element) {
   var type = element.type;
   var route = createRoute(type.defaultProps, element.props);
 
@@ -20841,7 +20931,7 @@ function createRoutesFromReactChildren(children, parentRoute) {
 
         if (route) routes.push(route);
       } else {
-        routes.push(createRouteFromReactElement(element));
+        routes.push(createRouteFromReactElement$1(element));
       }
     }
   });
@@ -21114,7 +21204,7 @@ function hasAnyProperties(object) {
   }return false;
 }
 
-function createTransitionManager(history, routes) {
+function createTransitionManager$1(history, routes) {
   var state = {};
 
   // Signature should be (location, indexOnly), but needs to support (path,
@@ -21546,7 +21636,7 @@ var RouterContext = React$1__default.createClass({
       router: this.props.router
     };
   },
-  createElement: function createElement$$1(component, props) {
+  createElement: function createElement(component, props) {
     return component == null ? null : this.props.createElement(component, props);
   },
   render: function render() {
@@ -21612,7 +21702,7 @@ var RouterContext = React$1__default.createClass({
 
 var _extends$9 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-function createRouterObject(history, transitionManager, state) {
+function createRouterObject$1(history, transitionManager, state) {
   var router = _extends$9({}, history, {
     setRouteLeaveHook: transitionManager.listenBeforeLeavingRoute,
     isActive: transitionManager.isActive
@@ -21687,7 +21777,7 @@ var Router = React$1__default.createClass({
       throw error; // This error probably occurred in getChildRoutes or getComponents.
     }
   },
-  createRouterObject: function createRouterObject$$1(state) {
+  createRouterObject: function createRouterObject(state) {
     var matchContext = this.props.matchContext;
 
     if (matchContext) {
@@ -21696,9 +21786,9 @@ var Router = React$1__default.createClass({
 
     var history$$1 = this.props.history;
 
-    return createRouterObject(history$$1, this.transitionManager, state);
+    return createRouterObject$1(history$$1, this.transitionManager, state);
   },
-  createTransitionManager: function createTransitionManager$$1() {
+  createTransitionManager: function createTransitionManager() {
     var matchContext = this.props.matchContext;
 
     if (matchContext) {
@@ -21713,7 +21803,7 @@ var Router = React$1__default.createClass({
 
     !history$$1.getCurrentLocation ? invariant_1$2(false, 'You have provided a history object created with history v4.x or v2.x ' + 'and earlier. This version of React Router is only compatible with v3 ' + 'history objects. Please change to history v3.x.') : void 0;
 
-    return createTransitionManager(history$$1, createRoutes(routes$$1 || children));
+    return createTransitionManager$1(history$$1, createRoutes(routes$$1 || children));
   },
   componentWillMount: function componentWillMount() {
     var _this = this;
@@ -21751,7 +21841,7 @@ var Router = React$1__default.createClass({
         components$$1 = _state.components;
 
     var _props2 = this.props,
-        createElement$$1 = _props2.createElement,
+        createElement = _props2.createElement,
         render = _props2.render,
         props = _objectWithoutProperties$3(_props2, ['createElement', 'render']);
 
@@ -21769,7 +21859,7 @@ var Router = React$1__default.createClass({
       routes: routes$$1,
       params: params,
       components: components$$1,
-      createElement: createElement$$1
+      createElement: createElement
     }));
   }
 });
@@ -21945,6 +22035,12 @@ var IndexLink = React$1__default.createClass({
   }
 });
 
+var _extends$12 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function getDisplayName$2(WrappedComponent) {
+  return WrappedComponent.displayName || WrappedComponent.name || 'Component';
+}
+
 var _React$PropTypes$4 = React$1__default.PropTypes;
 var string$4 = _React$PropTypes$4.string;
 var object$6 = _React$PropTypes$4.object;
@@ -21963,8 +22059,8 @@ var Redirect = React$1__default.createClass({
 
 
   statics: {
-    createRouteFromReactElement: function createRouteFromReactElement$$1(element) {
-      var route$$1 = createRouteFromReactElement(element);
+    createRouteFromReactElement: function createRouteFromReactElement(element) {
+      var route$$1 = createRouteFromReactElement$1(element);
 
       if (route$$1.from) route$$1.path = route$$1.from;
 
@@ -22077,10 +22173,10 @@ var IndexRoute = React$1__default.createClass({
 
 
   statics: {
-    createRouteFromReactElement: function createRouteFromReactElement$$1(element, parentRoute) {
+    createRouteFromReactElement: function createRouteFromReactElement(element, parentRoute) {
       /* istanbul ignore else: sanity check */
       if (parentRoute) {
-        parentRoute.indexRoute = createRouteFromReactElement(element);
+        parentRoute.indexRoute = createRouteFromReactElement$1(element);
       } else {
         routerWarning(false, 'An <IndexRoute> does not make sense at the root of your route config');
       }
@@ -22122,7 +22218,7 @@ var Route = React$1__default.createClass({
 
 
   statics: {
-    createRouteFromReactElement: createRouteFromReactElement
+    createRouteFromReactElement: createRouteFromReactElement$1
   },
 
   propTypes: {
@@ -22163,6 +22259,8 @@ var REPLACE = exports.REPLACE = 'REPLACE';
  */
 var POP = exports.POP = 'POP';
 });
+
+var Actions_2 = Actions.REPLACE;
 
 var index$9 = function (str) {
 	return encodeURIComponent(str).replace(/[!'()*]/g, function (c) {
@@ -23225,12 +23323,32 @@ var createMemoryHistory = function createMemoryHistory() {
 exports.default = createMemoryHistory;
 });
 
+var baseCreateMemoryHistory = unwrapExports(createMemoryHistory_1);
+
+function createMemoryHistory(options) {
+  // signatures and type checking differ between `useQueries` and
+  // `createMemoryHistory`, have to create `memoryHistory` first because
+  // `useQueries` doesn't understand the signature
+  var memoryHistory = baseCreateMemoryHistory(options);
+  var createHistory = function createHistory() {
+    return memoryHistory;
+  };
+  var history = useQueries(useBasename(createHistory))(options);
+  return history;
+}
+
+var _extends$13 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _objectWithoutProperties$5(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 function useRouterHistory(createHistory) {
   return function (options) {
     var history = useQueries(useBasename(createHistory))(options);
     return history;
   };
 }
+
+var _extends$14 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var ExecutionEnvironment$18 = createCommonjsModule(function (module, exports) {
 'use strict';
@@ -23941,20 +24059,20 @@ var App = (function (superclass) {
 
 	App.prototype.render = function render () {
 		return (
-			React$1__default.createElement( 'div', { className: "application" },
-				React$1__default.createElement( 'div', { className: "header" },
-					React$1__default.createElement( 'div', { className: "logo" },
-						React$1__default.createElement( 'img', { className: "logo_image", src: "https://cdn1.iconfinder.com/data/icons/mix-color-3/502/Untitled-35-512.png" }),
+			React$1__default.createElement( 'div', { className: "application" }, 
+				React$1__default.createElement( 'div', { className: "header" }, 
+					React$1__default.createElement( 'div', { className: "logo" }, 
+						React$1__default.createElement( 'img', { className: "logo_image", src: "https://cdn1.iconfinder.com/data/icons/mix-color-3/502/Untitled-35-512.png" }), 
 						React$1__default.createElement( 'span', { className: "company_name" }, "jobTrainer")
-					),
-					React$1__default.createElement( 'div', { className: "navigation" },
-						React$1__default.createElement( NavigationLink, { to: "/", linkText: "Main" }),
+					), 
+					React$1__default.createElement( 'div', { className: "navigation" }, 
+						React$1__default.createElement( NavigationLink, { to: "/", linkText: "Main" }), 
 						React$1__default.createElement( NavigationLink, { to: "/login", linkText: "Login", className: "login_navigation" })
 					)
-				),
-				React$1__default.createElement( 'div', { className: "content" },
+				), 
+				React$1__default.createElement( 'div', { className: "content" }, 
 					this.props.children
-				),
+				), 
 				React$1__default.createElement( 'div', { className: "footer" }, "This is the footer")
 			)
 		)
@@ -23972,8 +24090,8 @@ var InputGroup = function (ref) {
 	var onChange = ref.onChange;
 
 	return (
-		React.createElement( 'div', { className: "input_group" },
-			React.createElement( 'label', { htmlFor: inputName }, labelText, ":"),
+		React.createElement( 'div', { className: "input_group" }, 
+			React.createElement( 'label', { htmlFor: inputName }, labelText, ":"), 
 			React.createElement( 'input', { id: inputName, type: inputType, className: "text_field", onChange: onChange })
 		)
 	);
@@ -24024,11 +24142,11 @@ var Login = (function (superclass) {
 	
 	Login.prototype.render = function render () {
 		return (
-			React$1__default.createElement( 'div', { className: "login_page" },
-				React$1__default.createElement( 'div', { className: "login_container" },
-					React$1__default.createElement( 'h1', { className: "title" }, "Login"),
-					React$1__default.createElement( 'form', { onSubmit: this.handleLoginSubmit.bind(this) },
-						React$1__default.createElement( InputGroup, { labelText: "Username", inputName: "username", inputType: "text", onChange: this.handleUsernameChange.bind(this) }),
+			React$1__default.createElement( 'div', { className: "login_page" }, 
+				React$1__default.createElement( 'div', { className: "login_container" }, 
+					React$1__default.createElement( 'h1', { className: "title" }, "Login"), 
+					React$1__default.createElement( 'form', { onSubmit: this.handleLoginSubmit.bind(this) }, 
+						React$1__default.createElement( InputGroup, { labelText: "Username", inputName: "username", inputType: "text", onChange: this.handleUsernameChange.bind(this) }), 
 						React$1__default.createElement( InputGroup, { labelText: "Password", inputName: "password", inputType: "password", onChange: this.handlePasswordChange.bind(this) }), 						
 						React$1__default.createElement( MainButton, { buttonText: "Login", isSubmit: true, isDisabled: false })
 					)
@@ -24042,17 +24160,48 @@ var Login = (function (superclass) {
 
 var COURSE_STATUS_PENDING = 'pending';
 var COURSE_STATUS_IN_PROGRESS = 'in-progress';
-var COURSE_STATUS_FINISHED = 'finished';
+var COURSE_STATUS_COMPLETE = 'complete';
 
 var COURSE_STATUSES = [
 	COURSE_STATUS_PENDING,
 	COURSE_STATUS_IN_PROGRESS,
-	COURSE_STATUS_FINISHED ];
+	COURSE_STATUS_COMPLETE ];
 
-__$styleInject("",undefined);
+__$styleInject(".course{display:flex}.course .course_title{line-height:30px;margin:0 5px}.course .course_status{width:30px;height:30px;display:inline-block}",undefined);
+
+__$styleInject(".card_container{width:300px;height:350px;margin:10px;padding:10px;display:inline-block;box-shadow:0 0 3px 1px rgba(0,0,0,.3);text-align:center;background:#fff}",undefined);
+
+function Card(ref) {
+    var className = ref.className; if ( className === void 0 ) className = '';
+    var children = ref.children;
+
+    return (
+        React.createElement( 'div', { className: ("card_container " + className) }, children)
+    );
+}
+
+var MAP_STATUS_TO_IMAGE = {
+	'pending': 'https://d30y9cdsu7xlg0.cloudfront.net/png/99629-200.png',
+	'in-progress': 'https://d30y9cdsu7xlg0.cloudfront.net/png/99629-200.png',
+	'complete': 'https://image.flaticon.com/icons/png/128/148/148767.png'
+};
+
+var StatusIcon = function (ref) {
+	var status = ref.status;
+	var className = ref.className; if ( className === void 0 ) className = '';
+
+	var statusImage = MAP_STATUS_TO_IMAGE[status];
+
+	return (
+		React.createElement( 'img', { className: className, src: statusImage })
+	);
+};
+
+StatusIcon.PropTypes = {
+	status: React.PropTypes.string
+};
 
 var CourseGroupCard = function (ref) {
-	var title = ref.title;
 	var courses = ref.courses;
 
 	var activeCourses = courses.filter(function (course) {
@@ -24060,19 +24209,21 @@ var CourseGroupCard = function (ref) {
 	});
 
 	var currentCourse = activeCourses.length === 0 ? courses[0] : activeCourses[0];
-	
+
 	var leftCourses = courses.filter(function (course) {
 		return currentCourse.id !== course.id;
 	});
 
 	var coursesContent = leftCourses.map(function (course) {
-		return React.createElement( 'div', { className: "course" }, course.status, " - ", course.title)
+		return (
+			React.createElement( 'div', { className: "course" }, 
+				React.createElement( StatusIcon, { status: course.status, className: "course_status" }), 
+				React.createElement( 'span', { className: "course_title" }, " - ", course.title)
+			));
 	});
 
 	return (
-<<<<<<< HEAD
-		React.createElement( 'div', { className: "course_group_card" }, 
-			React.createElement( 'div', { className: "course_group_header" }, title), 
+		React.createElement( Card, { className: "course_group_card" }, 
 			React.createElement( 'div', { className: "current_course" }, 
 				React.createElement( 'div', { className: ("course_status course_status_" + (currentCourse.status)) }), 
 				React.createElement( 'div', { className: 'course_title' }, currentCourse.title), 
@@ -24080,19 +24231,12 @@ var CourseGroupCard = function (ref) {
 			), 
 			React.createElement( 'div', { className: "course_group_dependencies" }, 
 				coursesContent
-=======
-		React.createElement( 'div', { className: "course_group_card" },
-			React.createElement( 'div', { className: "course_group_header" }, title),
-			React.createElement( 'div', { className: "active_course" }),
-			React.createElement( 'div', { className: "course_group_dependencies" }
->>>>>>> d2eb17b845ed1ba836e9fee8091d8f49f689972c
 			)
 		)
 	);
 };
-
+// asd sdasd   
 CourseGroupCard.PropTypes = {
-	title: React.PropTypes.string,
 	courses: React.PropTypes.arrayOf(React.PropTypes.shape({
 		id: React.PropTypes.string,
 		title: React.PropTypes.string,
@@ -24104,17 +24248,6 @@ CourseGroupCard.PropTypes = {
 
 __$styleInject(".main_page_container h1{color:#666e77}",undefined);
 
-__$styleInject(".card_container{width:300px;height:350px;margin:10px;padding:10px;display:inline-block;box-shadow:0 0 3px 1px rgba(0,0,0,.3);text-align:center;background:#fff}",undefined);
-
-function Card(ref) {
-    var className = ref.className;
-    var children = ref.children;
-
-    return (
-        React.createElement( 'div', { className: ("card_container " + className) }, children)
-    );
-}
-
 __$styleInject(".domain_container .domain_image{height:150px;filter:grayscale(100%)}.domain_container .course_title{font-size:1.5em}.domain_container:hover{box-shadow:0 0 3px 1px rgba(0,0,0,.1);cursor:pointer}.domain_container:hover .domain_image{filter:none}",undefined);
 
 function DomainCard(ref) {
@@ -24124,9 +24257,9 @@ function DomainCard(ref) {
     var imageUrl = ref.imageUrl;
 
     return (
-        React.createElement( Card, { className: "domain_container" },
-            React.createElement( 'img', { className: "domain_image", src: imageUrl }),
-            React.createElement( 'h5', { className: "domain_title" }, title),
+        React.createElement( Card, { className: "domain_container" }, 
+            React.createElement( 'img', { className: "domain_image", src: imageUrl }), 
+            React.createElement( 'h5', { className: "domain_title" }, title), 
             React.createElement( 'span', { className: "domain_description" }, description)
         )
     );
@@ -24159,7 +24292,6 @@ var MainPage = (function (superclass) {
     if ( superclass ) MainPage.__proto__ = superclass;
     MainPage.prototype = Object.create( superclass && superclass.prototype );
     MainPage.prototype.constructor = MainPage;
-<<<<<<< HEAD
     
     MainPage.prototype.renderSingleCourse = function renderSingleCourse (ref) {
         var id = ref.id;
@@ -24175,8 +24307,6 @@ var MainPage = (function (superclass) {
             )
         )
     };
-=======
->>>>>>> d2eb17b845ed1ba836e9fee8091d8f49f689972c
 
     MainPage.prototype.render = function render () {
         var coursesElements = this.props.courses.map(function (ref) {
@@ -24188,7 +24318,6 @@ var MainPage = (function (superclass) {
                     return React$1__default.createElement( DomainCard, { key: id, id: id, title: title, description: description, imageUrl: imageUrl });
         });
         return (
-<<<<<<< HEAD
             React$1__default.createElement( 'div', { className: "page main_page_container" }, 
                 React$1__default.createElement( 'h1', null, "JobTrainer" ), 
                 React$1__default.createElement( 'span', null, "Trainer for new jobs" ), 
@@ -24196,15 +24325,6 @@ var MainPage = (function (superclass) {
                 React$1__default.createElement( 'h3', null, "Courses" ), 
                 coursesElements, 
                 React$1__default.createElement( CourseGroupCard, { title: "hello world", courses: this.courses })
-=======
-            React$1__default.createElement( 'div', { className: "page main_page_container" },
-                React$1__default.createElement( 'h1', null, "JobTrainer" ),
-                React$1__default.createElement( 'span', null, "Trainer for new jobs" ),
-                React$1__default.createElement( 'hr', null ),
-                React$1__default.createElement( 'h3', null, "Courses" ),
-                coursesElements,
-                React$1__default.createElement( CourseGroupCard, { title: "hello world" })
->>>>>>> d2eb17b845ed1ba836e9fee8091d8f49f689972c
             )
         )
     };
@@ -24223,7 +24343,7 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-var MainPage$1 = connect(mapStateToProps, mapDispatchToProps)(MainPage);
+var MainPage$1 = connect$1(mapStateToProps, mapDispatchToProps)(MainPage);
 
 var SET_INITIAL_DATA_ACTION = "SET_INITIAL_DATA_ACTION";
 var SET_VALUE_ACTION = "SET_VALUE_ACTION";
@@ -24294,10 +24414,10 @@ store.dispatch(setValueAction("courses", [
     ]));
  
 index.render(
-    React$1__default.createElement( Provider, { store: store },
-        React$1__default.createElement( Router, { history: browserHistory },
-            React$1__default.createElement( Route, { path: "/", component: App },
-                React$1__default.createElement( IndexRoute, { component: MainPage$1 }),
+    React$1__default.createElement( Provider, { store: store }, 
+        React$1__default.createElement( Router, { history: browserHistory }, 
+            React$1__default.createElement( Route, { path: "/", component: App }, 
+                React$1__default.createElement( IndexRoute, { component: MainPage$1 }), 
                 React$1__default.createElement( Route, { path: "login", component: Login })
             )
         )
