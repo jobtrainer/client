@@ -13,3 +13,8 @@ Client project for job training application
 * build - where the magic transformes to a cool application
 
 * index.js - where the magic begins
+
+### Structure
+* Domains
+** Courses
+*** Steps

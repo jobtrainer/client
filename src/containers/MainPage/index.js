@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import CourseGroupCard from "../../components/Cards/CourseGroupCard";
 
 import "./index.scss";
 import DomainCard from "../../components/Cards/DomainCard";
@@ -15,6 +16,7 @@ class MainPage extends React.Component {
                 <hr/>
                 <h3>Courses</h3>
                 {coursesElements}
+                <CourseGroupCard title="hello world"/>
             </div>
         )
     }
