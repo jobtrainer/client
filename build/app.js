@@ -23924,11 +23924,11 @@ var NavigationLink = function (ref) {
 	var itemClassName = "navigation_item" + (className ? ' ' + className : '');
 
 	return (
-		React.createElement( 'div', { className: itemClassName }, React.createElement( Link, { to: to }, linkText))
+		React.createElement( Link, { to: to }, React.createElement( 'div', { className: itemClassName }, linkText))
 	);
 };
 
-__$styleInject("body{margin:0;padding:0;overflow:hidden;@import url(\"https://fonts.googleapis.com/css?family=Roboto\");font-family:Roboto,sans-serif}.application .header{position:relative;width:100%;height:50px;padding:10px;z-index:1;display:flex;background-color:#fff;box-shadow:0 5px 11px 4px rgba(0,0,0,.03)}.application .header .logo{height:100%;display:flex;align-items:center}.application .header .logo .logo_image{max-width:100%;max-height:100%}.application .header .logo .company_name{display:inline-block;margin:0 15px}.application .header .navigation{display:flex;align-items:center}.application .header .navigation .login_navigation{position:absolute;right:30px}.application .content{position:fixed;height:100%;width:100%}.application .content .page{padding:20px;background-color:#f9f9f9;height:100%;width:100%}",undefined);
+__$styleInject("body{margin:0;padding:0;overflow:hidden;@import url(\"https://fonts.googleapis.com/css?family=Roboto\");font-family:Roboto,sans-serif}.application .header{position:relative;width:100%;height:50px;padding:10px;z-index:1;display:flex;background-color:#fff;box-shadow:0 5px 11px 4px rgba(0,0,0,.03)}.application .header .logo{height:100%;display:flex;align-items:center}.application .header .logo .logo_image{max-width:100%;max-height:100%}.application .header .logo .company_name{display:inline-block;margin:0 15px}.application .header .navigation .login_navigation{position:absolute;right:30px}.application .content{position:fixed;height:100%;width:100%}.application .content .page{padding:20px;background-color:#f9f9f9;height:100%;width:100%}",undefined);
 
 var App = (function (superclass) {
 	function App () {
@@ -24043,7 +24043,35 @@ var Login = (function (superclass) {
 	return Login;
 }(React$1__default.Component));
 
-__$styleInject(".main_page_container h1{color:#666e77}.main_page_container .course_container{width:300px;height:350px;margin:10px;padding:10px;display:inline-block;box-shadow:0 0 3px 1px rgba(0,0,0,.3);text-align:center}.main_page_container .course_container .course_image{height:150px;filter:grayscale(100%)}.main_page_container .course_container .course_title{font-size:1.5em}.main_page_container .course_container:hover{box-shadow:0 0 3px 1px rgba(0,0,0,.1);background:#fff;cursor:pointer}.main_page_container .course_container:hover .course_image{filter:none}",undefined);
+__$styleInject(".main_page_container h1{color:#666e77}",undefined);
+
+__$styleInject(".card_container{width:300px;height:350px;margin:10px;padding:10px;display:inline-block;box-shadow:0 0 3px 1px rgba(0,0,0,.3);text-align:center;background:#fff}",undefined);
+
+function Card(ref) {
+    var className = ref.className;
+    var children = ref.children;
+
+    return (
+        React.createElement( 'div', { className: ("card_container " + className) }, children)
+    );
+}
+
+__$styleInject(".domain_container .domain_image{height:150px;filter:grayscale(100%)}.domain_container .course_title{font-size:1.5em}.domain_container:hover{box-shadow:0 0 3px 1px rgba(0,0,0,.1);cursor:pointer}.domain_container:hover .domain_image{filter:none}",undefined);
+
+function DomainCard(ref) {
+    var id = ref.id;
+    var title = ref.title;
+    var description = ref.description;
+    var imageUrl = ref.imageUrl;
+
+    return (
+        React.createElement( Card, { className: "domain_container" },
+            React.createElement( 'img', { className: "domain_image", src: imageUrl }),
+            React.createElement( 'h5', { className: "domain_title" }, title),
+            React.createElement( 'span', { className: "domain_description" }, description)
+        )
+    );
+}
 
 var MainPage = (function (superclass) {
     function MainPage () {
@@ -24054,25 +24082,15 @@ var MainPage = (function (superclass) {
     MainPage.prototype = Object.create( superclass && superclass.prototype );
     MainPage.prototype.constructor = MainPage;
 
-    MainPage.prototype.renderSingleCourse = function renderSingleCourse (ref) {
-        var id = ref.id;
-        var title = ref.title;
-        var description = ref.description;
-        var imageUrl = ref.imageUrl;
-
-        return (
-            React$1__default.createElement( 'div', { key: id, id: id, className: "course_container", key: id },
-                React$1__default.createElement( 'img', { className: "course_image", src: imageUrl }),
-                React$1__default.createElement( 'h5', { className: "course_title" }, title),
-                React$1__default.createElement( 'span', { className: "course_description" }, description)
-            )
-        )
-    };
-
     MainPage.prototype.render = function render () {
-        var this$1 = this;
+        var coursesElements = this.props.courses.map(function (ref) {
+                    var id = ref.id;
+                    var title = ref.title;
+                    var description = ref.description;
+                    var imageUrl = ref.imageUrl;
 
-        var coursesElements = this.props.courses.map(function (curr) { return this$1.renderSingleCourse(curr); });
+                    return React$1__default.createElement( DomainCard, { key: id, id: id, title: title, description: description, imageUrl: imageUrl });
+        });
         return (
             React$1__default.createElement( 'div', { className: "page main_page_container" },
                 React$1__default.createElement( 'h1', null, "JobTrainer" ),
