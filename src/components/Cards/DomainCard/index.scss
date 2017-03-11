@@ -1,15 +1,40 @@
+@import "../../../common/variables.scss";
+
 .domain_container {
+    padding: 0;
+    .domain_display_container {
+        height: 200px;
+        background: darken($main-title-color, 30%);
+        transition: background ease-in-out 0.1s;
+        color: white;
+        line-height: 200px;
+        font-size: 50px;
+    }
+
     .domain_image {
         height: 150px;
         filter: grayscale(100%);
     }
 
-    .course_title {
-        font-size: 1.5em;
+
+    .domain_details {
+        padding: 10px;
+        .domain_title {
+            font-size: 32px;
+            margin-top: 10px;
+        }
+
+        .domain_description {
+            text-align: left;
+        }
     }
 
     &:hover {
-        box-shadow: 0 0 3px 1px rgba(0,0,0,0.1);
+        box-shadow: 0 0 2px 1px rgba(0,0,0,.3);
+
+        .domain_display_container {
+            background: #2f4054;
+        }
         cursor: pointer;
 
         .domain_image {

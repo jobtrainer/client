@@ -5,7 +5,6 @@ $header-size: 50px;
 body {
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
 	
 	@import url('https://fonts.googleapis.com/css?family=Roboto');
 	font-family: 'Roboto', sans-serif;
@@ -49,9 +48,7 @@ body {
 	}
 
 	.content {
-		position: fixed;
-		height: 100%;
-		width: 100%;
+		display: inline;
 		.page {
 			padding: 20px;
 			background-color: $main-background-color;

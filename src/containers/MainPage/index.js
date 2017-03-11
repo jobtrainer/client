@@ -7,16 +7,15 @@ import DomainCard from "../../components/Cards/DomainCard";
 
 class MainPage extends React.Component {
     render() {
-        const coursesElements = this.props.courses.map(({id, title, description, imageUrl}) => 
+        const domainElements = this.props.courses.map(({id, title, description, imageUrl}) => 
                 <DomainCard key={id} id={id} title={title} description={description} imageUrl={imageUrl}></DomainCard>);
         return (
             <div className="page main_page_container">
                 <h1>JobTrainer</h1>
                 <span>Trainer for new jobs</span>
                 <hr/>
-                <h3>Courses</h3>
-                {coursesElements}
-                <CourseGroupCard title="hello world"/>
+                <h3>Domains</h3>
+                {domainElements}
             </div>
         )
     }
@@ -24,7 +23,7 @@ class MainPage extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        courses: state.get("courses")
+        courses: state.get("domains")
     };
 }
 

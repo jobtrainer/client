@@ -23928,7 +23928,7 @@ var NavigationLink = function (ref) {
 	);
 };
 
-__$styleInject("body{margin:0;padding:0;overflow:hidden;@import url(\"https://fonts.googleapis.com/css?family=Roboto\");font-family:Roboto,sans-serif}.application .header{position:relative;width:100%;height:50px;padding:10px;z-index:1;display:flex;background-color:#fff;box-shadow:0 5px 11px 4px rgba(0,0,0,.03)}.application .header .logo{height:100%;display:flex;align-items:center}.application .header .logo .logo_image{max-width:100%;max-height:100%}.application .header .logo .company_name{display:inline-block;margin:0 15px}.application .header .navigation .login_navigation{position:absolute;right:30px}.application .content{position:fixed;height:100%;width:100%}.application .content .page{padding:20px;background-color:#f9f9f9;height:100%;width:100%}",undefined);
+__$styleInject("body{margin:0;padding:0;@import url(\"https://fonts.googleapis.com/css?family=Roboto\");font-family:Roboto,sans-serif}.application .header{position:relative;width:100%;height:50px;padding:10px;z-index:1;display:flex;background-color:#fff;box-shadow:0 5px 11px 4px rgba(0,0,0,.03)}.application .header .logo{height:100%;display:flex;align-items:center}.application .header .logo .logo_image{max-width:100%;max-height:100%}.application .header .logo .company_name{display:inline-block;margin:0 15px}.application .header .navigation .login_navigation{position:absolute;right:30px}.application .content{display:inline}.application .content .page{padding:20px;background-color:#fdfdfd;height:100%;width:100%}",undefined);
 
 var App = (function (superclass) {
 	function App () {
@@ -23954,8 +23954,7 @@ var App = (function (superclass) {
 				),
 				React$1__default.createElement( 'div', { className: "content" },
 					this.props.children
-				),
-				React$1__default.createElement( 'div', { className: "footer" }, "This is the footer")
+				)
 			)
 		)
 	};
@@ -24076,9 +24075,9 @@ CourseGroupCard.PropTypes = {
 	}))
 };
 
-__$styleInject(".main_page_container h1{color:#666e77}",undefined);
+__$styleInject(".main_page_container h1{color:#666e77}.main_page_container hr{margin-right:40px}.main_page_container .domain_container{margin:20px}",undefined);
 
-__$styleInject(".card_container{width:300px;height:350px;margin:10px;padding:10px;display:inline-block;box-shadow:0 0 3px 1px rgba(0,0,0,.3);text-align:center;background:#fff}",undefined);
+__$styleInject(".card_container{width:300px;height:350px;margin:10px;padding:10px;display:inline-block;box-shadow:1px 2px 2px 1px rgba(0,0,0,.3);text-align:center;background:#fff}",undefined);
 
 function Card(ref) {
     var className = ref.className;
@@ -24089,7 +24088,7 @@ function Card(ref) {
     );
 }
 
-__$styleInject(".domain_container .domain_image{height:150px;filter:grayscale(100%)}.domain_container .course_title{font-size:1.5em}.domain_container:hover{box-shadow:0 0 3px 1px rgba(0,0,0,.1);cursor:pointer}.domain_container:hover .domain_image{filter:none}",undefined);
+__$styleInject(".domain_container{padding:0}.domain_container .domain_display_container{height:200px;background:#464c53;transition:background .1s ease-in-out;color:#fff;line-height:200px;font-size:50px}.domain_container .domain_image{height:150px;filter:grayscale(100%)}.domain_container .domain_details{padding:10px}.domain_container .domain_details .domain_title{font-size:32px;margin-top:10px}.domain_container .domain_details .domain_description{text-align:left}.domain_container:hover{box-shadow:0 0 2px 1px rgba(0,0,0,.3);cursor:pointer}.domain_container:hover .domain_display_container{background:#2f4054}.domain_container:hover .domain_image{filter:none}",undefined);
 
 function DomainCard(ref) {
     var id = ref.id;
@@ -24097,11 +24096,15 @@ function DomainCard(ref) {
     var description = ref.description;
     var imageUrl = ref.imageUrl;
 
+    var domainHeaderText = title.split('').filter(function (curr) { return curr.match(/[A-Z]/); }).join('');
     return (
-        React.createElement( Card, { className: "domain_container" },
-            React.createElement( 'img', { className: "domain_image", src: imageUrl }),
-            React.createElement( 'h5', { className: "domain_title" }, title),
-            React.createElement( 'span', { className: "domain_description" }, description)
+        React.createElement( Card, { className: "domain_container" }
+            /*<img className="domain_image" src={imageUrl} />*/,
+            React.createElement( 'div', { className: "domain_display_container" }, React.createElement( 'span', { className: "domain_display_title" }, domainHeaderText)),
+            React.createElement( 'div', { className: "domain_details" },
+                React.createElement( 'h5', { className: "domain_title" }, title),
+                React.createElement( 'div', { className: "domain_description" }, description)
+            )
         )
     );
 }
@@ -24116,7 +24119,7 @@ var MainPage = (function (superclass) {
     MainPage.prototype.constructor = MainPage;
 
     MainPage.prototype.render = function render () {
-        var coursesElements = this.props.courses.map(function (ref) {
+        var domainElements = this.props.courses.map(function (ref) {
                     var id = ref.id;
                     var title = ref.title;
                     var description = ref.description;
@@ -24129,9 +24132,8 @@ var MainPage = (function (superclass) {
                 React$1__default.createElement( 'h1', null, "JobTrainer" ),
                 React$1__default.createElement( 'span', null, "Trainer for new jobs" ),
                 React$1__default.createElement( 'hr', null ),
-                React$1__default.createElement( 'h3', null, "Courses" ),
-                coursesElements,
-                React$1__default.createElement( CourseGroupCard, { title: "hello world" })
+                React$1__default.createElement( 'h3', null, "Domains" ),
+                domainElements
             )
         )
     };
@@ -24141,7 +24143,7 @@ var MainPage = (function (superclass) {
 
 function mapStateToProps(state) {
     return {
-        courses: state.get("courses")
+        courses: state.get("domains")
     };
 }
 
@@ -24199,26 +24201,25 @@ function createAppStore() {
 
 var store = createAppStore();
 
-store.dispatch(setValueAction("courses", [
+store.dispatch(setValueAction("domains", [
         {
             id: "frontend",
             title: "FrondEnd",
-            description: "Front end courses",
+            description: "Learn all the Front end courses Learn all the Front end courses",
             imageUrl: "http://cdn.geekwire.com/wp-content/uploads/2015/06/code-fellows-shield1-265x300.png",
         },
         {
             id: "backend",
             title: "BackEnd",
-            description: "Back end courses",
+            description: "Learn all the Back end courses Learn all the Back end courses",
             imageUrl: "https://static1.squarespace.com/static/55e561fce4b0524376a841d3/t/56695b077086d7721f2803eb/1486577990855/Back+end+development+icon"
         },
         {
             id: "qa",
             title: "QA",
-            description: "QA courses",
+            description: "Learn all the QA courses Learn all the QA courses",
             imageUrl: "http://sgbmithaiwala.com/onewebstatic/9d2d18004d-QA-ICON-small.png"
-        }   
-    ]));
+        } ]));
  
 index.render(
     React$1__default.createElement( Provider, { store: store },
