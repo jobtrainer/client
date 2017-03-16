@@ -6,6 +6,7 @@ import App from "./containers/App";
 import Login from "./containers/Login";
 import MainPage from "./containers/MainPage";
 import Courses from "./containers/CoursesPage";
+import DomainPage from "./containers/DomainPage";
 
 import { createAppStore } from "./store";
 import { setValueAction } from "./reducers/commonDataReducer/actions";
@@ -21,6 +22,23 @@ store.dispatch(setValueAction("domains", [
             title: "FrondEnd",
             description: "Learn all the Front end courses Learn all the Front end courses",
             imageUrl: "http://cdn.geekwire.com/wp-content/uploads/2015/06/code-fellows-shield1-265x300.png",
+            courses: [
+                {
+                    id: "react", 
+                    title: "ReactJs",
+                    description: "Learn Reactjs",
+                },
+                {
+                    id: "ng", 
+                    title: "AngularJs",
+                    description: "Learn AngularJs",
+                },
+                {
+                    id: "vue", 
+                    title: "VueJs",
+                    description: "Learn VueJs",
+                }
+            ]
         },
         {
             id: "backend",
@@ -42,7 +60,7 @@ ReactDOM.render(
             <Route path="/" component={App}>
                 <IndexRoute component={MainPage}/>
                 <Route path="login" component={Login}/>
-                <Route path="courses" component={Courses}/>
+                <Route path=":domainId" component={DomainPage}/>
             </Route>
         </Router>
     </Provider>,

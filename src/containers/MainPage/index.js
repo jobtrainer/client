@@ -23,13 +23,8 @@ class MainPage extends React.Component {
                 <h1>JobTrainer</h1>
                 <span>Trainer for new jobs</span>
                 <hr/>
-<<<<<<< HEAD
                 <h3>Domains</h3>
                 {domainElements}
-=======
-                <h3>Courses</h3>
-                {coursesElements}
->>>>>>> d6e834c66155f2f3040ddce7f40a258ebd772482
             </div>
         )
     }
