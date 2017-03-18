@@ -4,8 +4,10 @@ import { Provider } from "react-redux";
 
 import App from "./containers/App";
 import Login from "./containers/Login";
+
 import MainPage from "./containers/MainPage";
 import Courses from "./containers/CoursesPage";
+import ScopePage from "./containers/ScopePage";
 
 import { createAppStore } from "./store";
 import { setValueAction } from "./reducers/commonDataReducer/actions";
@@ -15,12 +17,32 @@ import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router'
  
 const store = createAppStore();
 
-store.dispatch(setValueAction("domains", [
+store.dispatch(setValueAction("scopes", [
         {
             id: "frontend",
             title: "FrondEnd",
             description: "Learn all the Front end courses Learn all the Front end courses",
             imageUrl: "http://cdn.geekwire.com/wp-content/uploads/2015/06/code-fellows-shield1-265x300.png",
+            courses: [
+                {
+                    id: "react",
+                    title: "React",
+                    description: "This course teaches react, a ui library from Facebook",
+                    status: "pending",
+                },
+                {
+                    id: "angular",
+                    title: "Angular",
+                    description: "This course teaches angular, a ui library from Google",
+                    status: "pending",
+                },
+                {
+                    id: "vue",
+                    title: "Vue",
+                    description: "This course teaches vue, a ui library",
+                    status: "pending",
+                }
+            ]
         },
         {
             id: "backend",
@@ -41,8 +63,8 @@ ReactDOM.render(
         <Router history={browserHistory}>
             <Route path="/" component={App}>
                 <IndexRoute component={MainPage}/>
+                <Route path="/:scopeId" component={ScopePage}/>
                 <Route path="login" component={Login}/>
-                <Route path="courses" component={Courses}/>
             </Route>
         </Router>
     </Provider>,

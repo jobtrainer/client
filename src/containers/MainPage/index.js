@@ -1,35 +1,24 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router";
 
 import "./index.scss";
-import DomainCard from "../../components/Cards/DomainCard";
+import EntityCard from "../../components/Cards/EntityCard";
 
 class MainPage extends React.Component {
-    renderSingleCourse({id, title, description, imageUrl}) {
-        return (
-            <div key={id} id={id} className="course_container" key={id}>
-                <img className="course_image" src={imageUrl}/>
-                <h5 className="course_title" >{title}</h5>
-                <span className="course_description">{description}</span>
-            </div>
-        )
-    }
-
     render() {
-        const domainElements = this.props.courses.map(({id, title, description, imageUrl}) => 
-                <DomainCard key={id} id={id} title={title} description={description} imageUrl={imageUrl}></DomainCard>);
+        const scopeElements = this.props.courses.map(({id, title, description, imageUrl}) => 
+            <Link key={id} to={`/${id}`}> 
+                <EntityCard id={id} title={title} description={description} imageUrl={imageUrl}/>
+            </Link>
+        );
         return (
-            <div className="page main_page_container">
+            <div className="page page_container">
                 <h1>JobTrainer</h1>
                 <span>Trainer for new jobs</span>
                 <hr/>
-<<<<<<< HEAD
-                <h3>Domains</h3>
-                {domainElements}
-=======
-                <h3>Courses</h3>
-                {coursesElements}
->>>>>>> d6e834c66155f2f3040ddce7f40a258ebd772482
+                <h3>Scopes</h3>
+                {scopeElements}
             </div>
         )
     }
@@ -37,7 +26,7 @@ class MainPage extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        courses: state.get("domains")
+        courses: state.get("scopes")
     };
 }
 

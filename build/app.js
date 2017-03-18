@@ -1,7 +1,7 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('react'), require('Immutable')) :
-    typeof define === 'function' && define.amd ? define(['react', 'Immutable'], factory) :
-    (factory(global.React,global.Immutable));
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('react'), require('Immutable')) :
+	typeof define === 'function' && define.amd ? define(['react', 'Immutable'], factory) :
+	(factory(global.React,global.Immutable));
 }(this, (function (React$1,Immutable) { 'use strict';
 
 function __$styleInject(css, returnValue) {
@@ -20,6 +20,7 @@ function __$styleInject(css, returnValue) {
   head.appendChild(style);
   return returnValue;
 }
+
 var React$1__default = 'default' in React$1 ? React$1['default'] : React$1;
 
 /**
@@ -41,17 +42,6 @@ var React$1__default = 'default' in React$1 ? React$1['default'] : React$1;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- */
-
-/**
- * Use invariant() to assert state which your program assumes to be true.
- *
- * Provide sprintf-style format (only %s is supported) and arguments
- * to provide information about what broke and what you were
- * expecting.
- *
- * The invariant message will be stripped in production, but the invariant
- * will remain to ensure logic does not differ in production.
  */
 
 var validateFormat = function validateFormat(format) {};
@@ -867,17 +857,6 @@ var ReactErrorUtils$2 = {
 
 var ReactErrorUtils_1 = ReactErrorUtils$2;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * 
- */
-
 function makeEmptyFunction(arg) {
   return function () {
     return arg;
@@ -889,7 +868,7 @@ function makeEmptyFunction(arg) {
  * primarily useful idiomatically for overridable function endpoints which
  * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
  */
-var emptyFunction$1 = function emptyFunction$1() {};
+var emptyFunction$1 = function emptyFunction() {};
 
 emptyFunction$1.thatReturns = makeEmptyFunction;
 emptyFunction$1.thatReturnsFalse = makeEmptyFunction(false);
@@ -937,7 +916,7 @@ var warning$3 = emptyFunction;
       } catch (x) {}
     };
 
-    warning$3 = function warning$3(condition, format) {
+    warning$3 = function warning(condition, format) {
       if (format === undefined) {
         throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
       }
@@ -1223,14 +1202,6 @@ var accumulateInto_1 = accumulateInto$2;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * 
- */
-
-/**
- * @param {array} arr an "accumulation" of items which is either an Array or
- * a single item. Useful when paired with the `accumulate` module. This is a
- * simple utility that allows us to reason about a collection of items, but
- * handling the case when there is exactly one item (and we do not need to
- * allocate an array).
  */
 
 function forEachAccumulated$2(arr, cb, scope) {
@@ -1669,7 +1640,6 @@ object-assign
 @license MIT
 */
 
-/* eslint-disable no-unused-vars */
 var getOwnPropertySymbols = Object.getOwnPropertySymbols;
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 var propIsEnumerable = Object.prototype.propertyIsEnumerable;
@@ -2987,12 +2957,6 @@ var ReactHostOperationHistoryHook_1 = ReactHostOperationHistoryHook$1;
  * 
  */
 
-/**
- * Keeps track of the current owner.
- *
- * The current owner is the component who should own any components that are
- * currently being constructed.
- */
 var ReactCurrentOwner$1 = {
 
   /**
@@ -3133,7 +3097,7 @@ function describeComponentFrame(name, source, ownerName) {
   return '\n    in ' + (name || 'Unknown') + (source ? ' (at ' + source.fileName.replace(/^.*[\\\/]/, '') + ':' + source.lineNumber + ')' : ownerName ? ' (created by ' + ownerName + ')' : '');
 }
 
-function getDisplayName$1(element) {
+function getDisplayName(element) {
   if (element == null) {
     return '#empty';
   } else if (typeof element === 'string' || typeof element === 'number') {
@@ -3251,7 +3215,7 @@ var ReactComponentTreeHook$1 = {
   getCurrentStackAddendum: function (topElement) {
     var info = '';
     if (topElement) {
-      var name = getDisplayName$1(topElement);
+      var name = getDisplayName(topElement);
       var owner = topElement._owner;
       info += describeComponentFrame(name, topElement._source, owner && owner.getName());
     }
@@ -3279,7 +3243,7 @@ var ReactComponentTreeHook$1 = {
     if (!element) {
       return null;
     }
-    return getDisplayName$1(element);
+    return getDisplayName(element);
   },
   getElement: function (id) {
     var item = getItem(id);
@@ -3334,17 +3298,6 @@ if (ExecutionEnvironment$6.canUseDOM) {
 
 var performance_1 = performance$2 || {};
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
-
 var performance$1 = performance_1;
 
 var performanceNow$1;
@@ -3355,11 +3308,11 @@ var performanceNow$1;
  * because of Facebook's testing infrastructure.
  */
 if (performance$1.now) {
-  performanceNow$1 = function performanceNow$1() {
+  performanceNow$1 = function performanceNow() {
     return performance$1.now();
   };
 } else {
-  performanceNow$1 = function performanceNow$1() {
+  performanceNow$1 = function performanceNow() {
     return Date.now();
   };
 }
@@ -3713,8 +3666,6 @@ if (/[?&]react_perf\b/.test(url)) {
 }
 
 var ReactDebugTool_1 = ReactDebugTool$1;
-
-// Trust the developer to only use ReactInstrumentation with a __DEV__ check
 
 var debugTool = null;
 
@@ -4339,14 +4290,6 @@ var ReactUpdates_1 = ReactUpdates$2;
  *
  */
 
-/**
- * Gets the target node from a native browser event by accounting for
- * inconsistencies in browser DOM APIs.
- *
- * @param {object} nativeEvent Native browser event.
- * @return {DOMEventTarget} Target node.
- */
-
 function getEventTarget$1(nativeEvent) {
   var target = nativeEvent.target || nativeEvent.srcElement || window;
 
@@ -4419,10 +4362,6 @@ var isEventSupported_1 = isEventSupported$1;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * 
- */
-
-/**
- * @see http://www.whatwg.org/specs/web-apps/current-work/multipage/the-input-element.html#input-type-attr-summary
  */
 
 var supportedInputTypes = {
@@ -4778,16 +4717,6 @@ var ChangeEventPlugin_1 = ChangeEventPlugin$1;
  *
  */
 
-/**
- * Module that is injectable into `EventPluginHub`, that specifies a
- * deterministic ordering of `EventPlugin`s. A convenient way to reason about
- * plugins, without having to package every one of them. This is better than
- * having plugins be ordered in the same order that they are injected because
- * that ordering would be influenced by the packaging order.
- * `ResponderEventPlugin` must occur before `SimpleEventPlugin` so that
- * preventing default on events is convenient in `SimpleEventPlugin` handlers.
- */
-
 var DefaultEventPluginOrder$1 = ['ResponderEventPlugin', 'SimpleEventPlugin', 'TapEventPlugin', 'EnterLeaveEventPlugin', 'ChangeEventPlugin', 'SelectEventPlugin', 'BeforeInputEventPlugin'];
 
 var DefaultEventPluginOrder_1 = DefaultEventPluginOrder$1;
@@ -4872,11 +4801,6 @@ var ViewportMetrics_1 = ViewportMetrics$1;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- */
-
-/**
- * Translation from modifier key to the associated property in the event.
- * @see http://www.w3.org/TR/DOM-Level-3-Events/#keys-Modifiers
  */
 
 var modifierKeyToProp = {
@@ -5283,10 +5207,6 @@ var DOMNamespaces_1 = DOMNamespaces$1;
 
 /* globals MSApp */
 
-/**
- * Create a function which has 'unsafe' privileges (required by windows8 apps)
- */
-
 var createMicrosoftUnsafeLocalFunction$3 = function (func) {
   if (typeof MSApp !== 'undefined' && MSApp.execUnsafeLocalFunction) {
     return function (arg0, arg1, arg2, arg3) {
@@ -5420,12 +5340,6 @@ var setInnerHTML_1 = setInnerHTML$2;
  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
- */
-
-// code copied and modified from escape-html
-/**
- * Module variables.
- * @private
  */
 
 var matchHtmlRegExp = /["'&<>]/;
@@ -5654,17 +5568,6 @@ DOMLazyTree$1.queueText = queueText;
 
 var DOMLazyTree_1 = DOMLazyTree$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
-
 var invariant$15 = invariant_1;
 
 /**
@@ -5779,18 +5682,6 @@ function createArrayFromMixed$1(obj) {
 
 var createArrayFromMixed_1 = createArrayFromMixed$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
-/*eslint-disable fb-www/unsafe-html */
-
 var ExecutionEnvironment$12 = ExecutionEnvironment_1;
 
 var invariant$16 = invariant_1;
@@ -5871,19 +5762,6 @@ function getMarkupWrap$1(nodeName) {
 }
 
 var getMarkupWrap_1 = getMarkupWrap$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
-
-/*eslint-disable fb-www/unsafe-html*/
 
 var ExecutionEnvironment$11 = ExecutionEnvironment_1;
 
@@ -6251,10 +6129,6 @@ var ReactComponentBrowserEnvironment_1 = ReactComponentBrowserEnvironment$1;
  *
  */
 
-/**
- * @param {DOMElement} node input/textarea to focus
- */
-
 function focusNode$1(node) {
   // IE8 can throw "Can't move focus to the control because it is invisible,
   // not enabled, or of a type that does not accept the focus." for all kinds of
@@ -6286,10 +6160,6 @@ var AutoFocusUtils_1 = AutoFocusUtils$1;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- */
-
-/**
- * CSS properties which accept numbers but are not in units of "px".
  */
 
 var isUnitlessNumber = {
@@ -6424,17 +6294,6 @@ var CSSProperty$1 = {
 
 var CSSProperty_1 = CSSProperty$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
-
 var _hyphenPattern = /-(.)/g;
 
 /**
@@ -6548,17 +6407,6 @@ function dangerousStyleValue$1(name, value, component) {
 
 var dangerousStyleValue_1 = dangerousStyleValue$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
-
 var _uppercasePattern = /([A-Z])/g;
 
 /**
@@ -6615,10 +6463,6 @@ var hyphenateStyleName_1 = hyphenateStyleName$1;
  *
  * 
  * @typechecks static-only
- */
-
-/**
- * Memoizes the return value of a function that accepts one string argument.
  */
 
 function memoizeStringOnly$1(callback) {
@@ -7627,9 +7471,6 @@ var canDefineProperty_1 = canDefineProperty$1;
  * 
  */
 
-// The Symbol used to tag the ReactElement type. If there is no native Symbol
-// nor polyfill, then a plain number is used for performance.
-
 var REACT_ELEMENT_TYPE$1 = typeof Symbol === 'function' && Symbol['for'] && Symbol['for']('react.element') || 0xeac7;
 
 var ReactElementSymbol = REACT_ELEMENT_TYPE$1;
@@ -7975,8 +7816,6 @@ var ReactElement_1 = ReactElement$2;
  * 
  */
 
-/* global Symbol */
-
 var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
 var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
 
@@ -8012,13 +7851,6 @@ var getIteratorFn_1 = getIteratorFn$1;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * 
- */
-
-/**
- * Escape and wrap key so it is safe to use as a reactid
- *
- * @param {string} key to be escaped.
- * @return {string} the escaped key.
  */
 
 function escape(key) {
@@ -10298,13 +10130,13 @@ var ReactVersion$1 = ReactVersion$2;
 var onlyChild = onlyChild_1;
 var warning$15 = warning_1;
 
-var createElement$2 = ReactElement.createElement;
+var createElement$1 = ReactElement.createElement;
 var createFactory = ReactElement.createFactory;
 var cloneElement = ReactElement.cloneElement;
 
 {
   var ReactElementValidator = ReactElementValidator_1;
-  createElement$2 = ReactElementValidator.createElement;
+  createElement$1 = ReactElementValidator.createElement;
   createFactory = ReactElementValidator.createFactory;
   cloneElement = ReactElementValidator.cloneElement;
 }
@@ -10335,7 +10167,7 @@ var React$3 = {
   Component: ReactComponent,
   PureComponent: ReactPureComponent,
 
-  createElement: createElement$2,
+  createElement: createElement$1,
   cloneElement: cloneElement,
   isValidElement: ReactElement.isValidElement,
 
@@ -11249,15 +11081,6 @@ var ReactComponentEnvironment_1 = ReactComponentEnvironment$1;
  *
  */
 
-/**
- * `ReactInstanceMap` maintains a mapping from a public facing stateful
- * instance (key) and the internal representation (value). This allows public
- * methods to accept the user facing instance as an argument and map them back
- * to internal methods.
- */
-
-// TODO: Replace this with ES6: var ReactInstanceMap = new Map();
-
 var ReactInstanceMap$1 = {
 
   /**
@@ -11480,18 +11303,6 @@ var shallowEqual_1 = shallowEqual$2;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- */
-
-/**
- * Given a `prevElement` and `nextElement`, determines if the existing
- * instance should be updated as opposed to being destroyed or replaced by a new
- * instance. Both arguments are elements. This ensures that this logic can
- * operate on stateless trees without any backing instance.
- *
- * @param {?object} prevElement
- * @param {?object} nextElement
- * @return {boolean} True if the existing instance should be updated.
- * @protected
  */
 
 function shouldUpdateReactComponent$2(prevElement, nextElement) {
@@ -12604,13 +12415,6 @@ var instantiateReactComponent_1 = instantiateReactComponent$1;
  * 
  */
 
-/**
- * Escape and wrap key so it is safe to use as a reactid
- *
- * @param {string} key to be escaped.
- * @return {string} the escaped key.
- */
-
 function escape$1(key) {
   var escapeRegex = /[=:]/g;
   var escaperLookup = {
@@ -12661,9 +12465,6 @@ var KeyEscapeUtils_1$2 = KeyEscapeUtils$3;
  * 
  */
 
-// The Symbol used to tag the ReactElement type. If there is no native Symbol
-// nor polyfill, then a plain number is used for performance.
-
 var REACT_ELEMENT_TYPE$4 = typeof Symbol === 'function' && Symbol['for'] && Symbol['for']('react.element') || 0xeac7;
 
 var ReactElementSymbol$2 = REACT_ELEMENT_TYPE$4;
@@ -12678,8 +12479,6 @@ var ReactElementSymbol$2 = REACT_ELEMENT_TYPE$4;
  *
  * 
  */
-
-/* global Symbol */
 
 var ITERATOR_SYMBOL$1 = typeof Symbol === 'function' && Symbol.iterator;
 var FAUX_ITERATOR_SYMBOL$1 = '@@iterator'; // Before Symbol spec.
@@ -13178,7 +12977,7 @@ function makeTextContent(textContent) {
  * Push an update, if any, onto the queue. Creates a new queue if none is
  * passed and always returns the queue. Mutative.
  */
-function enqueue$1(queue, update) {
+function enqueue(queue, update) {
   if (update) {
     queue = queue || [];
     queue.push(update);
@@ -13387,7 +13186,7 @@ var ReactMultiChild$1 = {
         var prevChild = prevChildren && prevChildren[name];
         var nextChild = nextChildren[name];
         if (prevChild === nextChild) {
-          updates = enqueue$1(updates, this.moveChild(prevChild, lastPlacedNode, nextIndex, lastIndex));
+          updates = enqueue(updates, this.moveChild(prevChild, lastPlacedNode, nextIndex, lastIndex));
           lastIndex = Math.max(prevChild._mountIndex, lastIndex);
           prevChild._mountIndex = nextIndex;
         } else {
@@ -13397,7 +13196,7 @@ var ReactMultiChild$1 = {
             // The `removedNodes` loop below will actually remove the child.
           }
           // The child must be instantiated before it's mounted.
-          updates = enqueue$1(updates, this._mountChildAtIndex(nextChild, mountImages[nextMountIndex], lastPlacedNode, nextIndex, transaction, context));
+          updates = enqueue(updates, this._mountChildAtIndex(nextChild, mountImages[nextMountIndex], lastPlacedNode, nextIndex, transaction, context));
           nextMountIndex++;
         }
         nextIndex++;
@@ -13406,7 +13205,7 @@ var ReactMultiChild$1 = {
       // Remove children that are no longer present.
       for (name in removedNodes) {
         if (removedNodes.hasOwnProperty(name)) {
-          updates = enqueue$1(updates, this._unmountChild(prevChildren[name], removedNodes[name]));
+          updates = enqueue(updates, this._unmountChild(prevChildren[name], removedNodes[name]));
         }
       }
       if (updates) {
@@ -15655,24 +15454,6 @@ var ReactDefaultBatchingStrategy$1 = {
 
 var ReactDefaultBatchingStrategy_1 = ReactDefaultBatchingStrategy$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- * @typechecks
- */
-
 var emptyFunction$10 = emptyFunction_1;
 
 /**
@@ -15746,17 +15527,6 @@ var EventListener_1 = EventListener$1;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @typechecks
- */
-
-/**
- * Gets the scroll position of the supplied element or window.
- *
- * The return values are unbounded, unlike `getScrollPosition`. This means they
- * may be negative or exceed the element boundaries (which is possible using
- * inertial scrolling).
- *
- * @param {DOMWindow|DOMElement} scrollable
- * @return {object} Map with `x` and `y` keys.
  */
 
 function getUnboundedScrollPosition$1(scrollable) {
@@ -15947,13 +15717,6 @@ var ReactInjection_1 = ReactInjection$1;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- */
-
-/**
- * Given any node return the first leaf node without children.
- *
- * @param {DOMElement|DOMTextNode} node
- * @return {DOMElement|DOMTextNode}
  */
 
 function getLeafNode(node) {
@@ -16211,37 +15974,11 @@ var ReactDOMSelection$1 = {
 
 var ReactDOMSelection_1 = ReactDOMSelection$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
-
-/**
- * @param {*} object The object to check.
- * @return {boolean} Whether or not the object is a DOM node.
- */
 function isNode$2(object) {
   return !!(object && (typeof Node === 'function' ? object instanceof Node : typeof object === 'object' && typeof object.nodeType === 'number' && typeof object.nodeName === 'string'));
 }
 
 var isNode_1 = isNode$2;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
 
 var isNode$1 = isNode_1;
 
@@ -16254,17 +15991,6 @@ function isTextNode$1(object) {
 }
 
 var isTextNode_1 = isTextNode$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * 
- */
 
 var isTextNode = isTextNode_1;
 
@@ -16293,26 +16019,6 @@ function containsNode$1(outerNode, innerNode) {
 
 var containsNode_1 = containsNode$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
-
-/* eslint-disable fb-www/typeof-undefined */
-
-/**
- * Same as document.activeElement but wraps in a try-catch block. In IE it is
- * not safe to call document.activeElement if there is nothing focused.
- *
- * The activeElement will be null only if the document or document body is not
- * yet defined.
- */
 function getActiveElement$1() /*?DOMElement*/{
   if (typeof document === 'undefined') {
     return null;
@@ -17168,17 +16874,6 @@ var SyntheticFocusEvent_1 = SyntheticFocusEvent$1;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- */
-
-/**
- * `charCode` represents the actual "character code" and is safe to use with
- * `String.fromCharCode`. As such, only keys that correspond to printable
- * characters produce a valid `charCode`, the only exception to this is Enter.
- * The Tab-key is considered non-printable and does not have a `charCode`,
- * presumably because it does not produce a tab-character in browsers.
- *
- * @param {object} nativeEvent Native browser event.
- * @return {number} Normalized `charCode` property.
  */
 
 function getEventCharCode$2(nativeEvent) {
@@ -18970,17 +18665,6 @@ var index$3 = function hoistNonReactStatics(targetComponent, sourceComponent, cu
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-/**
- * Use invariant() to assert state which your program assumes to be true.
- *
- * Provide sprintf-style format (only %s is supported) and arguments
- * to provide information about what broke and what you were
- * expecting.
- *
- * The invariant message will be stripped in production, but the invariant
- * will remain to ensure logic does not differ in production.
- */
-
 var NODE_ENV = "development";
 
 var invariant$41 = function(condition, format, a, b, c, d, e, f) {
@@ -19401,16 +19085,13 @@ function shallowEqual$4(objA, objB) {
 /** Detect free variable `global` from Node.js. */
 var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
 
-/** Detect free variable `self`. */
 var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
 
 /** Used as a reference to the global object. */
 var root = freeGlobal || freeSelf || Function('return this')();
 
-/** Built-in value references. */
 var Symbol$1 = root.Symbol;
 
-/** Used for built-in method references. */
 var objectProto$1 = Object.prototype;
 
 /** Used to check objects for own properties. */
@@ -19474,7 +19155,6 @@ function objectToString(value) {
   return nativeObjectToString$1.call(value);
 }
 
-/** `Object#toString` result references. */
 var nullTag = '[object Null]';
 var undefinedTag = '[object Undefined]';
 
@@ -19511,7 +19191,6 @@ function overArg(func, transform) {
   };
 }
 
-/** Built-in value references. */
 var getPrototype = overArg(Object.getPrototypeOf, Object);
 
 /**
@@ -19542,7 +19221,6 @@ function isObjectLike(value) {
   return value != null && typeof value == 'object';
 }
 
-/** `Object#toString` result references. */
 var objectTag = '[object Object]';
 
 /** Used for built-in method references. */
@@ -19669,12 +19347,6 @@ exports['default'] = result;
 
 var index$4 = index$5;
 
-/**
- * These are private action types reserved by Redux.
- * For any unknown actions, you must return the current state.
- * If the current state is undefined, you must return the initial state.
- * Do not reference these action types directly in your code.
- */
 var ActionTypes = {
   INIT: '@@redux/INIT'
 };
@@ -19937,54 +19609,6 @@ function warning$42(message) {
   /* eslint-enable no-empty */
 }
 
-function getUndefinedStateErrorMessage(key, action) {
-  var actionType = action && action.type;
-  var actionName = actionType && '"' + actionType.toString() + '"' || 'an action';
-
-  return 'Given action ' + actionName + ', reducer "' + key + '" returned undefined. ' + 'To ignore an action, you must explicitly return the previous state.';
-}
-
-function getUnexpectedStateShapeWarningMessage(inputState, reducers, action, unexpectedKeyCache) {
-  var reducerKeys = Object.keys(reducers);
-  var argumentName = action && action.type === ActionTypes.INIT ? 'preloadedState argument passed to createStore' : 'previous state received by the reducer';
-
-  if (reducerKeys.length === 0) {
-    return 'Store does not have a valid reducer. Make sure the argument passed ' + 'to combineReducers is an object whose values are reducers.';
-  }
-
-  if (!isPlainObject(inputState)) {
-    return 'The ' + argumentName + ' has unexpected type of "' + {}.toString.call(inputState).match(/\s([a-z|A-Z]+)/)[1] + '". Expected argument to be an object with the following ' + ('keys: "' + reducerKeys.join('", "') + '"');
-  }
-
-  var unexpectedKeys = Object.keys(inputState).filter(function (key) {
-    return !reducers.hasOwnProperty(key) && !unexpectedKeyCache[key];
-  });
-
-  unexpectedKeys.forEach(function (key) {
-    unexpectedKeyCache[key] = true;
-  });
-
-  if (unexpectedKeys.length > 0) {
-    return 'Unexpected ' + (unexpectedKeys.length > 1 ? 'keys' : 'key') + ' ' + ('"' + unexpectedKeys.join('", "') + '" found in ' + argumentName + '. ') + 'Expected to find one of the known reducer keys instead: ' + ('"' + reducerKeys.join('", "') + '". Unexpected keys will be ignored.');
-  }
-}
-
-function assertReducerSanity(reducers) {
-  Object.keys(reducers).forEach(function (key) {
-    var reducer = reducers[key];
-    var initialState = reducer(undefined, { type: ActionTypes.INIT });
-
-    if (typeof initialState === 'undefined') {
-      throw new Error('Reducer "' + key + '" returned undefined during initialization. ' + 'If the state passed to the reducer is undefined, you must ' + 'explicitly return the initial state. The initial state may ' + 'not be undefined.');
-    }
-
-    var type = '@@redux/PROBE_UNKNOWN_ACTION_' + Math.random().toString(36).substring(7).split('').join('.');
-    if (typeof reducer(undefined, { type: type }) === 'undefined') {
-      throw new Error('Reducer "' + key + '" returned undefined when probed with a random type. ' + ('Don\'t try to handle ' + ActionTypes.INIT + ' or other actions in "redux/*" ') + 'namespace. They are considered private. Instead, you must return the ' + 'current state for any unknown actions, unless it is undefined, ' + 'in which case you must return the initial state, regardless of the ' + 'action type. The initial state may not be undefined.');
-    }
-  });
-}
-
 function bindActionCreator(actionCreator, dispatch) {
   return function () {
     return dispatch(actionCreator.apply(undefined, arguments));
@@ -20044,36 +19668,6 @@ function bindActionCreators(actionCreators, dispatch) {
  * (...args) => f(g(h(...args))).
  */
 
-function compose() {
-  for (var _len = arguments.length, funcs = Array(_len), _key = 0; _key < _len; _key++) {
-    funcs[_key] = arguments[_key];
-  }
-
-  if (funcs.length === 0) {
-    return function (arg) {
-      return arg;
-    };
-  }
-
-  if (funcs.length === 1) {
-    return funcs[0];
-  }
-
-  var last = funcs[funcs.length - 1];
-  var rest = funcs.slice(0, -1);
-  return function () {
-    return rest.reduceRight(function (composed, f) {
-      return f(composed);
-    }, last.apply(undefined, arguments));
-  };
-}
-
-var _extends$2 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-/*
-* This is a dummy function to check if the function name has been altered by minification.
-* If the function has been minified and NODE_ENV !== 'production', warn the user.
-*/
 function isCrushed() {}
 
 if ("development" !== 'production' && typeof isCrushed.name === 'string' && isCrushed.name !== 'isCrushed') {
@@ -20347,23 +19941,6 @@ var _extends$1 = Object.assign || function (target) { for (var i = 1; i < argume
 
 function _objectWithoutProperties$1(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-/*
-  connect is a facade over connectAdvanced. It turns its args into a compatible
-  selectorFactory, which has the signature:
-
-    (dispatch, options) => (nextState, nextOwnProps) => nextFinalProps
-  
-  connect passes its args to connectAdvanced as options, which will in turn pass them to
-  selectorFactory each time a Connect component instance is instantiated or hot reloaded.
-
-  selectorFactory returns a final props selector from its mapStateToProps,
-  mapStateToPropsFactories, mapDispatchToProps, mapDispatchToPropsFactories, mergeProps,
-  mergePropsFactories, and pure args.
-
-  The resulting final props selector is called by the Connect component instance whenever
-  it receives new props or store state.
- */
-
 function match(arg, factories, name) {
   for (var i = factories.length - 1; i >= 0; i--) {
     var result = factories[i](arg);
@@ -20438,7 +20015,7 @@ function createConnect() {
   };
 }
 
-var connect$1 = createConnect();
+var connect = createConnect();
 
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -20447,13 +20024,6 @@ var connect$1 = createConnect();
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
- */
-
-/**
- * Similar to invariant but only logs a warning if the condition is not met.
- * This can be used to log issues in development environments in critical
- * paths. Removing the logging code for production environments will keep the
- * same logic and follow the same code paths.
  */
 
 var __DEV__ = "development" !== 'production';
@@ -21228,7 +20798,7 @@ function createRoute(defaultProps, props) {
   return _extends$7({}, defaultProps, props);
 }
 
-function createRouteFromReactElement$1(element) {
+function createRouteFromReactElement(element) {
   var type = element.type;
   var route = createRoute(type.defaultProps, element.props);
 
@@ -21271,7 +20841,7 @@ function createRoutesFromReactChildren(children, parentRoute) {
 
         if (route) routes.push(route);
       } else {
-        routes.push(createRouteFromReactElement$1(element));
+        routes.push(createRouteFromReactElement(element));
       }
     }
   });
@@ -21544,7 +21114,7 @@ function hasAnyProperties(object) {
   }return false;
 }
 
-function createTransitionManager$1(history, routes) {
+function createTransitionManager(history, routes) {
   var state = {};
 
   // Signature should be (location, indexOnly), but needs to support (path,
@@ -21808,10 +21378,6 @@ var components = oneOfType([component, object$1]);
 var route = oneOfType([object$1, element]);
 var routes = oneOfType([route, arrayOf(route)]);
 
-/**
- * Extracts an object of params the given route cares about from
- * the given params object.
- */
 function getRouteParams(route, params) {
   var routeParams = {};
 
@@ -21825,11 +21391,6 @@ function getRouteParams(route, params) {
 
   return routeParams;
 }
-
-// Works around issues with context updates failing to propagate.
-// Caveat: the context value is expected to never change its identity.
-// https://github.com/facebook/react/issues/2517
-// https://github.com/reactjs/react-router/issues/470
 
 var contextProviderShape = React$1.PropTypes.shape({
   subscribe: React$1.PropTypes.func.isRequired,
@@ -21985,7 +21546,7 @@ var RouterContext = React$1__default.createClass({
       router: this.props.router
     };
   },
-  createElement: function createElement(component, props) {
+  createElement: function createElement$$1(component, props) {
     return component == null ? null : this.props.createElement(component, props);
   },
   render: function render() {
@@ -22051,7 +21612,7 @@ var RouterContext = React$1__default.createClass({
 
 var _extends$9 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-function createRouterObject$1(history, transitionManager, state) {
+function createRouterObject(history, transitionManager, state) {
   var router = _extends$9({}, history, {
     setRouteLeaveHook: transitionManager.listenBeforeLeavingRoute,
     isActive: transitionManager.isActive
@@ -22126,7 +21687,7 @@ var Router = React$1__default.createClass({
       throw error; // This error probably occurred in getChildRoutes or getComponents.
     }
   },
-  createRouterObject: function createRouterObject(state) {
+  createRouterObject: function createRouterObject$$1(state) {
     var matchContext = this.props.matchContext;
 
     if (matchContext) {
@@ -22135,9 +21696,9 @@ var Router = React$1__default.createClass({
 
     var history$$1 = this.props.history;
 
-    return createRouterObject$1(history$$1, this.transitionManager, state);
+    return createRouterObject(history$$1, this.transitionManager, state);
   },
-  createTransitionManager: function createTransitionManager() {
+  createTransitionManager: function createTransitionManager$$1() {
     var matchContext = this.props.matchContext;
 
     if (matchContext) {
@@ -22152,7 +21713,7 @@ var Router = React$1__default.createClass({
 
     !history$$1.getCurrentLocation ? invariant_1$2(false, 'You have provided a history object created with history v4.x or v2.x ' + 'and earlier. This version of React Router is only compatible with v3 ' + 'history objects. Please change to history v3.x.') : void 0;
 
-    return createTransitionManager$1(history$$1, createRoutes(routes$$1 || children));
+    return createTransitionManager(history$$1, createRoutes(routes$$1 || children));
   },
   componentWillMount: function componentWillMount() {
     var _this = this;
@@ -22190,7 +21751,7 @@ var Router = React$1__default.createClass({
         components$$1 = _state.components;
 
     var _props2 = this.props,
-        createElement = _props2.createElement,
+        createElement$$1 = _props2.createElement,
         render = _props2.render,
         props = _objectWithoutProperties$3(_props2, ['createElement', 'render']);
 
@@ -22208,7 +21769,7 @@ var Router = React$1__default.createClass({
       routes: routes$$1,
       params: params,
       components: components$$1,
-      createElement: createElement
+      createElement: createElement$$1
     }));
   }
 });
@@ -22377,21 +21938,12 @@ var Link = React$1__default.createClass({
 
 var _extends$11 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-/**
- * An <IndexLink> is used to link to an <IndexRoute>.
- */
 var IndexLink = React$1__default.createClass({
   displayName: 'IndexLink',
   render: function render() {
     return React$1__default.createElement(Link, _extends$11({}, this.props, { onlyActiveOnIndex: true }));
   }
 });
-
-var _extends$12 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-function getDisplayName$2(WrappedComponent) {
-  return WrappedComponent.displayName || WrappedComponent.name || 'Component';
-}
 
 var _React$PropTypes$4 = React$1__default.PropTypes;
 var string$4 = _React$PropTypes$4.string;
@@ -22411,8 +21963,8 @@ var Redirect = React$1__default.createClass({
 
 
   statics: {
-    createRouteFromReactElement: function createRouteFromReactElement(element) {
-      var route$$1 = createRouteFromReactElement$1(element);
+    createRouteFromReactElement: function createRouteFromReactElement$$1(element) {
+      var route$$1 = createRouteFromReactElement(element);
 
       if (route$$1.from) route$$1.path = route$$1.from;
 
@@ -22525,10 +22077,10 @@ var IndexRoute = React$1__default.createClass({
 
 
   statics: {
-    createRouteFromReactElement: function createRouteFromReactElement(element, parentRoute) {
+    createRouteFromReactElement: function createRouteFromReactElement$$1(element, parentRoute) {
       /* istanbul ignore else: sanity check */
       if (parentRoute) {
-        parentRoute.indexRoute = createRouteFromReactElement$1(element);
+        parentRoute.indexRoute = createRouteFromReactElement(element);
       } else {
         routerWarning(false, 'An <IndexRoute> does not make sense at the root of your route config');
       }
@@ -22570,7 +22122,7 @@ var Route = React$1__default.createClass({
 
 
   statics: {
-    createRouteFromReactElement: createRouteFromReactElement$1
+    createRouteFromReactElement: createRouteFromReactElement
   },
 
   propTypes: {
@@ -22611,8 +22163,6 @@ var REPLACE = exports.REPLACE = 'REPLACE';
  */
 var POP = exports.POP = 'POP';
 });
-
-var Actions_2 = Actions.REPLACE;
 
 var index$9 = function (str) {
 	return encodeURIComponent(str).replace(/[!'()*]/g, function (c) {
@@ -22868,12 +22418,10 @@ var _warning2 = _interopRequireDefault(_warning);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var addQueryStringValueToPath = exports.addQueryStringValueToPath = function addQueryStringValueToPath(path, key, value) {
-  var _parsePath = parsePath(path);
-
-  var pathname = _parsePath.pathname;
-  var search = _parsePath.search;
-  var hash = _parsePath.hash;
-
+  var _parsePath = parsePath(path),
+      pathname = _parsePath.pathname,
+      search = _parsePath.search,
+      hash = _parsePath.hash;
 
   return createPath({
     pathname: pathname,
@@ -22883,12 +22431,10 @@ var addQueryStringValueToPath = exports.addQueryStringValueToPath = function add
 };
 
 var stripQueryStringValueFromPath = exports.stripQueryStringValueFromPath = function stripQueryStringValueFromPath(path, key) {
-  var _parsePath2 = parsePath(path);
-
-  var pathname = _parsePath2.pathname;
-  var search = _parsePath2.search;
-  var hash = _parsePath2.hash;
-
+  var _parsePath2 = parsePath(path),
+      pathname = _parsePath2.pathname,
+      search = _parsePath2.search,
+      hash = _parsePath2.hash;
 
   return createPath({
     pathname: pathname,
@@ -22900,9 +22446,8 @@ var stripQueryStringValueFromPath = exports.stripQueryStringValueFromPath = func
 };
 
 var getQueryStringValueFromPath = exports.getQueryStringValueFromPath = function getQueryStringValueFromPath(path, key) {
-  var _parsePath3 = parsePath(path);
-
-  var search = _parsePath3.search;
+  var _parsePath3 = parsePath(path),
+      search = _parsePath3.search;
 
   var match = search.match(new RegExp('[?&]' + key + '=([a-zA-Z0-9]+)'));
   return match && match[1];
@@ -22944,10 +22489,10 @@ var parsePath = exports.parsePath = function parsePath(path) {
 var createPath = exports.createPath = function createPath(location) {
   if (location == null || typeof location === 'string') return location;
 
-  var basename = location.basename;
-  var pathname = location.pathname;
-  var search = location.search;
-  var hash = location.hash;
+  var basename = location.basename,
+      pathname = location.pathname,
+      search = location.search,
+      hash = location.hash;
 
   var path = (basename || '') + pathname;
 
@@ -22965,7 +22510,7 @@ var LocationUtils = createCommonjsModule(function (module, exports) {
 exports.__esModule = true;
 exports.locationsAreEqual = exports.statesAreEqual = exports.createLocation = exports.createQuery = undefined;
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -22988,9 +22533,9 @@ var createQuery = exports.createQuery = function createQuery(props) {
 };
 
 var createLocation = exports.createLocation = function createLocation() {
-  var input = arguments.length <= 0 || arguments[0] === undefined ? '/' : arguments[0];
-  var action = arguments.length <= 1 || arguments[1] === undefined ? _Actions.POP : arguments[1];
-  var key = arguments.length <= 2 || arguments[2] === undefined ? null : arguments[2];
+  var input = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '/';
+  var action = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _Actions.POP;
+  var key = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
   var object = typeof input === 'string' ? (0, _PathUtils.parsePath)(input) : input;
 
@@ -23085,11 +22630,11 @@ var defaultParseQueryString = _queryString.parse;
  */
 var useQueries = function useQueries(createHistory) {
   return function () {
-    var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
     var history = createHistory(options);
-    var stringifyQuery = options.stringifyQuery;
-    var parseQueryString = options.parseQueryString;
+    var stringifyQuery = options.stringifyQuery,
+        parseQueryString = options.parseQueryString;
 
 
     if (typeof stringifyQuery !== 'function') stringifyQuery = defaultStringifyQuery;
@@ -23197,7 +22742,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var useBasename = function useBasename(createHistory) {
   return function () {
-    var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
     var history = createHistory(options);
     var basename = options.basename;
@@ -23207,7 +22752,7 @@ var useBasename = function useBasename(createHistory) {
       if (!location) return location;
 
       if (basename && location.basename == null) {
-        if (location.pathname.indexOf(basename) === 0) {
+        if (location.pathname.toLowerCase().indexOf(basename.toLowerCase()) === 0) {
           location.pathname = location.pathname.substring(basename.length);
           location.basename = basename;
 
@@ -23373,13 +22918,13 @@ var _LocationUtils = LocationUtils;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var createHistory = function createHistory() {
-  var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-  var getCurrentLocation = options.getCurrentLocation;
-  var getUserConfirmation = options.getUserConfirmation;
-  var pushLocation = options.pushLocation;
-  var replaceLocation = options.replaceLocation;
-  var go = options.go;
-  var keyLength = options.keyLength;
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var getCurrentLocation = options.getCurrentLocation,
+      getUserConfirmation = options.getUserConfirmation,
+      pushLocation = options.pushLocation,
+      replaceLocation = options.replaceLocation,
+      go = options.go,
+      keyLength = options.keyLength;
 
 
   var currentLocation = void 0;
@@ -23508,7 +23053,7 @@ var createHistory = function createHistory() {
   };
 
   var createLocation = function createLocation(location, action) {
-    var key = arguments.length <= 2 || arguments[2] === undefined ? createKey() : arguments[2];
+    var key = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : createKey();
     return (0, _LocationUtils.createLocation)(location, action, key);
   };
 
@@ -23569,7 +23114,7 @@ var createStateStorage = function createStateStorage(entries) {
 };
 
 var createMemoryHistory = function createMemoryHistory() {
-  var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
   if (Array.isArray(options)) {
     options = { entries: options };
@@ -23636,9 +23181,9 @@ var createMemoryHistory = function createMemoryHistory() {
     go: go
   }));
 
-  var _options = options;
-  var entries = _options.entries;
-  var current = _options.current;
+  var _options = options,
+      entries = _options.entries,
+      current = _options.current;
 
 
   if (typeof entries === 'string') {
@@ -23675,32 +23220,12 @@ var createMemoryHistory = function createMemoryHistory() {
 exports.default = createMemoryHistory;
 });
 
-var baseCreateMemoryHistory = unwrapExports(createMemoryHistory_1);
-
-function createMemoryHistory(options) {
-  // signatures and type checking differ between `useQueries` and
-  // `createMemoryHistory`, have to create `memoryHistory` first because
-  // `useQueries` doesn't understand the signature
-  var memoryHistory = baseCreateMemoryHistory(options);
-  var createHistory = function createHistory() {
-    return memoryHistory;
-  };
-  var history = useQueries(useBasename(createHistory))(options);
-  return history;
-}
-
-var _extends$13 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-function _objectWithoutProperties$5(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
 function useRouterHistory(createHistory) {
   return function (options) {
     var history = useQueries(useBasename(createHistory))(options);
     return history;
   };
 }
-
-var _extends$14 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var ExecutionEnvironment$18 = createCommonjsModule(function (module, exports) {
 'use strict';
@@ -23749,6 +23274,15 @@ var supportsGoWithoutReloadUsingHash = exports.supportsGoWithoutReloadUsingHash 
  */
 var supportsPopstateOnHashchange = exports.supportsPopstateOnHashchange = function supportsPopstateOnHashchange() {
   return window.navigator.userAgent.indexOf('Trident') === -1;
+};
+
+/**
+ * Returns true if a given popstate event is an extraneous WebKit event.
+ * Accounts for the fact that Chrome on iOS fires real popstate events
+ * containing undefined state when pressing the back button.
+ */
+var isExtraneousPopstateEvent = exports.isExtraneousPopstateEvent = function isExtraneousPopstateEvent(event) {
+  return event.state === undefined && navigator.userAgent.indexOf('CriOS') === -1;
 };
 });
 
@@ -23891,8 +23425,9 @@ var getUserConfirmation = exports.getUserConfirmation = function getUserConfirma
 
 var startListener = exports.startListener = function startListener(listener) {
   var handlePopState = function handlePopState(event) {
-    if (event.state !== undefined) // Ignore extraneous popstate events in WebKit
-      listener(_createLocation(event.state));
+    if ((0, _DOMUtils.isExtraneousPopstateEvent)(event)) // Ignore extraneous popstate events in WebKit
+      return;
+    listener(_createLocation(event.state));
   };
 
   (0, _DOMUtils.addEventListener)(window, PopStateEvent, handlePopState);
@@ -23915,8 +23450,8 @@ var startListener = exports.startListener = function startListener(listener) {
 };
 
 var updateLocation = function updateLocation(location, updateState) {
-  var state = location.state;
-  var key = location.key;
+  var state = location.state,
+      key = location.key;
 
 
   if (state !== undefined) (0, _DOMStateStorage.saveState)(key, state);
@@ -24023,18 +23558,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * behavior using { forceRefresh: true } in options.
  */
 var createBrowserHistory = function createBrowserHistory() {
-  var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
   !_ExecutionEnvironment.canUseDOM ? (0, _invariant2.default)(false, 'Browser history needs a DOM') : void 0;
 
   var useRefresh = options.forceRefresh || !(0, _DOMUtils.supportsHistory)();
   var Protocol = useRefresh ? RefreshProtocol$$1 : BrowserProtocol$$1;
 
-  var getUserConfirmation = Protocol.getUserConfirmation;
-  var getCurrentLocation = Protocol.getCurrentLocation;
-  var pushLocation = Protocol.pushLocation;
-  var replaceLocation = Protocol.replaceLocation;
-  var go = Protocol.go;
+  var getUserConfirmation = Protocol.getUserConfirmation,
+      getCurrentLocation = Protocol.getCurrentLocation,
+      pushLocation = Protocol.pushLocation,
+      replaceLocation = Protocol.replaceLocation,
+      go = Protocol.go;
 
 
   var history = (0, _createHistory2.default)(_extends({
@@ -24195,8 +23730,8 @@ var startListener = exports.startListener = function startListener(listener, pat
 };
 
 var updateLocation = function updateLocation(location, pathCoder, queryKey, updateHash) {
-  var state = location.state;
-  var key = location.key;
+  var state = location.state,
+      key = location.key;
 
 
   var path = pathCoder.encodePath((0, _PathUtils.createPath)(location));
@@ -24287,12 +23822,12 @@ var HashPathCoders = {
 };
 
 var createHashHistory = function createHashHistory() {
-  var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
   !_ExecutionEnvironment.canUseDOM ? (0, _invariant2.default)(false, 'Hash history needs a DOM') : void 0;
 
-  var queryKey = options.queryKey;
-  var hashType = options.hashType;
+  var queryKey = options.queryKey,
+      hashType = options.hashType;
 
 
   (0, _warning2.default)(queryKey !== false, 'Using { queryKey: false } no longer works. Instead, just don\'t ' + 'use location state if you don\'t want a key in your URL query string');
@@ -24383,9 +23918,6 @@ var createHashHistory = unwrapExports(createHashHistory_1);
 createRouterHistory(createHashHistory);
 
 /* components */
-/* components (configuration) */
-
-/* histories */
 
 __$styleInject(".navigation_item{display:inline-block;padding:15px;margin:0 20px;transition:all .2s}.navigation_item:hover{cursor:pointer;background:hsla(0,0%,91%,.4)}.navigation_item:hover a{color:#393d40}.navigation_item a{color:#aebdc1;font-weight:300;text-decoration:none}",undefined);
 
@@ -24401,7 +23933,7 @@ var NavigationLink = function (ref) {
 	);
 };
 
-__$styleInject("body{margin:0;padding:0;@import url(\"https://fonts.googleapis.com/css?family=Roboto\");font-family:Roboto,sans-serif}.application .header{position:relative;width:100%;height:50px;padding:10px;z-index:1;display:flex;background-color:#fff;box-shadow:0 5px 11px 4px rgba(0,0,0,.03)}.application .header .logo{height:100%;display:flex;align-items:center}.application .header .logo .logo_image{max-width:100%;max-height:100%}.application .header .logo .company_name{display:inline-block;margin:0 15px}.application .header .navigation .login_navigation{position:absolute;right:30px}.application .content{display:inline}.application .content .page{padding:20px;background-color:#fdfdfd;height:100%;width:100%}",undefined);
+__$styleInject("h1{color:#666e77}hr{margin-right:40px}.containercontainer{margin:20px}body{margin:0;padding:0;@import url(\"https://fonts.googleapis.com/css?family=Roboto\");font-family:Roboto,sans-serif}.application .header{position:relative;width:100%;height:50px;padding:10px;z-index:1;display:flex;background-color:#fff;box-shadow:0 5px 11px 4px rgba(0,0,0,.03)}.application .header .logo{height:100%;display:flex;align-items:center}.application .header .logo .logo_image{max-width:100%;max-height:100%}.application .header .logo .company_name{display:inline-block;margin:0 15px}.application .header .navigation .login_navigation{position:absolute;right:30px}.application .content{display:inline}.application .content .page{padding:20px;background-color:#fdfdfd;height:100%;width:100%}",undefined);
 
 var App = (function (superclass) {
 	function App () {
@@ -24414,26 +23946,21 @@ var App = (function (superclass) {
 
 	App.prototype.render = function render () {
 		return (
-			React$1__default.createElement( 'div', { className: "application" }, 
-				React$1__default.createElement( 'div', { className: "header" }, 
-					React$1__default.createElement( 'div', { className: "logo" }, 
-						React$1__default.createElement( 'img', { className: "logo_image", src: "https://cdn1.iconfinder.com/data/icons/mix-color-3/502/Untitled-35-512.png" }), 
+			React$1__default.createElement( 'div', { className: "application" },
+				React$1__default.createElement( 'div', { className: "header" },
+					React$1__default.createElement( 'div', { className: "logo" },
+						React$1__default.createElement( 'img', { className: "logo_image", src: "https://cdn1.iconfinder.com/data/icons/mix-color-3/502/Untitled-35-512.png" }),
 						React$1__default.createElement( 'span', { className: "company_name" }, "jobTrainer")
-					), 
-					React$1__default.createElement( 'div', { className: "navigation" }, 
-						React$1__default.createElement( NavigationLink, { to: "/", linkText: "Main" }), 
-						React$1__default.createElement( NavigationLink, { to: "/courses", linkText: "Courses" }), 
+					),
+					React$1__default.createElement( 'div', { className: "navigation" },
+						React$1__default.createElement( NavigationLink, { to: "/", linkText: "Main" }),
+						React$1__default.createElement( NavigationLink, { to: "/courses", linkText: "Courses" }),
 						React$1__default.createElement( NavigationLink, { to: "/login", linkText: "Login", className: "login_navigation" })
 					)
-				), 
-				React$1__default.createElement( 'div', { className: "content" }, 
+				),
+				React$1__default.createElement( 'div', { className: "content" },
 					this.props.children
-<<<<<<< HEAD
 				)
-=======
-				), 
-				React$1__default.createElement( 'div', { className: "footer" }, "This is the footer")
->>>>>>> d6e834c66155f2f3040ddce7f40a258ebd772482
 			)
 		)
 	};
@@ -24450,8 +23977,8 @@ var InputGroup = function (ref) {
 	var onChange = ref.onChange;
 
 	return (
-		React.createElement( 'div', { className: "input_group" }, 
-			React.createElement( 'label', { htmlFor: inputName }, labelText, ":"), 
+		React.createElement( 'div', { className: "input_group" },
+			React.createElement( 'label', { htmlFor: inputName }, labelText, ":"),
 			React.createElement( 'input', { id: inputName, type: inputType, className: "text_field", onChange: onChange })
 		)
 	);
@@ -24502,11 +24029,11 @@ var Login = (function (superclass) {
 	
 	Login.prototype.render = function render () {
 		return (
-			React$1__default.createElement( 'div', { className: "login_page" }, 
-				React$1__default.createElement( 'div', { className: "login_container" }, 
-					React$1__default.createElement( 'h1', { className: "title" }, "Login"), 
-					React$1__default.createElement( 'form', { onSubmit: this.handleLoginSubmit.bind(this) }, 
-						React$1__default.createElement( InputGroup, { labelText: "Username", inputName: "username", inputType: "text", onChange: this.handleUsernameChange.bind(this) }), 
+			React$1__default.createElement( 'div', { className: "login_page" },
+				React$1__default.createElement( 'div', { className: "login_container" },
+					React$1__default.createElement( 'h1', { className: "title" }, "Login"),
+					React$1__default.createElement( 'form', { onSubmit: this.handleLoginSubmit.bind(this) },
+						React$1__default.createElement( InputGroup, { labelText: "Username", inputName: "username", inputType: "text", onChange: this.handleUsernameChange.bind(this) }),
 						React$1__default.createElement( InputGroup, { labelText: "Password", inputName: "password", inputType: "password", onChange: this.handlePasswordChange.bind(this) }), 						
 						React$1__default.createElement( MainButton, { buttonText: "Login", isSubmit: true, isDisabled: false })
 					)
@@ -24518,47 +24045,7 @@ var Login = (function (superclass) {
 	return Login;
 }(React$1__default.Component));
 
-<<<<<<< HEAD
 __$styleInject("",undefined);
-
-var COURSE_STATUS_PENDING = 'pending';
-var COURSE_STATUS_IN_PROGRESS = 'in-progress';
-var COURSE_STATUS_FINISHED = 'finished';
-
-var COURSE_STATUSES = [
-	COURSE_STATUS_PENDING,
-	COURSE_STATUS_IN_PROGRESS,
-	COURSE_STATUS_FINISHED ];
-
-var CourseGroupCard = function (ref) {
-	var title = ref.title;
-	var courses = ref.courses;
-
-	return (
-		React.createElement( 'div', { className: "course_group_card" },
-			React.createElement( 'div', { className: "course_group_header" }, title),
-			React.createElement( 'div', { className: "active_course" }),
-			React.createElement( 'div', { className: "course_group_dependencies" }
-			)
-		)
-	);
-};
-
-CourseGroupCard.PropTypes = {
-	title: React.PropTypes.string,
-	courses: React.PropTypes.arrayOf(React.PropTypes.shape({
-		id: React.PropTypes.string,
-		title: React.PropTypes.string,
-		description: React.PropTypes.string,
-		status: React.PropTypes.oneOf(COURSE_STATUSES),
-		imageUrl: React.PropTypes.string
-	}))
-};
-
-__$styleInject(".main_page_container h1{color:#666e77}.main_page_container hr{margin-right:40px}.main_page_container .domain_container{margin:20px}",undefined);
-=======
-__$styleInject(".main_page_container h1{color:#666e77}",undefined);
->>>>>>> d6e834c66155f2f3040ddce7f40a258ebd772482
 
 __$styleInject(".card_container{width:300px;height:350px;margin:10px;padding:10px;display:inline-block;box-shadow:1px 2px 2px 1px rgba(0,0,0,.3);text-align:center;background:#fff}",undefined);
 
@@ -24571,30 +24058,26 @@ function Card(ref) {
     );
 }
 
-__$styleInject(".domain_container{padding:0}.domain_container .domain_display_container{height:200px;background:#464c53;transition:background .1s ease-in-out;color:#fff;line-height:200px;font-size:50px}.domain_container .domain_image{height:150px;filter:grayscale(100%)}.domain_container .domain_details{padding:10px}.domain_container .domain_details .domain_title{font-size:32px;margin-top:10px}.domain_container .domain_details .domain_description{text-align:left}.domain_container:hover{box-shadow:0 0 2px 1px rgba(0,0,0,.3);cursor:pointer}.domain_container:hover .domain_display_container{background:#2f4054}.domain_container:hover .domain_image{filter:none}",undefined);
+__$styleInject(".entity_card_container{padding:0;color:#000}.entity_card_container .entity_display_container{height:200px;background:#464c53;transition:background .1s ease-in-out;color:#fff;line-height:200px;font-size:50px}.entity_card_container .entity_image{height:150px}.entity_card_container .entity_details{padding:10px}.entity_card_container .entity_details .entity_title{font-size:32px;margin-top:10px}.entity_card_container .entity_details .entity_description{text-align:left}.entity_card_container:hover{box-shadow:0 0 2px 1px rgba(0,0,0,.3);cursor:pointer}.entity_card_container:hover .entity_display_container{background:#2f4054}",undefined);
 
-function DomainCard(ref) {
+function EntityCard(ref) {
     var id = ref.id;
     var title = ref.title;
     var description = ref.description;
-    var imageUrl = ref.imageUrl;
+    var status = ref.status;
+    var children = ref.children;
 
-    var domainHeaderText = title.split('').filter(function (curr) { return curr.match(/[A-Z]/); }).join('');
+    var entityHeaderText = title ? title.split('').filter(function (curr) { return curr.match(/[A-Z]/); }).join('') : title;
     return (
-<<<<<<< HEAD
-        React.createElement( Card, { className: "domain_container" }
-            /*<img className="domain_image" src={imageUrl} />*/,
-            React.createElement( 'div', { className: "domain_display_container" }, React.createElement( 'span', { className: "domain_display_title" }, domainHeaderText)),
-            React.createElement( 'div', { className: "domain_details" },
-                React.createElement( 'h5', { className: "domain_title" }, title),
-                React.createElement( 'div', { className: "domain_description" }, description)
+        React$1__default.createElement( Card, { className: "entity_card_container" },
+            React$1__default.createElement( 'div', { className: "entity_display_container" },
+                React$1__default.createElement( 'span', { className: "entity_display_title" }, entityHeaderText)
+            ),
+            React$1__default.createElement( 'div', { className: "entity_details" },
+                React$1__default.createElement( 'h5', { className: "entity_title" }, title),
+                React$1__default.createElement( 'div', { className: "entity_description" }, description),
+                React$1__default.createElement( 'div', { className: "entity_children" }, children)
             )
-=======
-        React.createElement( Card, { className: "domain_container" }, 
-            React.createElement( 'img', { className: "domain_image", src: imageUrl }), 
-            React.createElement( 'h5', { className: "domain_title" }, title), 
-            React.createElement( 'span', { className: "domain_description" }, description)
->>>>>>> d6e834c66155f2f3040ddce7f40a258ebd772482
         )
     );
 }
@@ -24608,46 +24091,25 @@ var MainPage = (function (superclass) {
     MainPage.prototype = Object.create( superclass && superclass.prototype );
     MainPage.prototype.constructor = MainPage;
 
-    MainPage.prototype.renderSingleCourse = function renderSingleCourse (ref) {
-        var id = ref.id;
-        var title = ref.title;
-        var description = ref.description;
-        var imageUrl = ref.imageUrl;
-
-        return (
-            React$1__default.createElement( 'div', { key: id, id: id, className: "course_container", key: id }, 
-                React$1__default.createElement( 'img', { className: "course_image", src: imageUrl }), 
-                React$1__default.createElement( 'h5', { className: "course_title" }, title), 
-                React$1__default.createElement( 'span', { className: "course_description" }, description)
-            )
-        )
-    };
-
     MainPage.prototype.render = function render () {
-        var domainElements = this.props.courses.map(function (ref) {
-                    var id = ref.id;
-                    var title = ref.title;
-                    var description = ref.description;
-                    var imageUrl = ref.imageUrl;
+        var scopeElements = this.props.courses.map(function (ref) {
+                var id = ref.id;
+                var title = ref.title;
+                var description = ref.description;
+                var imageUrl = ref.imageUrl;
 
-                    return React$1__default.createElement( DomainCard, { key: id, id: id, title: title, description: description, imageUrl: imageUrl });
-        });
+                return React$1__default.createElement( Link, { key: id, to: ("/" + id) },  
+                React$1__default.createElement( EntityCard, { id: id, title: title, description: description, imageUrl: imageUrl })
+            );
+        }
+        );
         return (
-<<<<<<< HEAD
-            React$1__default.createElement( 'div', { className: "page main_page_container" },
+            React$1__default.createElement( 'div', { className: "page page_container" },
                 React$1__default.createElement( 'h1', null, "JobTrainer" ),
                 React$1__default.createElement( 'span', null, "Trainer for new jobs" ),
                 React$1__default.createElement( 'hr', null ),
-                React$1__default.createElement( 'h3', null, "Domains" ),
-                domainElements
-=======
-            React$1__default.createElement( 'div', { className: "page main_page_container" }, 
-                React$1__default.createElement( 'h1', null, "JobTrainer" ), 
-                React$1__default.createElement( 'span', null, "Trainer for new jobs" ), 
-                React$1__default.createElement( 'hr', null ), 
-                React$1__default.createElement( 'h3', null, "Courses" ), 
-                coursesElements
->>>>>>> d6e834c66155f2f3040ddce7f40a258ebd772482
+                React$1__default.createElement( 'h3', null, "Scopes" ),
+                scopeElements
             )
         )
     };
@@ -24657,7 +24119,7 @@ var MainPage = (function (superclass) {
 
 function mapStateToProps(state) {
     return {
-        courses: state.get("domains")
+        courses: state.get("scopes")
     };
 }
 
@@ -24666,7 +24128,7 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-var MainPage$1 = connect$1(mapStateToProps, mapDispatchToProps)(MainPage);
+var MainPage$1 = connect(mapStateToProps, mapDispatchToProps)(MainPage);
 
 var COURSE_STATUS_PENDING = 'pending';
 var COURSE_STATUS_IN_PROGRESS = 'in-progress';
@@ -24700,7 +24162,6 @@ StatusIcon.PropTypes = {
 	status: React.PropTypes.string
 };
 
-// TODO: id?
 var CourseGroupCard = function (ref) {
 	var courses = ref.courses;
 
@@ -24716,25 +24177,26 @@ var CourseGroupCard = function (ref) {
 
 	var coursesContent = leftCourses.map(function (course) {
 		return (
-			React.createElement( 'div', { className: "course" }, 
-				React.createElement( StatusIcon, { status: course.status, className: "course_status" }), 
+			React.createElement( 'div', { className: "course" },
+				React.createElement( StatusIcon, { status: course.status, className: "course_status" }),
 				React.createElement( 'span', { className: "course_title" }, " - ", course.title)
 			));
 	});
 
 	return (
-		React.createElement( Card, { className: "course_group_card" }, 
-			React.createElement( 'div', { className: "current_course" }, 
-				React.createElement( 'div', { className: ("course_status course_status_" + (currentCourse.status)) }), 
-				React.createElement( 'div', { className: 'course_title' }, currentCourse.title), 
+		React.createElement( Card, { className: "course_group_card" },
+			React.createElement( 'div', { className: "current_course" },
+				React.createElement( 'div', { className: ("course_status course_status_" + (currentCourse.status)) }),
+				React.createElement( 'div', { className: 'course_title' }, currentCourse.title),
 				React.createElement( 'div', { className: 'course_description' }, currentCourse.description)
-			), 
-			React.createElement( 'div', { className: "course_group_dependencies" }, 
+			),
+			React.createElement( 'div', { className: "course_group_dependencies" },
 				coursesContent
 			)
 		)
 	);
 };
+// asd sdasd   
 CourseGroupCard.PropTypes = {
 	courses: React.PropTypes.arrayOf(React.PropTypes.shape({
 		id: React.PropTypes.string,
@@ -24745,43 +24207,58 @@ CourseGroupCard.PropTypes = {
 	}))
 };
 
-var CoursesPage = (function (superclass) {
-	function CoursesPage(props) {
-		superclass.call(this, props);
-		this.courses = [{
-			id: 'dj2912jd019dj',
-			title: 'Components',
-			description: 'write react components!',
-			status: COURSE_STATUS_PENDING,
-			imageUrl: 'https://images-na.ssl-images-amazon.com/images/G/01/img15/pet-products/small-tiles/23695_pets_vertical_store_dogs_small_tile_8._CB312176604_.jpg'
-		}, {
-			id: 'dj2912jd019dj31313',
-			title: 'Applications',
-			description: 'write react applications!',
-			status: COURSE_STATUS_IN_PROGRESS,
-			imageUrl: 'https://www.what-dog.net/Images/faces2/scroll0015.jpg'
-		}, {
-			id: 'dj2912jd019dj211212',
-			title: 'Redux',
-			description: 'write redux data flow!',
-			status: COURSE_STATUS_PENDING,
-			imageUrl: 'https://d2wq73xazpk036.cloudfront.net/media/27FB7F0C-9885-42A6-9E0C19C35242B5AC/DA746CFE-B4A4-43C0-A02F8BAF7BC6CE20/thul-51a71b71-3799-5e48-8a84-5b08c9efa9cf.jpg?response-content-disposition=inline'
-		}];
-	}
+__$styleInject("",undefined);
 
-	if ( superclass ) CoursesPage.__proto__ = superclass;
-	CoursesPage.prototype = Object.create( superclass && superclass.prototype );
-	CoursesPage.prototype.constructor = CoursesPage;
+function ScopePage(ref) {
+    var scope = ref.scope;
+
+    console.log(scope);
+    var id = scope.id;
+    var title = scope.title;
+    var description = scope.description;
+    var courses = scope.courses;
+    var courseCards = courses && courses.map(function (ref) {
+            var id = ref.id;
+            var title = ref.title;
+            var description = ref.description;
+            var status = ref.status;
+
+            return React$1__default.createElement( EntityCard, { key: id, id: id, title: title, description: description, status: status });
+    }
+    );
+
+    return (
+        React$1__default.createElement( 'div', { className: "page scope_page_container" },
+            React$1__default.createElement( 'h1', null, title ),
+            React$1__default.createElement( 'span', null, description ),
+            React$1__default.createElement( 'hr', null ),
+            React$1__default.createElement( 'h3', null, "Courses" ),
+            React$1__default.createElement( 'div', { className: "container scope_courses_container" },
+                courseCards
+            )
+        )
+    )
+}
 
 
-	CoursesPage.prototype.render = function render () {
-		return (
-			React$1__default.createElement( CourseGroupCard, { title: "hello world", courses: this.courses })
-		);
-	};
+function mapStateToProps$1(state) {
+    return {
+        scopes: state.get("scopes")
+    };
+}
 
-	return CoursesPage;
-}(React$1__default.Component));
+function mapDispatchToProps$1(dispatch) {
+    return {
+    }
+}
+
+function mergeProps(state, dispatch, props) {
+    return {
+        scope: state.scopes.find(function (currScope) { return currScope.id == props.params.scopeId; })
+    }
+}
+
+var ScopePage$1 = connect(mapStateToProps$1, mapDispatchToProps$1, mergeProps)(ScopePage);
 
 var SET_INITIAL_DATA_ACTION = "SET_INITIAL_DATA_ACTION";
 var SET_VALUE_ACTION = "SET_VALUE_ACTION";
@@ -24830,12 +24307,32 @@ function createAppStore() {
 
 var store = createAppStore();
 
-store.dispatch(setValueAction("domains", [
+store.dispatch(setValueAction("scopes", [
         {
             id: "frontend",
             title: "FrondEnd",
             description: "Learn all the Front end courses Learn all the Front end courses",
             imageUrl: "http://cdn.geekwire.com/wp-content/uploads/2015/06/code-fellows-shield1-265x300.png",
+            courses: [
+                {
+                    id: "react",
+                    title: "React",
+                    description: "This course teaches react, a ui library from Facebook",
+                    status: "pending",
+                },
+                {
+                    id: "angular",
+                    title: "Angular",
+                    description: "This course teaches angular, a ui library from Google",
+                    status: "pending",
+                },
+                {
+                    id: "vue",
+                    title: "Vue",
+                    description: "This course teaches vue, a ui library",
+                    status: "pending",
+                }
+            ]
         },
         {
             id: "backend",
@@ -24851,12 +24348,12 @@ store.dispatch(setValueAction("domains", [
         } ]));
  
 index.render(
-    React$1__default.createElement( Provider, { store: store }, 
-        React$1__default.createElement( Router, { history: browserHistory }, 
-            React$1__default.createElement( Route, { path: "/", component: App }, 
-                React$1__default.createElement( IndexRoute, { component: MainPage$1 }), 
-                React$1__default.createElement( Route, { path: "login", component: Login }), 
-                React$1__default.createElement( Route, { path: "courses", component: CoursesPage })
+    React$1__default.createElement( Provider, { store: store },
+        React$1__default.createElement( Router, { history: browserHistory },
+            React$1__default.createElement( Route, { path: "/", component: App },
+                React$1__default.createElement( IndexRoute, { component: MainPage$1 }),
+                React$1__default.createElement( Route, { path: "/:scopeId", component: ScopePage$1 }),
+                React$1__default.createElement( Route, { path: "login", component: Login })
             )
         )
     ),
