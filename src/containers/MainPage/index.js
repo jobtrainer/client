@@ -18,7 +18,9 @@ class MainPage extends React.Component {
                 <span>Trainer for new jobs</span>
                 <hr/>
                 <h3>Scopes</h3>
-                {scopeElements}
+                <div className="container scopes_container">
+                    {scopeElements}
+                </div>
             </div>
         )
     }

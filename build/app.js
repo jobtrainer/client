@@ -23933,7 +23933,7 @@ var NavigationLink = function (ref) {
 	);
 };
 
-__$styleInject("h1{color:#666e77}hr{margin-right:40px}.containercontainer{margin:20px}body{margin:0;padding:0;@import url(\"https://fonts.googleapis.com/css?family=Roboto\");font-family:Roboto,sans-serif}.application .header{position:relative;width:100%;height:50px;padding:10px;z-index:1;display:flex;background-color:#fff;box-shadow:0 5px 11px 4px rgba(0,0,0,.03)}.application .header .logo{height:100%;display:flex;align-items:center}.application .header .logo .logo_image{max-width:100%;max-height:100%}.application .header .logo .company_name{display:inline-block;margin:0 15px}.application .header .navigation .login_navigation{position:absolute;right:30px}.application .content{display:inline}.application .content .page{padding:20px;background-color:#fdfdfd;height:100%;width:100%}",undefined);
+__$styleInject("h1{color:#666e77}hr{margin-right:40px}.container{margin:20px}body{margin:0;padding:0;@import url(\"https://fonts.googleapis.com/css?family=Roboto\");font-family:Roboto,sans-serif}.application .header{position:relative;width:100%;height:50px;padding:10px;z-index:1;display:flex;background-color:#fff;box-shadow:0 5px 11px 4px rgba(0,0,0,.03)}.application .header .logo{height:100%;display:flex;align-items:center}.application .header .logo .logo_image{max-width:100%;max-height:100%}.application .header .logo .company_name{display:inline-block;margin:0 15px}.application .header .navigation .login_navigation{position:absolute;right:30px}.application .content{display:inline}.application .content .page{padding:20px;background-color:#fdfdfd;height:100%;width:100%}",undefined);
 
 var App = (function (superclass) {
 	function App () {
@@ -23955,6 +23955,7 @@ var App = (function (superclass) {
 					React$1__default.createElement( 'div', { className: "navigation" },
 						React$1__default.createElement( NavigationLink, { to: "/", linkText: "Main" }),
 						React$1__default.createElement( NavigationLink, { to: "/courses", linkText: "Courses" }),
+						React$1__default.createElement( NavigationLink, { to: "/:domain", linkText: "Domain" }),
 						React$1__default.createElement( NavigationLink, { to: "/login", linkText: "Login", className: "login_navigation" })
 					)
 				),
@@ -24109,7 +24110,9 @@ var MainPage = (function (superclass) {
                 React$1__default.createElement( 'span', null, "Trainer for new jobs" ),
                 React$1__default.createElement( 'hr', null ),
                 React$1__default.createElement( 'h3', null, "Scopes" ),
-                scopeElements
+                React$1__default.createElement( 'div', { className: "container scopes_container" },
+                    scopeElements
+                )
             )
         )
     };

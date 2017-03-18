@@ -7,11 +7,7 @@ import Login from "./containers/Login";
 
 import MainPage from "./containers/MainPage";
 import Courses from "./containers/CoursesPage";
-<<<<<<< HEAD
 import ScopePage from "./containers/ScopePage";
-=======
-import DomainPage from "./containers/DomainPage";
->>>>>>> c902e7fc76573ed7a4feba3c7ed5f50c4fd3c2e8
 
 import { createAppStore } from "./store";
 import { setValueAction } from "./reducers/commonDataReducer/actions";
@@ -29,7 +25,6 @@ store.dispatch(setValueAction("scopes", [
             imageUrl: "http://cdn.geekwire.com/wp-content/uploads/2015/06/code-fellows-shield1-265x300.png",
             courses: [
                 {
-<<<<<<< HEAD
                     id: "react",
                     title: "React",
                     description: "This course teaches react, a ui library from Facebook",
@@ -46,21 +41,6 @@ store.dispatch(setValueAction("scopes", [
                     title: "Vue",
                     description: "This course teaches vue, a ui library",
                     status: "pending",
-=======
-                    id: "react", 
-                    title: "ReactJs",
-                    description: "Learn Reactjs",
-                },
-                {
-                    id: "ng", 
-                    title: "AngularJs",
-                    description: "Learn AngularJs",
-                },
-                {
-                    id: "vue", 
-                    title: "VueJs",
-                    description: "Learn VueJs",
->>>>>>> c902e7fc76573ed7a4feba3c7ed5f50c4fd3c2e8
                 }
             ]
         },
@@ -85,10 +65,6 @@ ReactDOM.render(
                 <IndexRoute component={MainPage}/>
                 <Route path="/:scopeId" component={ScopePage}/>
                 <Route path="login" component={Login}/>
-<<<<<<< HEAD
-=======
-                <Route path=":domainId" component={DomainPage}/>
->>>>>>> c902e7fc76573ed7a4feba3c7ed5f50c4fd3c2e8
             </Route>
         </Router>
     </Provider>,
