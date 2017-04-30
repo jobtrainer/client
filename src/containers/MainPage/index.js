@@ -28,7 +28,7 @@ class MainPage extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        courses: state.get("scopes")
+        courses: state.scopes.get("scopes")
     };
 }
 

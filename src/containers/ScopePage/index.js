@@ -6,8 +6,8 @@ import EntityCard from "../../components/Cards/EntityCard";
 
 import "./index.scss";
 
-function ScopePage({scope}) {
-    console.log(scope);
+const ScopePage = ({scope, location}) => {
+
     const { id, title, description, courses } = scope;
     const courseCards = courses && courses.map(({id, title, description, status}) =>
         <EntityCard key={id} id={id} title={title} description={description} status={status}/>
@@ -29,7 +29,7 @@ function ScopePage({scope}) {
 
 function mapStateToProps(state) {
     return {
-        scopes: state.get("scopes")
+        scopes: state.scopes.get('scopes')
     };
 }
 

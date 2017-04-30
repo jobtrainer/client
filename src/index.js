@@ -6,16 +6,18 @@ import App from "./containers/App";
 import Login from "./containers/Login";
 
 import MainPage from "./containers/MainPage";
-import Courses from "./containers/CoursesPage";
+import CoursesPage from "./containers/CoursesPage";
 import ScopePage from "./containers/ScopePage";
 
 import { createAppStore } from "./store";
 import { setValueAction } from "./reducers/commonDataReducer/actions";
 
-import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router'
+import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router';
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 
  
 const store = createAppStore();
+const history = syncHistoryWithStore(browserHistory, store);
 
 store.dispatch(setValueAction("scopes", [
         {
@@ -60,10 +62,11 @@ store.dispatch(setValueAction("scopes", [
  
 ReactDOM.render(
     <Provider store={store}>
-        <Router history={browserHistory}>
+        <Router history={history}>
             <Route path="/" component={App}>
                 <IndexRoute component={MainPage}/>
                 <Route path="/:scopeId" component={ScopePage}/>
+                <Route path="/:scopeId/:courseId" component={CoursesPage}/>
                 <Route path="login" component={Login}/>
             </Route>
         </Router>

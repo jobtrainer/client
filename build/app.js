@@ -1,7 +1,7 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('react'), require('Immutable')) :
-	typeof define === 'function' && define.amd ? define(['react', 'Immutable'], factory) :
-	(factory(global.React,global.Immutable));
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('react'), require('Immutable')) :
+    typeof define === 'function' && define.amd ? define(['react', 'Immutable'], factory) :
+    (factory(global.React,global.Immutable));
 }(this, (function (React$1,Immutable) { 'use strict';
 
 function __$styleInject(css, returnValue) {
@@ -20,7 +20,6 @@ function __$styleInject(css, returnValue) {
   head.appendChild(style);
   return returnValue;
 }
-
 var React$1__default = 'default' in React$1 ? React$1['default'] : React$1;
 
 /**
@@ -868,7 +867,7 @@ function makeEmptyFunction(arg) {
  * primarily useful idiomatically for overridable function endpoints which
  * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
  */
-var emptyFunction$1 = function emptyFunction() {};
+var emptyFunction$1 = function emptyFunction$1() {};
 
 emptyFunction$1.thatReturns = makeEmptyFunction;
 emptyFunction$1.thatReturnsFalse = makeEmptyFunction(false);
@@ -916,7 +915,7 @@ var warning$3 = emptyFunction;
       } catch (x) {}
     };
 
-    warning$3 = function warning(condition, format) {
+    warning$3 = function warning$3(condition, format) {
       if (format === undefined) {
         throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
       }
@@ -1696,7 +1695,7 @@ function shouldUseNative() {
 	}
 }
 
-var index$1 = shouldUseNative() ? Object.assign : function (target, source) {
+var index$2 = shouldUseNative() ? Object.assign : function (target, source) {
 	var from;
 	var to = toObject(target);
 	var symbols;
@@ -1841,7 +1840,7 @@ function getTextContentAccessor$1() {
 
 var getTextContentAccessor_1 = getTextContentAccessor$1;
 
-var _assign = index$1;
+var _assign = index$2;
 
 var PooledClass = PooledClass_1;
 
@@ -1924,7 +1923,7 @@ PooledClass.addPoolingTo(FallbackCompositionState$1);
 
 var FallbackCompositionState_1 = FallbackCompositionState$1;
 
-var _assign$1 = index$1;
+var _assign$1 = index$2;
 
 var PooledClass$2 = PooledClass_1;
 
@@ -2914,11 +2913,11 @@ var ReactInvalidSetStateWarningHook_1 = ReactInvalidSetStateWarningHook$1;
  * 
  */
 
-var history = [];
+var history$1 = [];
 
 var ReactHostOperationHistoryHook$1 = {
   onHostOperation: function (operation) {
-    history.push(operation);
+    history$1.push(operation);
   },
   clearHistory: function () {
     if (ReactHostOperationHistoryHook$1._preventClearing) {
@@ -2926,10 +2925,10 @@ var ReactHostOperationHistoryHook$1 = {
       return;
     }
 
-    history = [];
+    history$1 = [];
   },
   getHistory: function () {
-    return history;
+    return history$1;
   }
 };
 
@@ -3097,7 +3096,7 @@ function describeComponentFrame(name, source, ownerName) {
   return '\n    in ' + (name || 'Unknown') + (source ? ' (at ' + source.fileName.replace(/^.*[\\\/]/, '') + ':' + source.lineNumber + ')' : ownerName ? ' (created by ' + ownerName + ')' : '');
 }
 
-function getDisplayName(element) {
+function getDisplayName$1(element) {
   if (element == null) {
     return '#empty';
   } else if (typeof element === 'string' || typeof element === 'number') {
@@ -3215,7 +3214,7 @@ var ReactComponentTreeHook$1 = {
   getCurrentStackAddendum: function (topElement) {
     var info = '';
     if (topElement) {
-      var name = getDisplayName(topElement);
+      var name = getDisplayName$1(topElement);
       var owner = topElement._owner;
       info += describeComponentFrame(name, topElement._source, owner && owner.getName());
     }
@@ -3243,7 +3242,7 @@ var ReactComponentTreeHook$1 = {
     if (!element) {
       return null;
     }
-    return getDisplayName(element);
+    return getDisplayName$1(element);
   },
   getElement: function (id) {
     var item = getItem(id);
@@ -3308,11 +3307,11 @@ var performanceNow$1;
  * because of Facebook's testing infrastructure.
  */
 if (performance$1.now) {
-  performanceNow$1 = function performanceNow() {
+  performanceNow$1 = function performanceNow$1() {
     return performance$1.now();
   };
 } else {
-  performanceNow$1 = function performanceNow() {
+  performanceNow$1 = function performanceNow$1() {
     return Date.now();
   };
 }
@@ -4042,7 +4041,7 @@ var TransactionImpl = {
 
 var Transaction$1 = TransactionImpl;
 
-var _assign$2 = index$1;
+var _assign$2 = index$2;
 
 var CallbackQueue = CallbackQueue_1;
 var PooledClass$3 = PooledClass_1;
@@ -7023,7 +7022,7 @@ function getVendorPrefixedEventName$1(eventName) {
 
 var getVendorPrefixedEventName_1 = getVendorPrefixedEventName$1;
 
-var _assign$4 = index$1;
+var _assign$4 = index$2;
 
 var EventPluginRegistry$3 = EventPluginRegistry_1;
 var ReactEventEmitterMixin = ReactEventEmitterMixin_1;
@@ -7475,7 +7474,7 @@ var REACT_ELEMENT_TYPE$1 = typeof Symbol === 'function' && Symbol['for'] && Symb
 
 var ReactElementSymbol = REACT_ELEMENT_TYPE$1;
 
-var _assign$7 = index$1;
+var _assign$7 = index$2;
 
 var ReactCurrentOwner$2 = ReactCurrentOwner_1;
 
@@ -8439,7 +8438,7 @@ ReactComponent$1.prototype.forceUpdate = function (callback) {
 
 var ReactComponent_1 = ReactComponent$1;
 
-var _assign$8 = index$1;
+var _assign$8 = index$2;
 
 var ReactComponent$2 = ReactComponent_1;
 var ReactNoopUpdateQueue$2 = ReactNoopUpdateQueue_1;
@@ -8492,7 +8491,7 @@ var ReactPropTypeLocationNames$1 = {};
 
 var ReactPropTypeLocationNames_1 = ReactPropTypeLocationNames$1;
 
-var _assign$9 = index$1;
+var _assign$9 = index$2;
 
 var ReactComponent$3 = ReactComponent_1;
 var ReactElement$3 = ReactElement_1;
@@ -10116,7 +10115,7 @@ function onlyChild$1(children) {
 
 var onlyChild_1 = onlyChild$1;
 
-var _assign$6 = index$1;
+var _assign$6 = index$2;
 
 var ReactChildren = ReactChildren_1;
 var ReactComponent = ReactComponent_1;
@@ -10130,13 +10129,13 @@ var ReactVersion$1 = ReactVersion$2;
 var onlyChild = onlyChild_1;
 var warning$15 = warning_1;
 
-var createElement$1 = ReactElement.createElement;
+var createElement$2 = ReactElement.createElement;
 var createFactory = ReactElement.createFactory;
 var cloneElement = ReactElement.cloneElement;
 
 {
   var ReactElementValidator = ReactElementValidator_1;
-  createElement$1 = ReactElementValidator.createElement;
+  createElement$2 = ReactElementValidator.createElement;
   createFactory = ReactElementValidator.createFactory;
   cloneElement = ReactElementValidator.cloneElement;
 }
@@ -10167,7 +10166,7 @@ var React$3 = {
   Component: ReactComponent,
   PureComponent: ReactPureComponent,
 
-  createElement: createElement$1,
+  createElement: createElement$2,
   cloneElement: cloneElement,
   isValidElement: ReactElement.isValidElement,
 
@@ -10329,7 +10328,7 @@ var LinkedValueUtils$1 = {
 
 var LinkedValueUtils_1 = LinkedValueUtils$1;
 
-var _assign$5 = index$1;
+var _assign$5 = index$2;
 
 var DOMPropertyOperations$2 = DOMPropertyOperations_1;
 var LinkedValueUtils = LinkedValueUtils_1;
@@ -10594,7 +10593,7 @@ function _handleChange(event) {
 
 var ReactDOMInput_1 = ReactDOMInput$1;
 
-var _assign$11 = index$1;
+var _assign$11 = index$2;
 
 var LinkedValueUtils$2 = LinkedValueUtils_1;
 var ReactDOMComponentTree$12 = ReactDOMComponentTree_1;
@@ -10782,7 +10781,7 @@ function _handleChange$1(event) {
 
 var ReactDOMSelect_1 = ReactDOMSelect$2;
 
-var _assign$10 = index$1;
+var _assign$10 = index$2;
 
 var React$4 = React_1;
 var ReactDOMComponentTree$11 = ReactDOMComponentTree_1;
@@ -10893,7 +10892,7 @@ var ReactDOMOption$1 = {
 
 var ReactDOMOption_1 = ReactDOMOption$1;
 
-var _assign$12 = index$1;
+var _assign$12 = index$2;
 
 var LinkedValueUtils$3 = LinkedValueUtils_1;
 var ReactDOMComponentTree$13 = ReactDOMComponentTree_1;
@@ -11323,7 +11322,7 @@ function shouldUpdateReactComponent$2(prevElement, nextElement) {
 
 var shouldUpdateReactComponent_1 = shouldUpdateReactComponent$2;
 
-var _assign$14 = index$1;
+var _assign$14 = index$2;
 
 var React$5 = React_1;
 var ReactComponentEnvironment$2 = ReactComponentEnvironment_1;
@@ -12289,7 +12288,7 @@ function getNextDebugID$1() {
 
 var getNextDebugID_1 = getNextDebugID$1;
 
-var _assign$13 = index$1;
+var _assign$13 = index$2;
 
 var ReactCompositeComponent = ReactCompositeComponent_1;
 var ReactEmptyComponent = ReactEmptyComponent_1;
@@ -12977,7 +12976,7 @@ function makeTextContent(textContent) {
  * Push an update, if any, onto the queue. Creates a new queue if none is
  * passed and always returns the queue. Mutative.
  */
-function enqueue(queue, update) {
+function enqueue$1(queue, update) {
   if (update) {
     queue = queue || [];
     queue.push(update);
@@ -13186,7 +13185,7 @@ var ReactMultiChild$1 = {
         var prevChild = prevChildren && prevChildren[name];
         var nextChild = nextChildren[name];
         if (prevChild === nextChild) {
-          updates = enqueue(updates, this.moveChild(prevChild, lastPlacedNode, nextIndex, lastIndex));
+          updates = enqueue$1(updates, this.moveChild(prevChild, lastPlacedNode, nextIndex, lastIndex));
           lastIndex = Math.max(prevChild._mountIndex, lastIndex);
           prevChild._mountIndex = nextIndex;
         } else {
@@ -13196,7 +13195,7 @@ var ReactMultiChild$1 = {
             // The `removedNodes` loop below will actually remove the child.
           }
           // The child must be instantiated before it's mounted.
-          updates = enqueue(updates, this._mountChildAtIndex(nextChild, mountImages[nextMountIndex], lastPlacedNode, nextIndex, transaction, context));
+          updates = enqueue$1(updates, this._mountChildAtIndex(nextChild, mountImages[nextMountIndex], lastPlacedNode, nextIndex, transaction, context));
           nextMountIndex++;
         }
         nextIndex++;
@@ -13205,7 +13204,7 @@ var ReactMultiChild$1 = {
       // Remove children that are no longer present.
       for (name in removedNodes) {
         if (removedNodes.hasOwnProperty(name)) {
-          updates = enqueue(updates, this._unmountChild(prevChildren[name], removedNodes[name]));
+          updates = enqueue$1(updates, this._unmountChild(prevChildren[name], removedNodes[name]));
         }
       }
       if (updates) {
@@ -13643,7 +13642,7 @@ var ReactServerUpdateQueue$1 = function () {
 
 var ReactServerUpdateQueue_1 = ReactServerUpdateQueue$1;
 
-var _assign$15 = index$1;
+var _assign$15 = index$2;
 
 var PooledClass$7 = PooledClass_1;
 var Transaction$3 = Transaction$1;
@@ -13721,7 +13720,7 @@ PooledClass$7.addPoolingTo(ReactServerRenderingTransaction$1);
 
 var ReactServerRenderingTransaction_1 = ReactServerRenderingTransaction$1;
 
-var _assign$16 = index$1;
+var _assign$16 = index$2;
 
 var emptyFunction$8 = emptyFunction_1;
 var warning$35 = warning_1;
@@ -14091,7 +14090,7 @@ var validateDOMNesting$1 = emptyFunction$8;
 
 var validateDOMNesting_1 = validateDOMNesting$1;
 
-var _assign$3 = index$1;
+var _assign$3 = index$2;
 
 var AutoFocusUtils = AutoFocusUtils_1;
 var CSSPropertyOperations = CSSPropertyOperations_1;
@@ -15077,7 +15076,7 @@ _assign$3(ReactDOMComponent$1.prototype, ReactDOMComponent$1.Mixin, ReactMultiCh
 
 var ReactDOMComponent_1 = ReactDOMComponent$1;
 
-var _assign$17 = index$1;
+var _assign$17 = index$2;
 
 var DOMLazyTree$4 = DOMLazyTree_1;
 var ReactDOMComponentTree$14 = ReactDOMComponentTree_1;
@@ -15247,7 +15246,7 @@ var ReactDOMTreeTraversal$1 = {
   traverseEnterLeave: traverseEnterLeave
 };
 
-var _assign$18 = index$1;
+var _assign$18 = index$2;
 
 var DOMChildrenOperations$3 = DOMChildrenOperations_1;
 var DOMLazyTree$5 = DOMLazyTree_1;
@@ -15398,7 +15397,7 @@ _assign$18(ReactDOMTextComponent$1.prototype, {
 
 var ReactDOMTextComponent_1 = ReactDOMTextComponent$1;
 
-var _assign$19 = index$1;
+var _assign$19 = index$2;
 
 var ReactUpdates$7 = ReactUpdates_1;
 var Transaction$4 = Transaction$1;
@@ -15544,7 +15543,7 @@ function getUnboundedScrollPosition$1(scrollable) {
 
 var getUnboundedScrollPosition_1 = getUnboundedScrollPosition$1;
 
-var _assign$20 = index$1;
+var _assign$20 = index$2;
 
 var EventListener = EventListener_1;
 var ExecutionEnvironment$15 = ExecutionEnvironment_1;
@@ -16144,7 +16143,7 @@ var ReactInputSelection$1 = {
 
 var ReactInputSelection_1 = ReactInputSelection$1;
 
-var _assign$21 = index$1;
+var _assign$21 = index$2;
 
 var CallbackQueue$2 = CallbackQueue_1;
 var PooledClass$9 = PooledClass_1;
@@ -18509,7 +18508,7 @@ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined' && typeof __REACT_DEVT
 
 var ReactDOM_1 = ReactDOM$1;
 
-var index = ReactDOM_1;
+var index$1 = ReactDOM_1;
 
 var subscriptionShape = React$1.PropTypes.shape({
   trySubscribe: React$1.PropTypes.func.isRequired,
@@ -18633,7 +18632,7 @@ var KNOWN_STATICS = {
 
 var isGetOwnPropertySymbolsAvailable = typeof Object.getOwnPropertySymbols === 'function';
 
-var index$3 = function hoistNonReactStatics(targetComponent, sourceComponent, customStatics) {
+var index$4 = function hoistNonReactStatics(targetComponent, sourceComponent, customStatics) {
     if (typeof sourceComponent !== 'string') { // don't hoist over string (html) components
         var keys = Object.getOwnPropertyNames(sourceComponent);
 
@@ -19047,7 +19046,7 @@ selectorFactory) {
       };
     }
 
-    return index$3(Connect, WrappedComponent);
+    return index$4(Connect, WrappedComponent);
   };
 }
 
@@ -19315,7 +19314,7 @@ function symbolObservablePonyfill(root) {
 }
 });
 
-var index$5 = createCommonjsModule(function (module, exports) {
+var index$6 = createCommonjsModule(function (module, exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19345,7 +19344,7 @@ var result = (0, _ponyfill2['default'])(root);
 exports['default'] = result;
 });
 
-var index$4 = index$5;
+var index$5 = index$6;
 
 var ActionTypes = {
   INIT: '@@redux/INIT'
@@ -19569,7 +19568,7 @@ function createStore(reducer, preloadedState, enhancer) {
         var unsubscribe = outerSubscribe(observeState);
         return { unsubscribe: unsubscribe };
       }
-    }, _ref[index$4] = function () {
+    }, _ref[index$5] = function () {
       return this;
     }, _ref;
   }
@@ -19584,7 +19583,7 @@ function createStore(reducer, preloadedState, enhancer) {
     subscribe: subscribe,
     getState: getState,
     replaceReducer: replaceReducer
-  }, _ref2[index$4] = observable, _ref2;
+  }, _ref2[index$5] = observable, _ref2;
 }
 
 /**
@@ -19607,6 +19606,132 @@ function warning$42(message) {
     /* eslint-disable no-empty */
   } catch (e) {}
   /* eslint-enable no-empty */
+}
+
+function getUndefinedStateErrorMessage(key, action) {
+  var actionType = action && action.type;
+  var actionName = actionType && '"' + actionType.toString() + '"' || 'an action';
+
+  return 'Given action ' + actionName + ', reducer "' + key + '" returned undefined. ' + 'To ignore an action, you must explicitly return the previous state.';
+}
+
+function getUnexpectedStateShapeWarningMessage(inputState, reducers, action, unexpectedKeyCache) {
+  var reducerKeys = Object.keys(reducers);
+  var argumentName = action && action.type === ActionTypes.INIT ? 'preloadedState argument passed to createStore' : 'previous state received by the reducer';
+
+  if (reducerKeys.length === 0) {
+    return 'Store does not have a valid reducer. Make sure the argument passed ' + 'to combineReducers is an object whose values are reducers.';
+  }
+
+  if (!isPlainObject(inputState)) {
+    return 'The ' + argumentName + ' has unexpected type of "' + {}.toString.call(inputState).match(/\s([a-z|A-Z]+)/)[1] + '". Expected argument to be an object with the following ' + ('keys: "' + reducerKeys.join('", "') + '"');
+  }
+
+  var unexpectedKeys = Object.keys(inputState).filter(function (key) {
+    return !reducers.hasOwnProperty(key) && !unexpectedKeyCache[key];
+  });
+
+  unexpectedKeys.forEach(function (key) {
+    unexpectedKeyCache[key] = true;
+  });
+
+  if (unexpectedKeys.length > 0) {
+    return 'Unexpected ' + (unexpectedKeys.length > 1 ? 'keys' : 'key') + ' ' + ('"' + unexpectedKeys.join('", "') + '" found in ' + argumentName + '. ') + 'Expected to find one of the known reducer keys instead: ' + ('"' + reducerKeys.join('", "') + '". Unexpected keys will be ignored.');
+  }
+}
+
+function assertReducerSanity(reducers) {
+  Object.keys(reducers).forEach(function (key) {
+    var reducer = reducers[key];
+    var initialState = reducer(undefined, { type: ActionTypes.INIT });
+
+    if (typeof initialState === 'undefined') {
+      throw new Error('Reducer "' + key + '" returned undefined during initialization. ' + 'If the state passed to the reducer is undefined, you must ' + 'explicitly return the initial state. The initial state may ' + 'not be undefined.');
+    }
+
+    var type = '@@redux/PROBE_UNKNOWN_ACTION_' + Math.random().toString(36).substring(7).split('').join('.');
+    if (typeof reducer(undefined, { type: type }) === 'undefined') {
+      throw new Error('Reducer "' + key + '" returned undefined when probed with a random type. ' + ('Don\'t try to handle ' + ActionTypes.INIT + ' or other actions in "redux/*" ') + 'namespace. They are considered private. Instead, you must return the ' + 'current state for any unknown actions, unless it is undefined, ' + 'in which case you must return the initial state, regardless of the ' + 'action type. The initial state may not be undefined.');
+    }
+  });
+}
+
+/**
+ * Turns an object whose values are different reducer functions, into a single
+ * reducer function. It will call every child reducer, and gather their results
+ * into a single state object, whose keys correspond to the keys of the passed
+ * reducer functions.
+ *
+ * @param {Object} reducers An object whose values correspond to different
+ * reducer functions that need to be combined into one. One handy way to obtain
+ * it is to use ES6 `import * as reducers` syntax. The reducers may never return
+ * undefined for any action. Instead, they should return their initial state
+ * if the state passed to them was undefined, and the current state for any
+ * unrecognized action.
+ *
+ * @returns {Function} A reducer function that invokes every reducer inside the
+ * passed object, and builds a state object with the same shape.
+ */
+function combineReducers(reducers) {
+  var reducerKeys = Object.keys(reducers);
+  var finalReducers = {};
+  for (var i = 0; i < reducerKeys.length; i++) {
+    var key = reducerKeys[i];
+
+    {
+      if (typeof reducers[key] === 'undefined') {
+        warning$42('No reducer provided for key "' + key + '"');
+      }
+    }
+
+    if (typeof reducers[key] === 'function') {
+      finalReducers[key] = reducers[key];
+    }
+  }
+  var finalReducerKeys = Object.keys(finalReducers);
+
+  {
+    var unexpectedKeyCache = {};
+  }
+
+  var sanityError;
+  try {
+    assertReducerSanity(finalReducers);
+  } catch (e) {
+    sanityError = e;
+  }
+
+  return function combination() {
+    var state = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+    var action = arguments[1];
+
+    if (sanityError) {
+      throw sanityError;
+    }
+
+    {
+      var warningMessage = getUnexpectedStateShapeWarningMessage(state, finalReducers, action, unexpectedKeyCache);
+      if (warningMessage) {
+        warning$42(warningMessage);
+      }
+    }
+
+    var hasChanged = false;
+    var nextState = {};
+    for (var i = 0; i < finalReducerKeys.length; i++) {
+      var key = finalReducerKeys[i];
+      var reducer = finalReducers[key];
+      var previousStateForKey = state[key];
+      var nextStateForKey = reducer(previousStateForKey, action);
+      if (typeof nextStateForKey === 'undefined') {
+        var errorMessage = getUndefinedStateErrorMessage(key, action);
+        throw new Error(errorMessage);
+      }
+      nextState[key] = nextStateForKey;
+      hasChanged = hasChanged || nextStateForKey !== previousStateForKey;
+    }
+    return hasChanged ? nextState : state;
+  };
 }
 
 function bindActionCreator(actionCreator, dispatch) {
@@ -19667,6 +19792,32 @@ function bindActionCreators(actionCreators, dispatch) {
  * from right to left. For example, compose(f, g, h) is identical to doing
  * (...args) => f(g(h(...args))).
  */
+
+function compose() {
+  for (var _len = arguments.length, funcs = Array(_len), _key = 0; _key < _len; _key++) {
+    funcs[_key] = arguments[_key];
+  }
+
+  if (funcs.length === 0) {
+    return function (arg) {
+      return arg;
+    };
+  }
+
+  if (funcs.length === 1) {
+    return funcs[0];
+  }
+
+  var last = funcs[funcs.length - 1];
+  var rest = funcs.slice(0, -1);
+  return function () {
+    return rest.reduceRight(function (composed, f) {
+      return f(composed);
+    }, last.apply(undefined, arguments));
+  };
+}
+
+var _extends$2 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 function isCrushed() {}
 
@@ -20015,7 +20166,7 @@ function createConnect() {
   };
 }
 
-var connect = createConnect();
+var connect$1 = createConnect();
 
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -20798,7 +20949,7 @@ function createRoute(defaultProps, props) {
   return _extends$7({}, defaultProps, props);
 }
 
-function createRouteFromReactElement(element) {
+function createRouteFromReactElement$1(element) {
   var type = element.type;
   var route = createRoute(type.defaultProps, element.props);
 
@@ -20841,7 +20992,7 @@ function createRoutesFromReactChildren(children, parentRoute) {
 
         if (route) routes.push(route);
       } else {
-        routes.push(createRouteFromReactElement(element));
+        routes.push(createRouteFromReactElement$1(element));
       }
     }
   });
@@ -21114,7 +21265,7 @@ function hasAnyProperties(object) {
   }return false;
 }
 
-function createTransitionManager(history, routes) {
+function createTransitionManager$1(history, routes) {
   var state = {};
 
   // Signature should be (location, indexOnly), but needs to support (path,
@@ -21364,7 +21515,7 @@ function falsy(props, propName, componentName) {
   if (props[propName]) return new Error('<' + componentName + '> should not have a "' + propName + '" prop');
 }
 
-var history$1 = shape({
+var history$2 = shape({
   listen: func$1.isRequired,
   push: func$1.isRequired,
   replace: func$1.isRequired,
@@ -21546,7 +21697,7 @@ var RouterContext = React$1__default.createClass({
       router: this.props.router
     };
   },
-  createElement: function createElement$$1(component, props) {
+  createElement: function createElement(component, props) {
     return component == null ? null : this.props.createElement(component, props);
   },
   render: function render() {
@@ -21612,7 +21763,7 @@ var RouterContext = React$1__default.createClass({
 
 var _extends$9 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-function createRouterObject(history, transitionManager, state) {
+function createRouterObject$1(history, transitionManager, state) {
   var router = _extends$9({}, history, {
     setRouteLeaveHook: transitionManager.listenBeforeLeavingRoute,
     isActive: transitionManager.isActive
@@ -21687,7 +21838,7 @@ var Router = React$1__default.createClass({
       throw error; // This error probably occurred in getChildRoutes or getComponents.
     }
   },
-  createRouterObject: function createRouterObject$$1(state) {
+  createRouterObject: function createRouterObject(state) {
     var matchContext = this.props.matchContext;
 
     if (matchContext) {
@@ -21696,9 +21847,9 @@ var Router = React$1__default.createClass({
 
     var history$$1 = this.props.history;
 
-    return createRouterObject(history$$1, this.transitionManager, state);
+    return createRouterObject$1(history$$1, this.transitionManager, state);
   },
-  createTransitionManager: function createTransitionManager$$1() {
+  createTransitionManager: function createTransitionManager() {
     var matchContext = this.props.matchContext;
 
     if (matchContext) {
@@ -21713,7 +21864,7 @@ var Router = React$1__default.createClass({
 
     !history$$1.getCurrentLocation ? invariant_1$2(false, 'You have provided a history object created with history v4.x or v2.x ' + 'and earlier. This version of React Router is only compatible with v3 ' + 'history objects. Please change to history v3.x.') : void 0;
 
-    return createTransitionManager(history$$1, createRoutes(routes$$1 || children));
+    return createTransitionManager$1(history$$1, createRoutes(routes$$1 || children));
   },
   componentWillMount: function componentWillMount() {
     var _this = this;
@@ -21751,7 +21902,7 @@ var Router = React$1__default.createClass({
         components$$1 = _state.components;
 
     var _props2 = this.props,
-        createElement$$1 = _props2.createElement,
+        createElement = _props2.createElement,
         render = _props2.render,
         props = _objectWithoutProperties$3(_props2, ['createElement', 'render']);
 
@@ -21769,7 +21920,7 @@ var Router = React$1__default.createClass({
       routes: routes$$1,
       params: params,
       components: components$$1,
-      createElement: createElement$$1
+      createElement: createElement
     }));
   }
 });
@@ -21945,6 +22096,12 @@ var IndexLink = React$1__default.createClass({
   }
 });
 
+var _extends$12 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function getDisplayName$2(WrappedComponent) {
+  return WrappedComponent.displayName || WrappedComponent.name || 'Component';
+}
+
 var _React$PropTypes$4 = React$1__default.PropTypes;
 var string$4 = _React$PropTypes$4.string;
 var object$6 = _React$PropTypes$4.object;
@@ -21963,8 +22120,8 @@ var Redirect = React$1__default.createClass({
 
 
   statics: {
-    createRouteFromReactElement: function createRouteFromReactElement$$1(element) {
-      var route$$1 = createRouteFromReactElement(element);
+    createRouteFromReactElement: function createRouteFromReactElement(element) {
+      var route$$1 = createRouteFromReactElement$1(element);
 
       if (route$$1.from) route$$1.path = route$$1.from;
 
@@ -22077,10 +22234,10 @@ var IndexRoute = React$1__default.createClass({
 
 
   statics: {
-    createRouteFromReactElement: function createRouteFromReactElement$$1(element, parentRoute) {
+    createRouteFromReactElement: function createRouteFromReactElement(element, parentRoute) {
       /* istanbul ignore else: sanity check */
       if (parentRoute) {
-        parentRoute.indexRoute = createRouteFromReactElement(element);
+        parentRoute.indexRoute = createRouteFromReactElement$1(element);
       } else {
         routerWarning(false, 'An <IndexRoute> does not make sense at the root of your route config');
       }
@@ -22122,7 +22279,7 @@ var Route = React$1__default.createClass({
 
 
   statics: {
-    createRouteFromReactElement: createRouteFromReactElement
+    createRouteFromReactElement: createRouteFromReactElement$1
   },
 
   propTypes: {
@@ -22164,14 +22321,16 @@ var REPLACE = exports.REPLACE = 'REPLACE';
 var POP = exports.POP = 'POP';
 });
 
-var index$9 = function (str) {
+var Actions_2 = Actions.REPLACE;
+
+var index$10 = function (str) {
 	return encodeURIComponent(str).replace(/[!'()*]/g, function (c) {
 		return '%' + c.charCodeAt(0).toString(16).toUpperCase();
 	});
 };
 
-var strictUriEncode = index$9;
-var objectAssign = index$1;
+var strictUriEncode = index$10;
+var objectAssign = index$2;
 
 function encoderForArrayFormat(opts) {
 	switch (opts.arrayFormat) {
@@ -22373,7 +22532,7 @@ var stringify = function (obj, opts) {
 	}).join('&') : '';
 };
 
-var index$7 = {
+var index$8 = {
 	extract: extract,
 	parse: parse,
 	stringify: stringify
@@ -22418,10 +22577,12 @@ var _warning2 = _interopRequireDefault(_warning);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var addQueryStringValueToPath = exports.addQueryStringValueToPath = function addQueryStringValueToPath(path, key, value) {
-  var _parsePath = parsePath(path),
-      pathname = _parsePath.pathname,
-      search = _parsePath.search,
-      hash = _parsePath.hash;
+  var _parsePath = parsePath(path);
+
+  var pathname = _parsePath.pathname;
+  var search = _parsePath.search;
+  var hash = _parsePath.hash;
+
 
   return createPath({
     pathname: pathname,
@@ -22431,10 +22592,12 @@ var addQueryStringValueToPath = exports.addQueryStringValueToPath = function add
 };
 
 var stripQueryStringValueFromPath = exports.stripQueryStringValueFromPath = function stripQueryStringValueFromPath(path, key) {
-  var _parsePath2 = parsePath(path),
-      pathname = _parsePath2.pathname,
-      search = _parsePath2.search,
-      hash = _parsePath2.hash;
+  var _parsePath2 = parsePath(path);
+
+  var pathname = _parsePath2.pathname;
+  var search = _parsePath2.search;
+  var hash = _parsePath2.hash;
+
 
   return createPath({
     pathname: pathname,
@@ -22446,8 +22609,9 @@ var stripQueryStringValueFromPath = exports.stripQueryStringValueFromPath = func
 };
 
 var getQueryStringValueFromPath = exports.getQueryStringValueFromPath = function getQueryStringValueFromPath(path, key) {
-  var _parsePath3 = parsePath(path),
-      search = _parsePath3.search;
+  var _parsePath3 = parsePath(path);
+
+  var search = _parsePath3.search;
 
   var match = search.match(new RegExp('[?&]' + key + '=([a-zA-Z0-9]+)'));
   return match && match[1];
@@ -22489,10 +22653,10 @@ var parsePath = exports.parsePath = function parsePath(path) {
 var createPath = exports.createPath = function createPath(location) {
   if (location == null || typeof location === 'string') return location;
 
-  var basename = location.basename,
-      pathname = location.pathname,
-      search = location.search,
-      hash = location.hash;
+  var basename = location.basename;
+  var pathname = location.pathname;
+  var search = location.search;
+  var hash = location.hash;
 
   var path = (basename || '') + pathname;
 
@@ -22510,7 +22674,7 @@ var LocationUtils = createCommonjsModule(function (module, exports) {
 exports.__esModule = true;
 exports.locationsAreEqual = exports.statesAreEqual = exports.createLocation = exports.createQuery = undefined;
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -22533,9 +22697,9 @@ var createQuery = exports.createQuery = function createQuery(props) {
 };
 
 var createLocation = exports.createLocation = function createLocation() {
-  var input = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '/';
-  var action = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _Actions.POP;
-  var key = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+  var input = arguments.length <= 0 || arguments[0] === undefined ? '/' : arguments[0];
+  var action = arguments.length <= 1 || arguments[1] === undefined ? _Actions.POP : arguments[1];
+  var key = arguments.length <= 2 || arguments[2] === undefined ? null : arguments[2];
 
   var object = typeof input === 'string' ? (0, _PathUtils.parsePath)(input) : input;
 
@@ -22606,7 +22770,7 @@ exports.__esModule = true;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _queryString = index$7;
+var _queryString = index$8;
 
 var _runTransitionHook = runTransitionHook_1;
 
@@ -22630,11 +22794,11 @@ var defaultParseQueryString = _queryString.parse;
  */
 var useQueries = function useQueries(createHistory) {
   return function () {
-    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
     var history = createHistory(options);
-    var stringifyQuery = options.stringifyQuery,
-        parseQueryString = options.parseQueryString;
+    var stringifyQuery = options.stringifyQuery;
+    var parseQueryString = options.parseQueryString;
 
 
     if (typeof stringifyQuery !== 'function') stringifyQuery = defaultStringifyQuery;
@@ -22742,7 +22906,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var useBasename = function useBasename(createHistory) {
   return function () {
-    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
     var history = createHistory(options);
     var basename = options.basename;
@@ -22752,7 +22916,7 @@ var useBasename = function useBasename(createHistory) {
       if (!location) return location;
 
       if (basename && location.basename == null) {
-        if (location.pathname.toLowerCase().indexOf(basename.toLowerCase()) === 0) {
+        if (location.pathname.indexOf(basename) === 0) {
           location.pathname = location.pathname.substring(basename.length);
           location.basename = basename;
 
@@ -22918,13 +23082,13 @@ var _LocationUtils = LocationUtils;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var createHistory = function createHistory() {
-  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var getCurrentLocation = options.getCurrentLocation,
-      getUserConfirmation = options.getUserConfirmation,
-      pushLocation = options.pushLocation,
-      replaceLocation = options.replaceLocation,
-      go = options.go,
-      keyLength = options.keyLength;
+  var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+  var getCurrentLocation = options.getCurrentLocation;
+  var getUserConfirmation = options.getUserConfirmation;
+  var pushLocation = options.pushLocation;
+  var replaceLocation = options.replaceLocation;
+  var go = options.go;
+  var keyLength = options.keyLength;
 
 
   var currentLocation = void 0;
@@ -23053,7 +23217,7 @@ var createHistory = function createHistory() {
   };
 
   var createLocation = function createLocation(location, action) {
-    var key = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : createKey();
+    var key = arguments.length <= 2 || arguments[2] === undefined ? createKey() : arguments[2];
     return (0, _LocationUtils.createLocation)(location, action, key);
   };
 
@@ -23114,7 +23278,7 @@ var createStateStorage = function createStateStorage(entries) {
 };
 
 var createMemoryHistory = function createMemoryHistory() {
-  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
   if (Array.isArray(options)) {
     options = { entries: options };
@@ -23181,9 +23345,9 @@ var createMemoryHistory = function createMemoryHistory() {
     go: go
   }));
 
-  var _options = options,
-      entries = _options.entries,
-      current = _options.current;
+  var _options = options;
+  var entries = _options.entries;
+  var current = _options.current;
 
 
   if (typeof entries === 'string') {
@@ -23220,12 +23384,32 @@ var createMemoryHistory = function createMemoryHistory() {
 exports.default = createMemoryHistory;
 });
 
+var baseCreateMemoryHistory = unwrapExports(createMemoryHistory_1);
+
+function createMemoryHistory(options) {
+  // signatures and type checking differ between `useQueries` and
+  // `createMemoryHistory`, have to create `memoryHistory` first because
+  // `useQueries` doesn't understand the signature
+  var memoryHistory = baseCreateMemoryHistory(options);
+  var createHistory = function createHistory() {
+    return memoryHistory;
+  };
+  var history = useQueries(useBasename(createHistory))(options);
+  return history;
+}
+
+var _extends$13 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _objectWithoutProperties$5(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 function useRouterHistory(createHistory) {
   return function (options) {
     var history = useQueries(useBasename(createHistory))(options);
     return history;
   };
 }
+
+var _extends$14 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var ExecutionEnvironment$18 = createCommonjsModule(function (module, exports) {
 'use strict';
@@ -23274,15 +23458,6 @@ var supportsGoWithoutReloadUsingHash = exports.supportsGoWithoutReloadUsingHash 
  */
 var supportsPopstateOnHashchange = exports.supportsPopstateOnHashchange = function supportsPopstateOnHashchange() {
   return window.navigator.userAgent.indexOf('Trident') === -1;
-};
-
-/**
- * Returns true if a given popstate event is an extraneous WebKit event.
- * Accounts for the fact that Chrome on iOS fires real popstate events
- * containing undefined state when pressing the back button.
- */
-var isExtraneousPopstateEvent = exports.isExtraneousPopstateEvent = function isExtraneousPopstateEvent(event) {
-  return event.state === undefined && navigator.userAgent.indexOf('CriOS') === -1;
 };
 });
 
@@ -23425,9 +23600,8 @@ var getUserConfirmation = exports.getUserConfirmation = function getUserConfirma
 
 var startListener = exports.startListener = function startListener(listener) {
   var handlePopState = function handlePopState(event) {
-    if ((0, _DOMUtils.isExtraneousPopstateEvent)(event)) // Ignore extraneous popstate events in WebKit
-      return;
-    listener(_createLocation(event.state));
+    if (event.state !== undefined) // Ignore extraneous popstate events in WebKit
+      listener(_createLocation(event.state));
   };
 
   (0, _DOMUtils.addEventListener)(window, PopStateEvent, handlePopState);
@@ -23450,8 +23624,8 @@ var startListener = exports.startListener = function startListener(listener) {
 };
 
 var updateLocation = function updateLocation(location, updateState) {
-  var state = location.state,
-      key = location.key;
+  var state = location.state;
+  var key = location.key;
 
 
   if (state !== undefined) (0, _DOMStateStorage.saveState)(key, state);
@@ -23558,18 +23732,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * behavior using { forceRefresh: true } in options.
  */
 var createBrowserHistory = function createBrowserHistory() {
-  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
   !_ExecutionEnvironment.canUseDOM ? (0, _invariant2.default)(false, 'Browser history needs a DOM') : void 0;
 
   var useRefresh = options.forceRefresh || !(0, _DOMUtils.supportsHistory)();
   var Protocol = useRefresh ? RefreshProtocol$$1 : BrowserProtocol$$1;
 
-  var getUserConfirmation = Protocol.getUserConfirmation,
-      getCurrentLocation = Protocol.getCurrentLocation,
-      pushLocation = Protocol.pushLocation,
-      replaceLocation = Protocol.replaceLocation,
-      go = Protocol.go;
+  var getUserConfirmation = Protocol.getUserConfirmation;
+  var getCurrentLocation = Protocol.getCurrentLocation;
+  var pushLocation = Protocol.pushLocation;
+  var replaceLocation = Protocol.replaceLocation;
+  var go = Protocol.go;
 
 
   var history = (0, _createHistory2.default)(_extends({
@@ -23730,8 +23904,8 @@ var startListener = exports.startListener = function startListener(listener, pat
 };
 
 var updateLocation = function updateLocation(location, pathCoder, queryKey, updateHash) {
-  var state = location.state,
-      key = location.key;
+  var state = location.state;
+  var key = location.key;
 
 
   var path = pathCoder.encodePath((0, _PathUtils.createPath)(location));
@@ -23822,12 +23996,12 @@ var HashPathCoders = {
 };
 
 var createHashHistory = function createHashHistory() {
-  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
   !_ExecutionEnvironment.canUseDOM ? (0, _invariant2.default)(false, 'Hash history needs a DOM') : void 0;
 
-  var queryKey = options.queryKey,
-      hashType = options.hashType;
+  var queryKey = options.queryKey;
+  var hashType = options.hashType;
 
 
   (0, _warning2.default)(queryKey !== false, 'Using { queryKey: false } no longer works. Instead, just don\'t ' + 'use location state if you don\'t want a key in your URL query string');
@@ -23946,20 +24120,18 @@ var App = (function (superclass) {
 
 	App.prototype.render = function render () {
 		return (
-			React$1__default.createElement( 'div', { className: "application" },
-				React$1__default.createElement( 'div', { className: "header" },
-					React$1__default.createElement( 'div', { className: "logo" },
-						React$1__default.createElement( 'img', { className: "logo_image", src: "https://cdn1.iconfinder.com/data/icons/mix-color-3/502/Untitled-35-512.png" }),
+			React$1__default.createElement( 'div', { className: "application" }, 
+				React$1__default.createElement( 'div', { className: "header" }, 
+					React$1__default.createElement( 'div', { className: "logo" }, 
+						React$1__default.createElement( 'img', { className: "logo_image", src: "https://cdn1.iconfinder.com/data/icons/mix-color-3/502/Untitled-35-512.png" }), 
 						React$1__default.createElement( 'span', { className: "company_name" }, "jobTrainer")
-					),
-					React$1__default.createElement( 'div', { className: "navigation" },
-						React$1__default.createElement( NavigationLink, { to: "/", linkText: "Main" }),
-						React$1__default.createElement( NavigationLink, { to: "/courses", linkText: "Courses" }),
-						React$1__default.createElement( NavigationLink, { to: "/:domain", linkText: "Domain" }),
+					), 
+					React$1__default.createElement( 'div', { className: "navigation" }, 
+						React$1__default.createElement( NavigationLink, { to: "/", linkText: "Main" }), 
 						React$1__default.createElement( NavigationLink, { to: "/login", linkText: "Login", className: "login_navigation" })
 					)
-				),
-				React$1__default.createElement( 'div', { className: "content" },
+				), 
+				React$1__default.createElement( 'div', { className: "content" }, 
 					this.props.children
 				)
 			)
@@ -23978,8 +24150,8 @@ var InputGroup = function (ref) {
 	var onChange = ref.onChange;
 
 	return (
-		React.createElement( 'div', { className: "input_group" },
-			React.createElement( 'label', { htmlFor: inputName }, labelText, ":"),
+		React.createElement( 'div', { className: "input_group" }, 
+			React.createElement( 'label', { htmlFor: inputName }, labelText, ":"), 
 			React.createElement( 'input', { id: inputName, type: inputType, className: "text_field", onChange: onChange })
 		)
 	);
@@ -24030,11 +24202,11 @@ var Login = (function (superclass) {
 	
 	Login.prototype.render = function render () {
 		return (
-			React$1__default.createElement( 'div', { className: "login_page" },
-				React$1__default.createElement( 'div', { className: "login_container" },
-					React$1__default.createElement( 'h1', { className: "title" }, "Login"),
-					React$1__default.createElement( 'form', { onSubmit: this.handleLoginSubmit.bind(this) },
-						React$1__default.createElement( InputGroup, { labelText: "Username", inputName: "username", inputType: "text", onChange: this.handleUsernameChange.bind(this) }),
+			React$1__default.createElement( 'div', { className: "login_page" }, 
+				React$1__default.createElement( 'div', { className: "login_container" }, 
+					React$1__default.createElement( 'h1', { className: "title" }, "Login"), 
+					React$1__default.createElement( 'form', { onSubmit: this.handleLoginSubmit.bind(this) }, 
+						React$1__default.createElement( InputGroup, { labelText: "Username", inputName: "username", inputType: "text", onChange: this.handleUsernameChange.bind(this) }), 
 						React$1__default.createElement( InputGroup, { labelText: "Password", inputName: "password", inputType: "password", onChange: this.handlePasswordChange.bind(this) }), 						
 						React$1__default.createElement( MainButton, { buttonText: "Login", isSubmit: true, isDisabled: false })
 					)
@@ -24070,13 +24242,13 @@ function EntityCard(ref) {
 
     var entityHeaderText = title ? title.split('').filter(function (curr) { return curr.match(/[A-Z]/); }).join('') : title;
     return (
-        React$1__default.createElement( Card, { className: "entity_card_container" },
-            React$1__default.createElement( 'div', { className: "entity_display_container" },
+        React$1__default.createElement( Card, { className: "entity_card_container" }, 
+            React$1__default.createElement( 'div', { className: "entity_display_container" }, 
                 React$1__default.createElement( 'span', { className: "entity_display_title" }, entityHeaderText)
-            ),
-            React$1__default.createElement( 'div', { className: "entity_details" },
-                React$1__default.createElement( 'h5', { className: "entity_title" }, title),
-                React$1__default.createElement( 'div', { className: "entity_description" }, description),
+            ), 
+            React$1__default.createElement( 'div', { className: "entity_details" }, 
+                React$1__default.createElement( 'h5', { className: "entity_title" }, title), 
+                React$1__default.createElement( 'div', { className: "entity_description" }, description), 
                 React$1__default.createElement( 'div', { className: "entity_children" }, children)
             )
         )
@@ -24105,12 +24277,12 @@ var MainPage = (function (superclass) {
         }
         );
         return (
-            React$1__default.createElement( 'div', { className: "page page_container" },
-                React$1__default.createElement( 'h1', null, "JobTrainer" ),
-                React$1__default.createElement( 'span', null, "Trainer for new jobs" ),
-                React$1__default.createElement( 'hr', null ),
-                React$1__default.createElement( 'h3', null, "Scopes" ),
-                React$1__default.createElement( 'div', { className: "container scopes_container" },
+            React$1__default.createElement( 'div', { className: "page page_container" }, 
+                React$1__default.createElement( 'h1', null, "JobTrainer" ), 
+                React$1__default.createElement( 'span', null, "Trainer for new jobs" ), 
+                React$1__default.createElement( 'hr', null ), 
+                React$1__default.createElement( 'h3', null, "Scopes" ), 
+                React$1__default.createElement( 'div', { className: "container scopes_container" }, 
                     scopeElements
                 )
             )
@@ -24122,7 +24294,7 @@ var MainPage = (function (superclass) {
 
 function mapStateToProps(state) {
     return {
-        courses: state.get("scopes")
+        courses: state.scopes.get("scopes")
     };
 }
 
@@ -24131,7 +24303,7 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-var MainPage$1 = connect(mapStateToProps, mapDispatchToProps)(MainPage);
+var MainPage$1 = connect$1(mapStateToProps, mapDispatchToProps)(MainPage);
 
 var COURSE_STATUS_PENDING = 'pending';
 var COURSE_STATUS_IN_PROGRESS = 'in-progress';
@@ -24180,20 +24352,20 @@ var CourseGroupCard = function (ref) {
 
 	var coursesContent = leftCourses.map(function (course) {
 		return (
-			React.createElement( 'div', { className: "course" },
-				React.createElement( StatusIcon, { status: course.status, className: "course_status" }),
+			React.createElement( 'div', { className: "course" }, 
+				React.createElement( StatusIcon, { status: course.status, className: "course_status" }), 
 				React.createElement( 'span', { className: "course_title" }, " - ", course.title)
 			));
 	});
 
 	return (
-		React.createElement( Card, { className: "course_group_card" },
-			React.createElement( 'div', { className: "current_course" },
-				React.createElement( 'div', { className: ("course_status course_status_" + (currentCourse.status)) }),
-				React.createElement( 'div', { className: 'course_title' }, currentCourse.title),
+		React.createElement( Card, { className: "course_group_card" }, 
+			React.createElement( 'div', { className: "current_course" }, 
+				React.createElement( 'div', { className: ("course_status course_status_" + (currentCourse.status)) }), 
+				React.createElement( 'div', { className: 'course_title' }, currentCourse.title), 
 				React.createElement( 'div', { className: 'course_description' }, currentCourse.description)
-			),
-			React.createElement( 'div', { className: "course_group_dependencies" },
+			), 
+			React.createElement( 'div', { className: "course_group_dependencies" }, 
 				coursesContent
 			)
 		)
@@ -24210,12 +24382,51 @@ CourseGroupCard.PropTypes = {
 	}))
 };
 
+var CoursesPage = (function (superclass) {
+	function CoursesPage(props) {
+		superclass.call(this, props);
+		this.courses = [{
+			id: 'dj2912jd019dj',
+			title: 'Components',
+			description: 'write react components!',
+			status: COURSE_STATUS_PENDING,
+			imageUrl: 'https://images-na.ssl-images-amazon.com/images/G/01/img15/pet-products/small-tiles/23695_pets_vertical_store_dogs_small_tile_8._CB312176604_.jpg'
+		}, {
+			id: 'dj2912jd019dj31313',
+			title: 'Applications',
+			description: 'write react applications!',
+			status: COURSE_STATUS_IN_PROGRESS,
+			imageUrl: 'https://www.what-dog.net/Images/faces2/scroll0015.jpg'
+		}, {
+			id: 'dj2912jd019dj211212',
+			title: 'Redux',
+			description: 'write redux data flow!',
+			status: COURSE_STATUS_PENDING,
+			imageUrl: 'https://d2wq73xazpk036.cloudfront.net/media/27FB7F0C-9885-42A6-9E0C19C35242B5AC/DA746CFE-B4A4-43C0-A02F8BAF7BC6CE20/thul-51a71b71-3799-5e48-8a84-5b08c9efa9cf.jpg?response-content-disposition=inline'
+		}];
+	}
+
+	if ( superclass ) CoursesPage.__proto__ = superclass;
+	CoursesPage.prototype = Object.create( superclass && superclass.prototype );
+	CoursesPage.prototype.constructor = CoursesPage;
+
+
+	CoursesPage.prototype.render = function render () {
+		return (
+			React$1__default.createElement( CourseGroupCard, { title: "hello world", courses: this.courses })
+		);
+	};
+
+	return CoursesPage;
+}(React$1__default.Component));
+
 __$styleInject("",undefined);
 
-function ScopePage(ref) {
+var ScopePage = function (ref) {
     var scope = ref.scope;
+    var location = ref.location;
 
-    console.log(scope);
+
     var id = scope.id;
     var title = scope.title;
     var description = scope.description;
@@ -24231,22 +24442,22 @@ function ScopePage(ref) {
     );
 
     return (
-        React$1__default.createElement( 'div', { className: "page scope_page_container" },
-            React$1__default.createElement( 'h1', null, title ),
-            React$1__default.createElement( 'span', null, description ),
-            React$1__default.createElement( 'hr', null ),
-            React$1__default.createElement( 'h3', null, "Courses" ),
-            React$1__default.createElement( 'div', { className: "container scope_courses_container" },
+        React$1__default.createElement( 'div', { className: "page scope_page_container" }, 
+            React$1__default.createElement( 'h1', null, title ), 
+            React$1__default.createElement( 'span', null, description ), 
+            React$1__default.createElement( 'hr', null ), 
+            React$1__default.createElement( 'h3', null, "Courses" ), 
+            React$1__default.createElement( 'div', { className: "container scope_courses_container" }, 
                 courseCards
             )
         )
     )
-}
+};
 
 
 function mapStateToProps$1(state) {
     return {
-        scopes: state.get("scopes")
+        scopes: state.scopes.get('scopes')
     };
 }
 
@@ -24261,7 +24472,7 @@ function mergeProps(state, dispatch, props) {
     }
 }
 
-var ScopePage$1 = connect(mapStateToProps$1, mapDispatchToProps$1, mergeProps)(ScopePage);
+var ScopePage$1 = connect$1(mapStateToProps$1, mapDispatchToProps$1, mergeProps)(ScopePage);
 
 var SET_INITIAL_DATA_ACTION = "SET_INITIAL_DATA_ACTION";
 var SET_VALUE_ACTION = "SET_VALUE_ACTION";
@@ -24301,14 +24512,375 @@ function commonDataReducer(state, ref) {
     return newState;
 }
 
+var reducer = createCommonjsModule(function (module, exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+exports.routerReducer = routerReducer;
+/**
+ * This action type will be dispatched when your history
+ * receives a location change.
+ */
+var LOCATION_CHANGE = exports.LOCATION_CHANGE = '@@router/LOCATION_CHANGE';
+
+var initialState = {
+  locationBeforeTransitions: null
+};
+
+/**
+ * This reducer will update the state with the most recent location history
+ * has transitioned to. This may not be in sync with the router, particularly
+ * if you have asynchronously-loaded routes, so reading from and relying on
+ * this state is discouraged.
+ */
+function routerReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+
+  var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+      type = _ref.type,
+      payload = _ref.payload;
+
+  if (type === LOCATION_CHANGE) {
+    return _extends({}, state, { locationBeforeTransitions: payload });
+  }
+
+  return state;
+}
+});
+
+var actions = createCommonjsModule(function (module, exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/**
+ * This action type will be dispatched by the history actions below.
+ * If you're writing a middleware to watch for navigation events, be sure to
+ * look for actions of this type.
+ */
+var CALL_HISTORY_METHOD = exports.CALL_HISTORY_METHOD = '@@router/CALL_HISTORY_METHOD';
+
+function updateLocation(method) {
+  return function () {
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return {
+      type: CALL_HISTORY_METHOD,
+      payload: { method: method, args: args }
+    };
+  };
+}
+
+/**
+ * These actions correspond to the history API.
+ * The associated routerMiddleware will capture these events before they get to
+ * your reducer and reissue them as the matching function on your history.
+ */
+var push = exports.push = updateLocation('push');
+var replace = exports.replace = updateLocation('replace');
+var go = exports.go = updateLocation('go');
+var goBack = exports.goBack = updateLocation('goBack');
+var goForward = exports.goForward = updateLocation('goForward');
+
+var routerActions = exports.routerActions = { push: push, replace: replace, go: go, goBack: goBack, goForward: goForward };
+});
+
+var sync = createCommonjsModule(function (module, exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+exports['default'] = syncHistoryWithStore;
+
+var _reducer = reducer;
+
+var defaultSelectLocationState = function defaultSelectLocationState(state) {
+  return state.routing;
+};
+
+/**
+ * This function synchronizes your history state with the Redux store.
+ * Location changes flow from history to the store. An enhanced history is
+ * returned with a listen method that responds to store updates for location.
+ *
+ * When this history is provided to the router, this means the location data
+ * will flow like this:
+ * history.push -> store.dispatch -> enhancedHistory.listen -> router
+ * This ensures that when the store state changes due to a replay or other
+ * event, the router will be updated appropriately and can transition to the
+ * correct router state.
+ */
+function syncHistoryWithStore(history, store) {
+  var _ref = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {},
+      _ref$selectLocationSt = _ref.selectLocationState,
+      selectLocationState = _ref$selectLocationSt === undefined ? defaultSelectLocationState : _ref$selectLocationSt,
+      _ref$adjustUrlOnRepla = _ref.adjustUrlOnReplay,
+      adjustUrlOnReplay = _ref$adjustUrlOnRepla === undefined ? true : _ref$adjustUrlOnRepla;
+
+  // Ensure that the reducer is mounted on the store and functioning properly.
+  if (typeof selectLocationState(store.getState()) === 'undefined') {
+    throw new Error('Expected the routing state to be available either as `state.routing` ' + 'or as the custom expression you can specify as `selectLocationState` ' + 'in the `syncHistoryWithStore()` options. ' + 'Ensure you have added the `routerReducer` to your store\'s ' + 'reducers via `combineReducers` or whatever method you use to isolate ' + 'your reducers.');
+  }
+
+  var initialLocation = void 0;
+  var isTimeTraveling = void 0;
+  var unsubscribeFromStore = void 0;
+  var unsubscribeFromHistory = void 0;
+  var currentLocation = void 0;
+
+  // What does the store say about current location?
+  var getLocationInStore = function getLocationInStore(useInitialIfEmpty) {
+    var locationState = selectLocationState(store.getState());
+    return locationState.locationBeforeTransitions || (useInitialIfEmpty ? initialLocation : undefined);
+  };
+
+  // Init initialLocation with potential location in store
+  initialLocation = getLocationInStore();
+
+  // If the store is replayed, update the URL in the browser to match.
+  if (adjustUrlOnReplay) {
+    var handleStoreChange = function handleStoreChange() {
+      var locationInStore = getLocationInStore(true);
+      if (currentLocation === locationInStore || initialLocation === locationInStore) {
+        return;
+      }
+
+      // Update address bar to reflect store state
+      isTimeTraveling = true;
+      currentLocation = locationInStore;
+      history.transitionTo(_extends({}, locationInStore, {
+        action: 'PUSH'
+      }));
+      isTimeTraveling = false;
+    };
+
+    unsubscribeFromStore = store.subscribe(handleStoreChange);
+    handleStoreChange();
+  }
+
+  // Whenever location changes, dispatch an action to get it in the store
+  var handleLocationChange = function handleLocationChange(location) {
+    // ... unless we just caused that location change
+    if (isTimeTraveling) {
+      return;
+    }
+
+    // Remember where we are
+    currentLocation = location;
+
+    // Are we being called for the first time?
+    if (!initialLocation) {
+      // Remember as a fallback in case state is reset
+      initialLocation = location;
+
+      // Respect persisted location, if any
+      if (getLocationInStore()) {
+        return;
+      }
+    }
+
+    // Tell the store to update by dispatching an action
+    store.dispatch({
+      type: _reducer.LOCATION_CHANGE,
+      payload: location
+    });
+  };
+  unsubscribeFromHistory = history.listen(handleLocationChange);
+
+  // History 3.x doesn't call listen synchronously, so fire the initial location change ourselves
+  if (history.getCurrentLocation) {
+    handleLocationChange(history.getCurrentLocation());
+  }
+
+  // The enhanced history uses store as source of truth
+  return _extends({}, history, {
+    // The listeners are subscribed to the store instead of history
+    listen: function listen(listener) {
+      // Copy of last location.
+      var lastPublishedLocation = getLocationInStore(true);
+
+      // Keep track of whether we unsubscribed, as Redux store
+      // only applies changes in subscriptions on next dispatch
+      var unsubscribed = false;
+      var unsubscribeFromStore = store.subscribe(function () {
+        var currentLocation = getLocationInStore(true);
+        if (currentLocation === lastPublishedLocation) {
+          return;
+        }
+        lastPublishedLocation = currentLocation;
+        if (!unsubscribed) {
+          listener(lastPublishedLocation);
+        }
+      });
+
+      // History 2.x listeners expect a synchronous call. Make the first call to the
+      // listener after subscribing to the store, in case the listener causes a
+      // location change (e.g. when it redirects)
+      if (!history.getCurrentLocation) {
+        listener(lastPublishedLocation);
+      }
+
+      // Let user unsubscribe later
+      return function () {
+        unsubscribed = true;
+        unsubscribeFromStore();
+      };
+    },
+
+
+    // It also provides a way to destroy internal listeners
+    unsubscribe: function unsubscribe() {
+      if (adjustUrlOnReplay) {
+        unsubscribeFromStore();
+      }
+      unsubscribeFromHistory();
+    }
+  });
+}
+});
+
+var middleware = createCommonjsModule(function (module, exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports['default'] = routerMiddleware;
+
+var _actions = actions;
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+/**
+ * This middleware captures CALL_HISTORY_METHOD actions to redirect to the
+ * provided history object. This will prevent these actions from reaching your
+ * reducer or any middleware that comes after this one.
+ */
+function routerMiddleware(history) {
+  return function () {
+    return function (next) {
+      return function (action) {
+        if (action.type !== _actions.CALL_HISTORY_METHOD) {
+          return next(action);
+        }
+
+        var _action$payload = action.payload,
+            method = _action$payload.method,
+            args = _action$payload.args;
+
+        history[method].apply(history, _toConsumableArray(args));
+      };
+    };
+  };
+}
+});
+
+var index$22 = createCommonjsModule(function (module, exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.routerMiddleware = exports.routerActions = exports.goForward = exports.goBack = exports.go = exports.replace = exports.push = exports.CALL_HISTORY_METHOD = exports.routerReducer = exports.LOCATION_CHANGE = exports.syncHistoryWithStore = undefined;
+
+var _reducer = reducer;
+
+Object.defineProperty(exports, 'LOCATION_CHANGE', {
+  enumerable: true,
+  get: function get() {
+    return _reducer.LOCATION_CHANGE;
+  }
+});
+Object.defineProperty(exports, 'routerReducer', {
+  enumerable: true,
+  get: function get() {
+    return _reducer.routerReducer;
+  }
+});
+
+var _actions = actions;
+
+Object.defineProperty(exports, 'CALL_HISTORY_METHOD', {
+  enumerable: true,
+  get: function get() {
+    return _actions.CALL_HISTORY_METHOD;
+  }
+});
+Object.defineProperty(exports, 'push', {
+  enumerable: true,
+  get: function get() {
+    return _actions.push;
+  }
+});
+Object.defineProperty(exports, 'replace', {
+  enumerable: true,
+  get: function get() {
+    return _actions.replace;
+  }
+});
+Object.defineProperty(exports, 'go', {
+  enumerable: true,
+  get: function get() {
+    return _actions.go;
+  }
+});
+Object.defineProperty(exports, 'goBack', {
+  enumerable: true,
+  get: function get() {
+    return _actions.goBack;
+  }
+});
+Object.defineProperty(exports, 'goForward', {
+  enumerable: true,
+  get: function get() {
+    return _actions.goForward;
+  }
+});
+Object.defineProperty(exports, 'routerActions', {
+  enumerable: true,
+  get: function get() {
+    return _actions.routerActions;
+  }
+});
+
+var _sync = sync;
+
+var _sync2 = _interopRequireDefault(_sync);
+
+var _middleware = middleware;
+
+var _middleware2 = _interopRequireDefault(_middleware);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+exports.syncHistoryWithStore = _sync2['default'];
+exports.routerMiddleware = _middleware2['default'];
+});
+
+var index_9 = index$22.routerReducer;
+var index_11 = index$22.syncHistoryWithStore;
+
 function createAppStore() {
-    var reducer = commonDataReducer;
-    var store = createStore(reducer);
+    var reducer = combineReducers({scopes: commonDataReducer, routing: index_9});
+    var store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
     return store;
 }
 
 var store = createAppStore();
+var history = index_11(browserHistory, store);
 
 store.dispatch(setValueAction("scopes", [
         {
@@ -24350,12 +24922,13 @@ store.dispatch(setValueAction("scopes", [
             imageUrl: "http://sgbmithaiwala.com/onewebstatic/9d2d18004d-QA-ICON-small.png"
         } ]));
  
-index.render(
-    React$1__default.createElement( Provider, { store: store },
-        React$1__default.createElement( Router, { history: browserHistory },
-            React$1__default.createElement( Route, { path: "/", component: App },
-                React$1__default.createElement( IndexRoute, { component: MainPage$1 }),
-                React$1__default.createElement( Route, { path: "/:scopeId", component: ScopePage$1 }),
+index$1.render(
+    React$1__default.createElement( Provider, { store: store }, 
+        React$1__default.createElement( Router, { history: history }, 
+            React$1__default.createElement( Route, { path: "/", component: App }, 
+                React$1__default.createElement( IndexRoute, { component: MainPage$1 }), 
+                React$1__default.createElement( Route, { path: "/:scopeId", component: ScopePage$1 }), 
+                React$1__default.createElement( Route, { path: "/:scopeId/:courseId", component: CoursesPage }), 
                 React$1__default.createElement( Route, { path: "login", component: Login })
             )
         )

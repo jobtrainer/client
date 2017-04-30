@@ -16,8 +16,6 @@ export default class App extends React.Component {
 					</div>
 					<div className="navigation">
 						<NavigationLink to="/" linkText="Main" />
-						<NavigationLink to="/courses" linkText="Courses" />
-						<NavigationLink to="/:domain" linkText="Domain" />
 						<NavigationLink to="/login" linkText="Login" className="login_navigation"/>
 					</div>
 				</div>
