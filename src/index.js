@@ -8,6 +8,7 @@ import Login from "./containers/Login";
 import MainPage from "./containers/MainPage";
 import CoursePage from "./containers/CoursePage";
 import ScopePage from "./containers/ScopePage";
+import StepPage from "./containers/StepPage";
 
 import { createAppStore } from "./store";
 import { setValueAction } from "./reducers/commonDataReducer/actions";
@@ -67,6 +68,7 @@ ReactDOM.render(
                 <IndexRoute component={MainPage}/>
                 <Route path="/:scopeId" component={ScopePage}/>
                 <Route path="/:scopeId/:courseId" component={CoursePage}/>
+                <Route path="/:scopeId/:courseId/:step" component={StepPage}/>
                 <Route path="login" component={Login}/>
             </Route>
         </Router>
