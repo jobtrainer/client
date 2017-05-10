@@ -24424,8 +24424,8 @@ __$styleInject("",undefined);
 
 var ScopePage = function (ref) {
     var scope = ref.scope;
+    var scopeId = ref.scopeId;
     var location = ref.location;
-
 
     var id = scope.id;
     var title = scope.title;
@@ -24437,7 +24437,9 @@ var ScopePage = function (ref) {
             var description = ref.description;
             var status = ref.status;
 
-            return React$1__default.createElement( EntityCard, { key: id, id: id, title: title, description: description, status: status });
+            return (React$1__default.createElement( Link, { key: id, to: ("/" + scopeId + "/" + id) },  
+            React$1__default.createElement( EntityCard, { key: id, id: id, title: title, description: description, status: status })
+        ));
     }
     );
 
@@ -24468,7 +24470,8 @@ function mapDispatchToProps$1(dispatch) {
 
 function mergeProps(state, dispatch, props) {
     return {
-        scope: state.scopes.find(function (currScope) { return currScope.id == props.params.scopeId; })
+        scope: state.scopes.find(function (currScope) { return currScope.id == props.params.scopeId; }),
+        scopeId: props.params.scopeId
     }
 }
 

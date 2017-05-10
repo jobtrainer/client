@@ -6,11 +6,12 @@ import EntityCard from "../../components/Cards/EntityCard";
 
 import "./index.scss";
 
-const ScopePage = ({scope, location}) => {
-
+const ScopePage = ({scope, scopeId, location}) => {
     const { id, title, description, courses } = scope;
     const courseCards = courses && courses.map(({id, title, description, status}) =>
-        <EntityCard key={id} id={id} title={title} description={description} status={status}/>
+        (<Link key={id} to={`/${scopeId}/${id}`}> 
+            <EntityCard key={id} id={id} title={title} description={description} status={status}/>
+        </Link>)
     );
 
     return (
@@ -40,7 +41,8 @@ function mapDispatchToProps(dispatch) {
 
 function mergeProps(state, dispatch, props) {
     return {
-        scope: state.scopes.find(currScope => currScope.id == props.params.scopeId)
+        scope: state.scopes.find(currScope => currScope.id == props.params.scopeId),
+        scopeId: props.params.scopeId
     }
 }
 
