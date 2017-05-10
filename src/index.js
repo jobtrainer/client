@@ -6,7 +6,7 @@ import App from "./containers/App";
 import Login from "./containers/Login";
 
 import MainPage from "./containers/MainPage";
-import CoursesPage from "./containers/CoursesPage";
+import CoursePage from "./containers/CoursePage";
 import ScopePage from "./containers/ScopePage";
 
 import { createAppStore } from "./store";
@@ -66,7 +66,7 @@ ReactDOM.render(
             <Route path="/" component={App}>
                 <IndexRoute component={MainPage}/>
                 <Route path="/:scopeId" component={ScopePage}/>
-                <Route path="/:scopeId/:courseId" component={CoursesPage}/>
+                <Route path="/:scopeId/:courseId" component={CoursePage}/>
                 <Route path="login" component={Login}/>
             </Route>
         </Router>

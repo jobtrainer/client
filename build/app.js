@@ -24305,119 +24305,23 @@ function mapDispatchToProps(dispatch) {
 
 var MainPage$1 = connect$1(mapStateToProps, mapDispatchToProps)(MainPage);
 
-var COURSE_STATUS_PENDING = 'pending';
-var COURSE_STATUS_IN_PROGRESS = 'in-progress';
-var COURSE_STATUS_COMPLETE = 'complete';
-
-var COURSE_STATUSES = [
-	COURSE_STATUS_PENDING,
-	COURSE_STATUS_IN_PROGRESS,
-	COURSE_STATUS_COMPLETE ];
-
-__$styleInject(".course{display:flex}.course .course_title{line-height:30px;margin:0 5px}.course .course_status{width:30px;height:30px;display:inline-block}",undefined);
-
-var MAP_STATUS_TO_IMAGE = {
-	'pending': 'https://d30y9cdsu7xlg0.cloudfront.net/png/99629-200.png',
-	'in-progress': 'https://d30y9cdsu7xlg0.cloudfront.net/png/99629-200.png',
-	'complete': 'https://image.flaticon.com/icons/png/128/148/148767.png'
-};
-
-var StatusIcon = function (ref) {
-	var status = ref.status;
-	var className = ref.className; if ( className === void 0 ) className = '';
-
-	var statusImage = MAP_STATUS_TO_IMAGE[status];
-
-	return (
-		React.createElement( 'img', { className: className, src: statusImage })
-	);
-};
-
-StatusIcon.PropTypes = {
-	status: React.PropTypes.string
-};
-
-var CourseGroupCard = function (ref) {
-	var courses = ref.courses;
-
-	var activeCourses = courses.filter(function (course) {
-		return course.status === COURSE_STATUS_IN_PROGRESS;
-	});
-
-	var currentCourse = activeCourses.length === 0 ? courses[0] : activeCourses[0];
-
-	var leftCourses = courses.filter(function (course) {
-		return currentCourse.id !== course.id;
-	});
-
-	var coursesContent = leftCourses.map(function (course) {
-		return (
-			React.createElement( 'div', { className: "course" }, 
-				React.createElement( StatusIcon, { status: course.status, className: "course_status" }), 
-				React.createElement( 'span', { className: "course_title" }, " - ", course.title)
-			));
-	});
-
-	return (
-		React.createElement( Card, { className: "course_group_card" }, 
-			React.createElement( 'div', { className: "current_course" }, 
-				React.createElement( 'div', { className: ("course_status course_status_" + (currentCourse.status)) }), 
-				React.createElement( 'div', { className: 'course_title' }, currentCourse.title), 
-				React.createElement( 'div', { className: 'course_description' }, currentCourse.description)
-			), 
-			React.createElement( 'div', { className: "course_group_dependencies" }, 
-				coursesContent
-			)
-		)
-	);
-};
-// asd sdasd   
-CourseGroupCard.PropTypes = {
-	courses: React.PropTypes.arrayOf(React.PropTypes.shape({
-		id: React.PropTypes.string,
-		title: React.PropTypes.string,
-		description: React.PropTypes.string,
-		status: React.PropTypes.oneOf(COURSE_STATUSES),
-		imageUrl: React.PropTypes.string
-	}))
-};
-
-var CoursesPage = (function (superclass) {
-	function CoursesPage(props) {
+var CoursePage = (function (superclass) {
+	function CoursePage(props) {
 		superclass.call(this, props);
-		this.courses = [{
-			id: 'dj2912jd019dj',
-			title: 'Components',
-			description: 'write react components!',
-			status: COURSE_STATUS_PENDING,
-			imageUrl: 'https://images-na.ssl-images-amazon.com/images/G/01/img15/pet-products/small-tiles/23695_pets_vertical_store_dogs_small_tile_8._CB312176604_.jpg'
-		}, {
-			id: 'dj2912jd019dj31313',
-			title: 'Applications',
-			description: 'write react applications!',
-			status: COURSE_STATUS_IN_PROGRESS,
-			imageUrl: 'https://www.what-dog.net/Images/faces2/scroll0015.jpg'
-		}, {
-			id: 'dj2912jd019dj211212',
-			title: 'Redux',
-			description: 'write redux data flow!',
-			status: COURSE_STATUS_PENDING,
-			imageUrl: 'https://d2wq73xazpk036.cloudfront.net/media/27FB7F0C-9885-42A6-9E0C19C35242B5AC/DA746CFE-B4A4-43C0-A02F8BAF7BC6CE20/thul-51a71b71-3799-5e48-8a84-5b08c9efa9cf.jpg?response-content-disposition=inline'
-		}];
 	}
 
-	if ( superclass ) CoursesPage.__proto__ = superclass;
-	CoursesPage.prototype = Object.create( superclass && superclass.prototype );
-	CoursesPage.prototype.constructor = CoursesPage;
+	if ( superclass ) CoursePage.__proto__ = superclass;
+	CoursePage.prototype = Object.create( superclass && superclass.prototype );
+	CoursePage.prototype.constructor = CoursePage;
 
 
-	CoursesPage.prototype.render = function render () {
+	CoursePage.prototype.render = function render () {
 		return (
-			React$1__default.createElement( CourseGroupCard, { title: "hello world", courses: this.courses })
+			React$1__default.createElement( 'div', null, "Hello world" ) 
 		);
 	};
 
-	return CoursesPage;
+	return CoursePage;
 }(React$1__default.Component));
 
 __$styleInject("",undefined);
@@ -24790,7 +24694,7 @@ function routerMiddleware(history) {
 }
 });
 
-var index$22 = createCommonjsModule(function (module, exports) {
+var index$21 = createCommonjsModule(function (module, exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24872,8 +24776,8 @@ exports.syncHistoryWithStore = _sync2['default'];
 exports.routerMiddleware = _middleware2['default'];
 });
 
-var index_9 = index$22.routerReducer;
-var index_11 = index$22.syncHistoryWithStore;
+var index_9 = index$21.routerReducer;
+var index_11 = index$21.syncHistoryWithStore;
 
 function createAppStore() {
     var reducer = combineReducers({scopes: commonDataReducer, routing: index_9});
@@ -24931,7 +24835,7 @@ index$1.render(
             React$1__default.createElement( Route, { path: "/", component: App }, 
                 React$1__default.createElement( IndexRoute, { component: MainPage$1 }), 
                 React$1__default.createElement( Route, { path: "/:scopeId", component: ScopePage$1 }), 
-                React$1__default.createElement( Route, { path: "/:scopeId/:courseId", component: CoursesPage }), 
+                React$1__default.createElement( Route, { path: "/:scopeId/:courseId", component: CoursePage }), 
                 React$1__default.createElement( Route, { path: "login", component: Login })
             )
         )
