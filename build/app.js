@@ -43,17 +43,6 @@ var React$1__default = 'default' in React$1 ? React$1['default'] : React$1;
  *
  */
 
-/**
- * Use invariant() to assert state which your program assumes to be true.
- *
- * Provide sprintf-style format (only %s is supported) and arguments
- * to provide information about what broke and what you were
- * expecting.
- *
- * The invariant message will be stripped in production, but the invariant
- * will remain to ensure logic does not differ in production.
- */
-
 var validateFormat = function validateFormat(format) {};
 
 {
@@ -867,17 +856,6 @@ var ReactErrorUtils$2 = {
 
 var ReactErrorUtils_1 = ReactErrorUtils$2;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * 
- */
-
 function makeEmptyFunction(arg) {
   return function () {
     return arg;
@@ -1223,14 +1201,6 @@ var accumulateInto_1 = accumulateInto$2;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * 
- */
-
-/**
- * @param {array} arr an "accumulation" of items which is either an Array or
- * a single item. Useful when paired with the `accumulate` module. This is a
- * simple utility that allows us to reason about a collection of items, but
- * handling the case when there is exactly one item (and we do not need to
- * allocate an array).
  */
 
 function forEachAccumulated$2(arr, cb, scope) {
@@ -1669,7 +1639,6 @@ object-assign
 @license MIT
 */
 
-/* eslint-disable no-unused-vars */
 var getOwnPropertySymbols = Object.getOwnPropertySymbols;
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 var propIsEnumerable = Object.prototype.propertyIsEnumerable;
@@ -2987,12 +2956,6 @@ var ReactHostOperationHistoryHook_1 = ReactHostOperationHistoryHook$1;
  * 
  */
 
-/**
- * Keeps track of the current owner.
- *
- * The current owner is the component who should own any components that are
- * currently being constructed.
- */
 var ReactCurrentOwner$1 = {
 
   /**
@@ -3333,17 +3296,6 @@ if (ExecutionEnvironment$6.canUseDOM) {
 }
 
 var performance_1 = performance$2 || {};
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
 
 var performance$1 = performance_1;
 
@@ -3713,8 +3665,6 @@ if (/[?&]react_perf\b/.test(url)) {
 }
 
 var ReactDebugTool_1 = ReactDebugTool$1;
-
-// Trust the developer to only use ReactInstrumentation with a __DEV__ check
 
 var debugTool = null;
 
@@ -4339,14 +4289,6 @@ var ReactUpdates_1 = ReactUpdates$2;
  *
  */
 
-/**
- * Gets the target node from a native browser event by accounting for
- * inconsistencies in browser DOM APIs.
- *
- * @param {object} nativeEvent Native browser event.
- * @return {DOMEventTarget} Target node.
- */
-
 function getEventTarget$1(nativeEvent) {
   var target = nativeEvent.target || nativeEvent.srcElement || window;
 
@@ -4419,10 +4361,6 @@ var isEventSupported_1 = isEventSupported$1;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * 
- */
-
-/**
- * @see http://www.whatwg.org/specs/web-apps/current-work/multipage/the-input-element.html#input-type-attr-summary
  */
 
 var supportedInputTypes = {
@@ -4778,16 +4716,6 @@ var ChangeEventPlugin_1 = ChangeEventPlugin$1;
  *
  */
 
-/**
- * Module that is injectable into `EventPluginHub`, that specifies a
- * deterministic ordering of `EventPlugin`s. A convenient way to reason about
- * plugins, without having to package every one of them. This is better than
- * having plugins be ordered in the same order that they are injected because
- * that ordering would be influenced by the packaging order.
- * `ResponderEventPlugin` must occur before `SimpleEventPlugin` so that
- * preventing default on events is convenient in `SimpleEventPlugin` handlers.
- */
-
 var DefaultEventPluginOrder$1 = ['ResponderEventPlugin', 'SimpleEventPlugin', 'TapEventPlugin', 'EnterLeaveEventPlugin', 'ChangeEventPlugin', 'SelectEventPlugin', 'BeforeInputEventPlugin'];
 
 var DefaultEventPluginOrder_1 = DefaultEventPluginOrder$1;
@@ -4872,11 +4800,6 @@ var ViewportMetrics_1 = ViewportMetrics$1;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- */
-
-/**
- * Translation from modifier key to the associated property in the event.
- * @see http://www.w3.org/TR/DOM-Level-3-Events/#keys-Modifiers
  */
 
 var modifierKeyToProp = {
@@ -5283,10 +5206,6 @@ var DOMNamespaces_1 = DOMNamespaces$1;
 
 /* globals MSApp */
 
-/**
- * Create a function which has 'unsafe' privileges (required by windows8 apps)
- */
-
 var createMicrosoftUnsafeLocalFunction$3 = function (func) {
   if (typeof MSApp !== 'undefined' && MSApp.execUnsafeLocalFunction) {
     return function (arg0, arg1, arg2, arg3) {
@@ -5420,12 +5339,6 @@ var setInnerHTML_1 = setInnerHTML$2;
  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
- */
-
-// code copied and modified from escape-html
-/**
- * Module variables.
- * @private
  */
 
 var matchHtmlRegExp = /["'&<>]/;
@@ -5654,17 +5567,6 @@ DOMLazyTree$1.queueText = queueText;
 
 var DOMLazyTree_1 = DOMLazyTree$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
-
 var invariant$15 = invariant_1;
 
 /**
@@ -5779,18 +5681,6 @@ function createArrayFromMixed$1(obj) {
 
 var createArrayFromMixed_1 = createArrayFromMixed$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
-/*eslint-disable fb-www/unsafe-html */
-
 var ExecutionEnvironment$12 = ExecutionEnvironment_1;
 
 var invariant$16 = invariant_1;
@@ -5871,19 +5761,6 @@ function getMarkupWrap$1(nodeName) {
 }
 
 var getMarkupWrap_1 = getMarkupWrap$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
-
-/*eslint-disable fb-www/unsafe-html*/
 
 var ExecutionEnvironment$11 = ExecutionEnvironment_1;
 
@@ -6251,10 +6128,6 @@ var ReactComponentBrowserEnvironment_1 = ReactComponentBrowserEnvironment$1;
  *
  */
 
-/**
- * @param {DOMElement} node input/textarea to focus
- */
-
 function focusNode$1(node) {
   // IE8 can throw "Can't move focus to the control because it is invisible,
   // not enabled, or of a type that does not accept the focus." for all kinds of
@@ -6286,10 +6159,6 @@ var AutoFocusUtils_1 = AutoFocusUtils$1;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- */
-
-/**
- * CSS properties which accept numbers but are not in units of "px".
  */
 
 var isUnitlessNumber = {
@@ -6424,17 +6293,6 @@ var CSSProperty$1 = {
 
 var CSSProperty_1 = CSSProperty$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
-
 var _hyphenPattern = /-(.)/g;
 
 /**
@@ -6548,17 +6406,6 @@ function dangerousStyleValue$1(name, value, component) {
 
 var dangerousStyleValue_1 = dangerousStyleValue$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
-
 var _uppercasePattern = /([A-Z])/g;
 
 /**
@@ -6615,10 +6462,6 @@ var hyphenateStyleName_1 = hyphenateStyleName$1;
  *
  * 
  * @typechecks static-only
- */
-
-/**
- * Memoizes the return value of a function that accepts one string argument.
  */
 
 function memoizeStringOnly$1(callback) {
@@ -7627,9 +7470,6 @@ var canDefineProperty_1 = canDefineProperty$1;
  * 
  */
 
-// The Symbol used to tag the ReactElement type. If there is no native Symbol
-// nor polyfill, then a plain number is used for performance.
-
 var REACT_ELEMENT_TYPE$1 = typeof Symbol === 'function' && Symbol['for'] && Symbol['for']('react.element') || 0xeac7;
 
 var ReactElementSymbol = REACT_ELEMENT_TYPE$1;
@@ -7975,8 +7815,6 @@ var ReactElement_1 = ReactElement$2;
  * 
  */
 
-/* global Symbol */
-
 var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
 var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
 
@@ -8012,13 +7850,6 @@ var getIteratorFn_1 = getIteratorFn$1;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * 
- */
-
-/**
- * Escape and wrap key so it is safe to use as a reactid
- *
- * @param {string} key to be escaped.
- * @return {string} the escaped key.
  */
 
 function escape(key) {
@@ -11249,15 +11080,6 @@ var ReactComponentEnvironment_1 = ReactComponentEnvironment$1;
  *
  */
 
-/**
- * `ReactInstanceMap` maintains a mapping from a public facing stateful
- * instance (key) and the internal representation (value). This allows public
- * methods to accept the user facing instance as an argument and map them back
- * to internal methods.
- */
-
-// TODO: Replace this with ES6: var ReactInstanceMap = new Map();
-
 var ReactInstanceMap$1 = {
 
   /**
@@ -11480,18 +11302,6 @@ var shallowEqual_1 = shallowEqual$2;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- */
-
-/**
- * Given a `prevElement` and `nextElement`, determines if the existing
- * instance should be updated as opposed to being destroyed or replaced by a new
- * instance. Both arguments are elements. This ensures that this logic can
- * operate on stateless trees without any backing instance.
- *
- * @param {?object} prevElement
- * @param {?object} nextElement
- * @return {boolean} True if the existing instance should be updated.
- * @protected
  */
 
 function shouldUpdateReactComponent$2(prevElement, nextElement) {
@@ -12604,13 +12414,6 @@ var instantiateReactComponent_1 = instantiateReactComponent$1;
  * 
  */
 
-/**
- * Escape and wrap key so it is safe to use as a reactid
- *
- * @param {string} key to be escaped.
- * @return {string} the escaped key.
- */
-
 function escape$1(key) {
   var escapeRegex = /[=:]/g;
   var escaperLookup = {
@@ -12661,9 +12464,6 @@ var KeyEscapeUtils_1$2 = KeyEscapeUtils$3;
  * 
  */
 
-// The Symbol used to tag the ReactElement type. If there is no native Symbol
-// nor polyfill, then a plain number is used for performance.
-
 var REACT_ELEMENT_TYPE$4 = typeof Symbol === 'function' && Symbol['for'] && Symbol['for']('react.element') || 0xeac7;
 
 var ReactElementSymbol$2 = REACT_ELEMENT_TYPE$4;
@@ -12678,8 +12478,6 @@ var ReactElementSymbol$2 = REACT_ELEMENT_TYPE$4;
  *
  * 
  */
-
-/* global Symbol */
 
 var ITERATOR_SYMBOL$1 = typeof Symbol === 'function' && Symbol.iterator;
 var FAUX_ITERATOR_SYMBOL$1 = '@@iterator'; // Before Symbol spec.
@@ -15655,24 +15453,6 @@ var ReactDefaultBatchingStrategy$1 = {
 
 var ReactDefaultBatchingStrategy_1 = ReactDefaultBatchingStrategy$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- * @typechecks
- */
-
 var emptyFunction$10 = emptyFunction_1;
 
 /**
@@ -15746,17 +15526,6 @@ var EventListener_1 = EventListener$1;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @typechecks
- */
-
-/**
- * Gets the scroll position of the supplied element or window.
- *
- * The return values are unbounded, unlike `getScrollPosition`. This means they
- * may be negative or exceed the element boundaries (which is possible using
- * inertial scrolling).
- *
- * @param {DOMWindow|DOMElement} scrollable
- * @return {object} Map with `x` and `y` keys.
  */
 
 function getUnboundedScrollPosition$1(scrollable) {
@@ -15947,13 +15716,6 @@ var ReactInjection_1 = ReactInjection$1;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- */
-
-/**
- * Given any node return the first leaf node without children.
- *
- * @param {DOMElement|DOMTextNode} node
- * @return {DOMElement|DOMTextNode}
  */
 
 function getLeafNode(node) {
@@ -16211,37 +15973,11 @@ var ReactDOMSelection$1 = {
 
 var ReactDOMSelection_1 = ReactDOMSelection$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
-
-/**
- * @param {*} object The object to check.
- * @return {boolean} Whether or not the object is a DOM node.
- */
 function isNode$2(object) {
   return !!(object && (typeof Node === 'function' ? object instanceof Node : typeof object === 'object' && typeof object.nodeType === 'number' && typeof object.nodeName === 'string'));
 }
 
 var isNode_1 = isNode$2;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
 
 var isNode$1 = isNode_1;
 
@@ -16254,17 +15990,6 @@ function isTextNode$1(object) {
 }
 
 var isTextNode_1 = isTextNode$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * 
- */
 
 var isTextNode = isTextNode_1;
 
@@ -16293,26 +16018,6 @@ function containsNode$1(outerNode, innerNode) {
 
 var containsNode_1 = containsNode$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
- */
-
-/* eslint-disable fb-www/typeof-undefined */
-
-/**
- * Same as document.activeElement but wraps in a try-catch block. In IE it is
- * not safe to call document.activeElement if there is nothing focused.
- *
- * The activeElement will be null only if the document or document body is not
- * yet defined.
- */
 function getActiveElement$1() /*?DOMElement*/{
   if (typeof document === 'undefined') {
     return null;
@@ -17168,17 +16873,6 @@ var SyntheticFocusEvent_1 = SyntheticFocusEvent$1;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- */
-
-/**
- * `charCode` represents the actual "character code" and is safe to use with
- * `String.fromCharCode`. As such, only keys that correspond to printable
- * characters produce a valid `charCode`, the only exception to this is Enter.
- * The Tab-key is considered non-printable and does not have a `charCode`,
- * presumably because it does not produce a tab-character in browsers.
- *
- * @param {object} nativeEvent Native browser event.
- * @return {number} Normalized `charCode` property.
  */
 
 function getEventCharCode$2(nativeEvent) {
@@ -18970,17 +18664,6 @@ var index$4 = function hoistNonReactStatics(targetComponent, sourceComponent, cu
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-/**
- * Use invariant() to assert state which your program assumes to be true.
- *
- * Provide sprintf-style format (only %s is supported) and arguments
- * to provide information about what broke and what you were
- * expecting.
- *
- * The invariant message will be stripped in production, but the invariant
- * will remain to ensure logic does not differ in production.
- */
-
 var NODE_ENV = "development";
 
 var invariant$41 = function(condition, format, a, b, c, d, e, f) {
@@ -19401,16 +19084,13 @@ function shallowEqual$4(objA, objB) {
 /** Detect free variable `global` from Node.js. */
 var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
 
-/** Detect free variable `self`. */
 var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
 
 /** Used as a reference to the global object. */
 var root = freeGlobal || freeSelf || Function('return this')();
 
-/** Built-in value references. */
 var Symbol$1 = root.Symbol;
 
-/** Used for built-in method references. */
 var objectProto$1 = Object.prototype;
 
 /** Used to check objects for own properties. */
@@ -19474,7 +19154,6 @@ function objectToString(value) {
   return nativeObjectToString$1.call(value);
 }
 
-/** `Object#toString` result references. */
 var nullTag = '[object Null]';
 var undefinedTag = '[object Undefined]';
 
@@ -19511,7 +19190,6 @@ function overArg(func, transform) {
   };
 }
 
-/** Built-in value references. */
 var getPrototype = overArg(Object.getPrototypeOf, Object);
 
 /**
@@ -19542,7 +19220,6 @@ function isObjectLike(value) {
   return value != null && typeof value == 'object';
 }
 
-/** `Object#toString` result references. */
 var objectTag = '[object Object]';
 
 /** Used for built-in method references. */
@@ -19669,12 +19346,6 @@ exports['default'] = result;
 
 var index$5 = index$6;
 
-/**
- * These are private action types reserved by Redux.
- * For any unknown actions, you must return the current state.
- * If the current state is undefined, you must return the initial state.
- * Do not reference these action types directly in your code.
- */
 var ActionTypes = {
   INIT: '@@redux/INIT'
 };
@@ -20148,10 +19819,6 @@ function compose() {
 
 var _extends$2 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-/*
-* This is a dummy function to check if the function name has been altered by minification.
-* If the function has been minified and NODE_ENV !== 'production', warn the user.
-*/
 function isCrushed() {}
 
 if ("development" !== 'production' && typeof isCrushed.name === 'string' && isCrushed.name !== 'isCrushed') {
@@ -20425,23 +20092,6 @@ var _extends$1 = Object.assign || function (target) { for (var i = 1; i < argume
 
 function _objectWithoutProperties$1(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-/*
-  connect is a facade over connectAdvanced. It turns its args into a compatible
-  selectorFactory, which has the signature:
-
-    (dispatch, options) => (nextState, nextOwnProps) => nextFinalProps
-  
-  connect passes its args to connectAdvanced as options, which will in turn pass them to
-  selectorFactory each time a Connect component instance is instantiated or hot reloaded.
-
-  selectorFactory returns a final props selector from its mapStateToProps,
-  mapStateToPropsFactories, mapDispatchToProps, mapDispatchToPropsFactories, mergeProps,
-  mergePropsFactories, and pure args.
-
-  The resulting final props selector is called by the Connect component instance whenever
-  it receives new props or store state.
- */
-
 function match(arg, factories, name) {
   for (var i = factories.length - 1; i >= 0; i--) {
     var result = factories[i](arg);
@@ -20525,13 +20175,6 @@ var connect$1 = createConnect();
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
- */
-
-/**
- * Similar to invariant but only logs a warning if the condition is not met.
- * This can be used to log issues in development environments in critical
- * paths. Removing the logging code for production environments will keep the
- * same logic and follow the same code paths.
  */
 
 var __DEV__ = "development" !== 'production';
@@ -21886,10 +21529,6 @@ var components = oneOfType([component, object$1]);
 var route = oneOfType([object$1, element]);
 var routes = oneOfType([route, arrayOf(route)]);
 
-/**
- * Extracts an object of params the given route cares about from
- * the given params object.
- */
 function getRouteParams(route, params) {
   var routeParams = {};
 
@@ -21903,11 +21542,6 @@ function getRouteParams(route, params) {
 
   return routeParams;
 }
-
-// Works around issues with context updates failing to propagate.
-// Caveat: the context value is expected to never change its identity.
-// https://github.com/facebook/react/issues/2517
-// https://github.com/reactjs/react-router/issues/470
 
 var contextProviderShape = React$1.PropTypes.shape({
   subscribe: React$1.PropTypes.func.isRequired,
@@ -22455,9 +22089,6 @@ var Link = React$1__default.createClass({
 
 var _extends$11 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-/**
- * An <IndexLink> is used to link to an <IndexRoute>.
- */
 var IndexLink = React$1__default.createClass({
   displayName: 'IndexLink',
   render: function render() {
@@ -24461,9 +24092,6 @@ var createHashHistory = unwrapExports(createHashHistory_1);
 createRouterHistory(createHashHistory);
 
 /* components */
-/* components (configuration) */
-
-/* histories */
 
 __$styleInject(".navigation_item{display:inline-block;padding:15px;margin:0 20px;transition:all .2s}.navigation_item:hover{cursor:pointer;background:hsla(0,0%,91%,.4)}.navigation_item:hover a{color:#393d40}.navigation_item a{color:#aebdc1;font-weight:300;text-decoration:none}",undefined);
 
@@ -25194,6 +24822,22 @@ store.dispatch(setValueAction("scopes", [
                     title: "React",
                     description: "This course teaches react, a ui library from Facebook",
                     status: "pending",
+                    steps: [
+                        {
+                            title: "Overview",
+                            description: "Here you will learn all about the react general overview",
+                            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor nisl quis lectus tincidunt egestas. Mauris vel pellentesque diam. Mauris metus sapien, cursus ac tincidunt nec, mattis ut mi. Duis vel urna blandit, laoreet velit eu, ultricies felis. Sed scelerisque ullamcorper eros quis pellentesque. Donec laoreet risus ac turpis convallis egestas. Praesent in consequat quam. In mattis ultrices nulla. In hac habitasse platea dictumst. Sed efficitur arcu vestibulum cursus pharetra. Curabitur luctus ligula metus, vel sollicitudin sem porttitor a. Mauris et massa dui. Curabitur nec lectus a velit bibendum vehicula id vitae turpis.\n\nUt vulputate purus nunc, vel pulvinar tortor efficitur a. Integer at suscipit eros, ac varius nunc. Curabitur eu diam vitae arcu convallis suscipit. Maecenas nec purus gravida tortor aliquet fringilla. Mauris interdum in orci eget bibendum. Donec condimentum vestibulum consectetur. Ut laoreet porttitor nulla, nec tempor mauris varius et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nAenean vel ex facilisis, iaculis eros et, mattis tortor. Donec felis diam, pretium vel ex imperdiet, porta pharetra tellus. Donec eleifend eleifend tempus. Duis vehicula blandit eleifend. Duis consequat massa vitae est accumsan condimentum. Vestibulum at felis sed eros pretium dignissim sed in nisl. Donec enim sem, condimentum euismod nisi ut, auctor pretium nibh. Pellentesque vel tincidunt velit, ut lobortis lorem. Sed facilisis, odio vel efficitur placerat, metus massa facilisis ante, a sodales sapien neque interdum mauris. Mauris vel nisl quis quam venenatis fringilla eget at orci.\n\nInteger augue felis, finibus sit amet pulvinar eu, mollis nec odio. Duis ac justo egestas, tempor magna vel, euismod nisl. Sed hendrerit ante non aliquet ornare. Praesent molestie commodo arcu, quis sagittis lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus et elit suscipit, ultrices mi ut, cursus mi. Cras scelerisque hendrerit elit sagittis volutpat. Proin pulvinar urna nec dignissim luctus. Fusce bibendum blandit dui, vitae dictum tortor suscipit quis. Proin tempus molestie risus, sit amet consectetur urna maximus ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce consectetur massa mi, sit amet vestibulum velit dapibus in. Etiam commodo dui in felis condimentum fermentum.\n\nInteger pellentesque ligula id nulla varius, id auctor diam porttitor. Nullam pretium in est in pharetra. Ut porta luctus egestas. Cras neque nisi, volutpat quis facilisis at, volutpat sit amet nulla. Sed lorem arcu, aliquam lobortis dolor a, luctus malesuada velit. Proin commodo dapibus nulla hendrerit facilisis. Duis eleifend odio purus, nec imperdiet sapien pulvinar eu. Proin tempus magna at ex varius, at sodales neque scelerisque. Etiam eu est porttitor, gravida ex non, sagittis libero. Cras tempor erat ipsum, imperdiet sodales enim sagittis at. Aliquam pretium purus sit amet justo tincidunt, id ornare tortor consectetur. Integer vehicula, lectus in consectetur aliquam, orci mauris maximus arcu, in mattis dolor est in felis."
+                        },
+                        {
+                            title: "Installation",
+                            description: "Learn about installing",
+                            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor nisl quis lectus tincidunt egestas. Mauris vel pellentesque diam. Mauris metus sapien, cursus ac tincidunt nec, mattis ut mi. Duis vel urna blandit, laoreet velit eu, ultricies felis. Sed scelerisque ullamcorper eros quis pellentesque. Donec laoreet risus ac turpis convallis egestas. Praesent in consequat quam. In mattis ultrices nulla. In hac habitasse platea dictumst. Sed efficitur arcu vestibulum cursus pharetra. Curabitur luctus ligula metus, vel sollicitudin sem porttitor a. Mauris et massa dui. Curabitur nec lectus a velit bibendum vehicula id vitae turpis.\n\nUt vulputate purus nunc, vel pulvinar tortor efficitur a. Integer at suscipit eros, ac varius nunc. Curabitur eu diam vitae arcu convallis suscipit. Maecenas nec purus gravida tortor aliquet fringilla. Mauris interdum in orci eget bibendum. Donec condimentum vestibulum consectetur. Ut laoreet porttitor nulla, nec tempor mauris varius et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nAenean vel ex facilisis, iaculis eros et, mattis tortor. Donec felis diam, pretium vel ex imperdiet, porta pharetra tellus. Donec eleifend eleifend tempus. Duis vehicula blandit eleifend. Duis consequat massa vitae est accumsan condimentum. Vestibulum at felis sed eros pretium dignissim sed in nisl. Donec enim sem, condimentum euismod nisi ut, auctor pretium nibh. Pellentesque vel tincidunt velit, ut lobortis lorem. Sed facilisis, odio vel efficitur placerat, metus massa facilisis ante, a sodales sapien neque interdum mauris. Mauris vel nisl quis quam venenatis fringilla eget at orci.\n\nInteger augue felis, finibus sit amet pulvinar eu, mollis nec odio. Duis ac justo egestas, tempor magna vel, euismod nisl. Sed hendrerit ante non aliquet ornare. Praesent molestie commodo arcu, quis sagittis lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus et elit suscipit, ultrices mi ut, cursus mi. Cras scelerisque hendrerit elit sagittis volutpat. Proin pulvinar urna nec dignissim luctus. Fusce bibendum blandit dui, vitae dictum tortor suscipit quis. Proin tempus molestie risus, sit amet consectetur urna maximus ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce consectetur massa mi, sit amet vestibulum velit dapibus in. Etiam commodo dui in felis condimentum fermentum.\n\nInteger pellentesque ligula id nulla varius, id auctor diam porttitor. Nullam pretium in est in pharetra. Ut porta luctus egestas. Cras neque nisi, volutpat quis facilisis at, volutpat sit amet nulla. Sed lorem arcu, aliquam lobortis dolor a, luctus malesuada velit. Proin commodo dapibus nulla hendrerit facilisis. Duis eleifend odio purus, nec imperdiet sapien pulvinar eu. Proin tempus magna at ex varius, at sodales neque scelerisque. Etiam eu est porttitor, gravida ex non, sagittis libero. Cras tempor erat ipsum, imperdiet sodales enim sagittis at. Aliquam pretium purus sit amet justo tincidunt, id ornare tortor consectetur. Integer vehicula, lectus in consectetur aliquam, orci mauris maximus arcu, in mattis dolor est in felis."
+                        },
+                        {
+                            title: "And more!",
+                            description: "Wohoo",
+                            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor nisl quis lectus tincidunt egestas. Mauris vel pellentesque diam. Mauris metus sapien, cursus ac tincidunt nec, mattis ut mi. Duis vel urna blandit, laoreet velit eu, ultricies felis. Sed scelerisque ullamcorper eros quis pellentesque. Donec laoreet risus ac turpis convallis egestas. Praesent in consequat quam. In mattis ultrices nulla. In hac habitasse platea dictumst. Sed efficitur arcu vestibulum cursus pharetra. Curabitur luctus ligula metus, vel sollicitudin sem porttitor a. Mauris et massa dui. Curabitur nec lectus a velit bibendum vehicula id vitae turpis.\n\nUt vulputate purus nunc, vel pulvinar tortor efficitur a. Integer at suscipit eros, ac varius nunc. Curabitur eu diam vitae arcu convallis suscipit. Maecenas nec purus gravida tortor aliquet fringilla. Mauris interdum in orci eget bibendum. Donec condimentum vestibulum consectetur. Ut laoreet porttitor nulla, nec tempor mauris varius et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nAenean vel ex facilisis, iaculis eros et, mattis tortor. Donec felis diam, pretium vel ex imperdiet, porta pharetra tellus. Donec eleifend eleifend tempus. Duis vehicula blandit eleifend. Duis consequat massa vitae est accumsan condimentum. Vestibulum at felis sed eros pretium dignissim sed in nisl. Donec enim sem, condimentum euismod nisi ut, auctor pretium nibh. Pellentesque vel tincidunt velit, ut lobortis lorem. Sed facilisis, odio vel efficitur placerat, metus massa facilisis ante, a sodales sapien neque interdum mauris. Mauris vel nisl quis quam venenatis fringilla eget at orci.\n\nInteger augue felis, finibus sit amet pulvinar eu, mollis nec odio. Duis ac justo egestas, tempor magna vel, euismod nisl. Sed hendrerit ante non aliquet ornare. Praesent molestie commodo arcu, quis sagittis lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus et elit suscipit, ultrices mi ut, cursus mi. Cras scelerisque hendrerit elit sagittis volutpat. Proin pulvinar urna nec dignissim luctus. Fusce bibendum blandit dui, vitae dictum tortor suscipit quis. Proin tempus molestie risus, sit amet consectetur urna maximus ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce consectetur massa mi, sit amet vestibulum velit dapibus in. Etiam commodo dui in felis condimentum fermentum.\n\nInteger pellentesque ligula id nulla varius, id auctor diam porttitor. Nullam pretium in est in pharetra. Ut porta luctus egestas. Cras neque nisi, volutpat quis facilisis at, volutpat sit amet nulla. Sed lorem arcu, aliquam lobortis dolor a, luctus malesuada velit. Proin commodo dapibus nulla hendrerit facilisis. Duis eleifend odio purus, nec imperdiet sapien pulvinar eu. Proin tempus magna at ex varius, at sodales neque scelerisque. Etiam eu est porttitor, gravida ex non, sagittis libero. Cras tempor erat ipsum, imperdiet sodales enim sagittis at. Aliquam pretium purus sit amet justo tincidunt, id ornare tortor consectetur. Integer vehicula, lectus in consectetur aliquam, orci mauris maximus arcu, in mattis dolor est in felis."
+                        } ]
                 },
                 {
                     id: "angular",
