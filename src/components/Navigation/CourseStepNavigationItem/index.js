@@ -1,7 +1,7 @@
 import "./index.scss";
 
 const CourseStepNavigationItem = ({stepNum, title, description, isActive}) => {
-	let stepClassNameAddition = isActive ? "not_active" : "active";
+	let stepClassNameAddition = isActive ? "active" : "not_active";
 	let stepClassName = "step_navigation_item step_navigation_item_" + stepClassNameAddition;
 	return (
 		<div className={stepClassName}>

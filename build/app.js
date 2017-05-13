@@ -24315,7 +24315,7 @@ var CourseStepNavigationItem = function (ref) {
 	var description = ref.description;
 	var isActive = ref.isActive;
 
-	var stepClassNameAddition = isActive ? "not_active" : "active";
+	var stepClassNameAddition = isActive ? "active" : "not_active";
 	var stepClassName = "step_navigation_item step_navigation_item_" + stepClassNameAddition;
 	return (
 		React.createElement( 'div', { className: stepClassName }, 
