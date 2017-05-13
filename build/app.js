@@ -24305,6 +24305,47 @@ function mapDispatchToProps(dispatch) {
 
 var MainPage$1 = connect$1(mapStateToProps, mapDispatchToProps)(MainPage);
 
+__$styleInject("",undefined);
+
+__$styleInject("",undefined);
+
+var CourseStepNavigationItem = function (ref) {
+	var stepNum = ref.stepNum;
+	var title = ref.title;
+	var description = ref.description;
+	var isActive = ref.isActive;
+
+	var stepClassNameAddition = isActive ? "not_active" : "active";
+	var stepClassName = "step_navigation_item step_navigation_item_" + stepClassNameAddition;
+	return (
+		React.createElement( 'div', { className: stepClassName }, 
+			React.createElement( 'span', { className: "step_number" }, stepNum), 
+			React.createElement( 'span', { className: "separator" }, " - "), 
+			React.createElement( 'span', { className: "title" }, title)
+			 //TODO: Implement step description tooltip
+			
+		)
+	);
+};
+
+var CourseStepsNavigation = function (ref) {
+	var currentStep = ref.currentStep;
+	var stepsProperties = ref.stepsProperties; if ( stepsProperties === void 0 ) stepsProperties = [];
+
+	var stepsNavigationItems = stepsProperties.map(function (stepProperties, index) {
+			return (
+				React.createElement( CourseStepNavigationItem, { 	
+						key: index, title: stepProperties.title, description: stepProperties.description, stepNum: index, isActive: currentStep === index })
+			);
+		});
+
+	return (
+		React.createElement( 'div', { className: "navigation_items" }, 
+			stepsNavigationItems
+		)
+	);
+};
+
 var CoursePage = (function (superclass) {
 	function CoursePage(props) {
 		superclass.call(this, props);
@@ -24316,16 +24357,47 @@ var CoursePage = (function (superclass) {
 
 
 	CoursePage.prototype.render = function render () {
+		console.log(this.props);
 		return (
 			React$1__default.createElement( 'div', null, 
 				React$1__default.createElement( 'div', null, "Hello world" ), 
-				React$1__default.createElement( Link, { to: ("/" + (this.props.params.scopeId) + "/" + (this.props.params.courseId) + "/" + (2)) }, "Click me!")
+				React$1__default.createElement( Link, { to: ("/" + (this.props.scopeId) + "/" + (this.props.courseId) + "/" + (2)) }, "Click me!"), 
+				React$1__default.createElement( CourseStepsNavigation, { currentStep: 1, stepsProperties: this.props.steps })
 			)
 		);
 	};
 
 	return CoursePage;
 }(React$1__default.Component));
+
+function mapStateToProps$1(state) {
+    return {
+        scopes: state.scopes.get('scopes')
+    };
+}
+
+function mapDispatchToProps$1(dispatch) {
+    return {
+    }
+}
+
+function mergeProps(state, dispatch, props) {
+	console.log(props.params);
+    var scopeId = props.params.scopeId;
+	var courseId = props.params.courseId;
+	var scope = state.scopes.find(function (currScope) { return currScope.id == scopeId; });
+	var course = scope.courses.find(function (currCourse) { return currCourse.id == courseId; });
+	var steps = course.steps;
+	return {
+        scope: scope,
+		course: course,
+		steps: steps,
+        scopeId: scopeId,
+		courseId: courseId
+    }
+}
+
+var CoursePage$1 = connect$1(mapStateToProps$1, mapDispatchToProps$1, mergeProps)(CoursePage);
 
 __$styleInject("",undefined);
 
@@ -24364,25 +24436,25 @@ var ScopePage = function (ref) {
 };
 
 
-function mapStateToProps$1(state) {
+function mapStateToProps$2(state) {
     return {
         scopes: state.scopes.get('scopes')
     };
 }
 
-function mapDispatchToProps$1(dispatch) {
+function mapDispatchToProps$2(dispatch) {
     return {
     }
 }
 
-function mergeProps(state, dispatch, props) {
+function mergeProps$1(state, dispatch, props) {
     return {
         scope: state.scopes.find(function (currScope) { return currScope.id == props.params.scopeId; }),
         scopeId: props.params.scopeId
     }
 }
 
-var ScopePage$1 = connect$1(mapStateToProps$1, mapDispatchToProps$1, mergeProps)(ScopePage);
+var ScopePage$1 = connect$1(mapStateToProps$2, mapDispatchToProps$2, mergeProps$1)(ScopePage);
 
 var StepPage = (function (superclass) {
 	function StepPage(props) {
@@ -24715,7 +24787,7 @@ function routerMiddleware(history) {
 }
 });
 
-var index$21 = createCommonjsModule(function (module, exports) {
+var index$23 = createCommonjsModule(function (module, exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24797,8 +24869,8 @@ exports.syncHistoryWithStore = _sync2['default'];
 exports.routerMiddleware = _middleware2['default'];
 });
 
-var index_9 = index$21.routerReducer;
-var index_11 = index$21.syncHistoryWithStore;
+var index_9 = index$23.routerReducer;
+var index_11 = index$23.syncHistoryWithStore;
 
 function createAppStore() {
     var reducer = combineReducers({scopes: commonDataReducer, routing: index_9});
@@ -24872,7 +24944,7 @@ index$1.render(
             React$1__default.createElement( Route, { path: "/", component: App }, 
                 React$1__default.createElement( IndexRoute, { component: MainPage$1 }), 
                 React$1__default.createElement( Route, { path: "/:scopeId", component: ScopePage$1 }), 
-                React$1__default.createElement( Route, { path: "/:scopeId/:courseId", component: CoursePage }), 
+                React$1__default.createElement( Route, { path: "/:scopeId/:courseId", component: CoursePage$1 }), 
                 React$1__default.createElement( Route, { path: "/:scopeId/:courseId/:step", component: StepPage }), 
                 React$1__default.createElement( Route, { path: "login", component: Login })
             )
